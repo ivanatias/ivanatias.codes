@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.grid__image-container {
+  width: 100%;
+}
+
+.grid__image-container > span {
+  position: unset !important;
+}
+
+.grid__image {
+  object-fit: cover;
+  width: 100% !important;
+  /* min-height: 250px !important; */
+  position: relative !important;
+  height: unset !important;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "personalwebsite",
+  "version": "0.1.0",
+  "private": true,
+  "keywords": [
+    "Frontend Developer",
+    "UI Designer",
+    "Ivan Atias",
+    "Portfolio"
+  ],
+  "author": "Ivan Atias",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@sanity/client": "^3.3.2",
+    "framer-motion": "^6.3.11",
+    "next": "12.1.6",
+    "next-themes": "^0.2.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-icons": "^4.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.24"
+  }
+}
