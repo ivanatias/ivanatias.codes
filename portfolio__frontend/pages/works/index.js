@@ -7,9 +7,9 @@ const Works = ({ works }) => {
   return (
     <MainSection title="Works">
       <Article title="Works" delay={0.1}>
-        <Paragraph>
+        <Paragraph textIndent="indent-4">
           These are some of my favorite projects that I have built, each one of
-          them taught me different things through out their development process.
+          them taught me different things during their development process.
         </Paragraph>
       </Article>
       <Grid data={works} />

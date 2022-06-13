@@ -48,7 +48,7 @@ const Navbar = () => {
               imageLoaded ? "opacity-100" : "opacity-0"
             } transition-opacity `}
           >
-            <Link href="/" passHref>
+            <Link href="/" passHref scroll={false}>
               <a className="pt-2">
                 <Image
                   src={`/FullLogo${theme}.svg`}
@@ -63,7 +63,7 @@ const Navbar = () => {
           <ul className="hidden md:flex md:items-center md:gap-2">
             {links.map((link, index) => (
               <li key={index + link.name}>
-                <Link href={link.path}>
+                <Link href={link.path} scroll={false}>
                   <a className="text-black decoration-black dark:decoration-gray-300 dark:text-gray-300 font-semibold underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white transition-all duration-150">
                     {link.name}
                   </a>

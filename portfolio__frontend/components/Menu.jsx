@@ -8,7 +8,7 @@ const Menu = ({ closeMenu }) => {
       <ul className="flex flex-col justify-center gap-2 w-full">
         {links.map((link, index) => (
           <li key={index + link.name}>
-            <Link href={link.path}>
+            <Link href={link.path} scroll={false}>
               <a
                 className="text-black block decoration-black dark:decoration-white dark:text-white font-semibold underline-offset-4 hover:underline transition-all duration-150"
                 onClick={closeMenu}

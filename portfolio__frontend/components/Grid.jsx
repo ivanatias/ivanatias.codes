@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const GridItem = ({ thumbnail, title, overview, slug }) => {
   return (
-    <Link href={`/works/${slug}`} passHref>
+    <Link href={`/works/${slug}`} passHref scroll={false}>
       <a>
-        <div className="flex flex-col items-center justify-center w-full h-full hover:scale-110 transition-transform duration-300">
+        <div className="flex flex-col items-center justify-center w-full h-full lg:hover:scale-110 transition-transform duration-300">
           <div className="relative w-full grid__image-container">
             <Image
               src={thumbnail}

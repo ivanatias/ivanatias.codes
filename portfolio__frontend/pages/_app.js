@@ -10,8 +10,16 @@ function MyApp({ Component, pageProps, router }) {
       attribute="class"
       defaultTheme="system"
     >
-      <Layout>
-        <AnimatePresence initial={true} exitBeforeEnter>
+      <Layout router={router}>
+        <AnimatePresence
+          initial={true}
+          exitBeforeEnter
+          onExitComplete={() => {
+            if (window !== "undefined") {
+              scrollTo({ top: 0 });
+            }
+          }}
+        >
           <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>
       </Layout>

@@ -12,7 +12,7 @@ const Work = ({ work }) => {
     <MainSection title={work.title}>
       <article className="flex flex-col gap-5">
         <div className="flex items-center gap-2">
-          <Link href="/works">
+          <Link href="/works" scroll={false}>
             <a>
               <h2 className="text-black dark:text-white font-bold text-sm 2xl:text-base">
                 Works
