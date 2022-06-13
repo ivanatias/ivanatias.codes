@@ -9,3 +9,4 @@ export { default as Paragraph } from "./Paragraph";
 export { default as LinkButton } from "./LinkButton";
 export { default as Biography } from "./Biography";
 export { default as Grid } from "./Grid";
+export { default as Skill } from "./Skill";
