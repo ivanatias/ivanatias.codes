@@ -14,6 +14,8 @@ const Section = ({ children, title }) => {
       {title && (
         <Head>
           <title>{title} - Ivan Atias</title>
+          <meta name="og:title" content={`${title} - Ivan Atias`} />
+          <meta name="twitter:title" content={`${title} - Ivan Atias`} />
         </Head>
       )}
       <motion.section
