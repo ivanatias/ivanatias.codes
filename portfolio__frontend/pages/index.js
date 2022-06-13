@@ -4,6 +4,7 @@ import {
   Paragraph,
   LinkButton,
   Biography,
+  Skill,
 } from "../components";
 import { BioYear, BioDescription } from "../components/Biography";
 import { client } from "../sanity/client";
@@ -18,8 +19,9 @@ const Home = ({ biography }) => {
           I&apos;m a Frontend Developer and UI Designer that enjoys a lot
           building and designing good looking and functional websites and apps.
           These days, most of my work revolves around technologies such as
-          React, NextJS, GatsbyJS and recently, React Native. Also using CSS
-          technologies like Sass, Bootstrap, Material UI, TailwindCSS, etc.
+          React.js, Next.js, Gatsby.js and recently, React Native. I&apos;m also
+          comfortable using CSS technologies such as Sass, Bootstrap, Material
+          UI, TailwindCSS, etc.
           <br />
           <br />
           For my designs, Figma is my predilect design and prototyping tool.
@@ -27,20 +29,34 @@ const Home = ({ biography }) => {
         <LinkButton>My portfolio</LinkButton>
       </Article>
 
-      <Article title="Biography" delay={0.3}>
+      <Article title="Skills" delay={0.3}>
+        <Paragraph>
+          These are some of the technologies and tools I&apos;m comfortable
+          with:
+        </Paragraph>
+        <div className="w-full flex items-center justify-center sm:justify-start flex-wrap gap-4 md:gap-6">
+          <Skill skillImage="/images/reactjs.svg" skillText="React.js" />
+          <Skill skillImage="/images/nextjs.svg" skillText="Next.js" />
+          <Skill skillImage="/images/gatsbyjs.svg" skillText="Gatsby.js" />
+          <Skill skillImage="/images/javascript.svg" skillText="Javascript" />
+          <Skill skillImage="/images/css.svg" skillText="CSS" />
+          <Skill skillImage="/images/html.svg" skillText="HTML" />
+          <Skill skillImage="/images/sass.svg" skillText="Sass" />
+          <Skill skillImage="/images/tailwindcss.svg" skillText="TailwindCSS" />
+          <Skill skillImage="/images/materialui.svg" skillText="Material UI" />
+          <Skill skillImage="/images/bootstrap.svg" skillText="Bootstrap" />
+          <Skill skillImage="/images/git.svg" skillText="Git" />
+          <Skill skillImage="/images/figma.svg" skillText="Figma" />
+        </div>
+      </Article>
+
+      <Article title="Biography" delay={0.5}>
         {biography.map((item) => (
           <Biography key={item._id}>
             <BioYear>{item.year}</BioYear>
             <BioDescription>{item.description}</BioDescription>
           </Biography>
         ))}
-      </Article>
-
-      <Article title="I ❤️" delay={0.5}>
-        <Paragraph>
-          Playing guitar, watching Netflix, burgers, spending time with friends
-          and coding.
-        </Paragraph>
       </Article>
 
       <Article title="Find me online" delay={0.7}>
