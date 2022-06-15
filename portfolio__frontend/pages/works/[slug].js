@@ -24,7 +24,7 @@ const Work = ({ work }) => {
             {work.title}
           </h3>
         </div>
-        <Paragraph textIndent="indent-4">{work.description}</Paragraph>
+        <Paragraph>{work.description}</Paragraph>
         <div className="flex flex-col gap-3 text-sm font-semibold text-black dark:text-white 2xl:text-base">
           <div className="flex items-center gap-3">
             <span className="inline-block px-4 py-1 text-xs font-semibold text-white bg-indigo-800 rounded-lg 2xl:text-sm dark:bg-indigo-600">

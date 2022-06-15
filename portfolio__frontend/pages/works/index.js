@@ -7,7 +7,7 @@ const Works = ({ works }) => {
   return (
     <MainSection title="Works">
       <Article title="Works" delay={0.1}>
-        <Paragraph textIndent="indent-4">
+        <Paragraph>
           These are some of my favorite projects that I have built, each one of
           them taught me different things during their development process.
         </Paragraph>

@@ -14,7 +14,7 @@ const Home = ({ biography }) => {
   return (
     <MainSection>
       <Article title="Work" delay={0.1}>
-        <Paragraph textIndent="indent-4">
+        <Paragraph>
           I&apos;m a Frontend Developer and UI Designer that enjoys a lot
           building and designing good looking and functional websites and apps.
           These days, most of my work revolves around technologies such as
@@ -33,7 +33,7 @@ const Home = ({ biography }) => {
           These are some of the technologies and tools I&apos;m comfortable
           with:
         </Paragraph>
-        <div className="w-full flex items-center justify-center sm:justify-start flex-wrap gap-4 md:gap-6">
+        <div className="flex flex-wrap items-center justify-center w-full gap-4 sm:justify-start md:gap-6">
           <Skill skillImage="/images/reactjs.svg" skillText="React.js" />
           <Skill skillImage="/images/nextjs.svg" skillText="Next.js" />
           <Skill skillImage="/images/gatsbyjs.svg" skillText="Gatsby.js" />
@@ -64,7 +64,7 @@ const Home = ({ biography }) => {
         <div className="flex items-center gap-3">
           {socialLinks.map((item) => (
             <a
-              className="text-pink-800 dark:text-pink-600 text-2xl"
+              className="text-2xl text-pink-800 dark:text-pink-600"
               key={item.name}
               href={item.path}
               target="_blank"
