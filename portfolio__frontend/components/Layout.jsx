@@ -25,18 +25,19 @@ const Layout = ({ children, router }) => {
           href="/images/favicon.ico"
           type="image/x-icon"
         />
+        <link rel="icon" href="/images/favicon.ico" />
         <meta name="twitter:title" content="Ivan Atias - Home" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:image"
-          content={`${process.env.NEXT_PUBLIC_URL}/ivanatiasprofile.jpg`}
+          content="https://www.ivanatias.codes/ivanatiasprofile.jpg"
         />
         <meta property="og:site_name" content="Ivan Atias Personal Website" />
         <meta name="og:title" content="Ivan Atias - Home" />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content={`${process.env.NEXT_PUBLIC_URL}/ivanatiasprofile.jpg`}
+          content="https://www.ivanatias.codes/ivanatiasprofile.jpg"
         />
         <meta charSet="UTF-8" />
       </Head>
