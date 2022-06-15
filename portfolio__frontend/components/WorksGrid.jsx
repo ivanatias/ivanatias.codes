@@ -32,7 +32,7 @@ const GridItem = ({ thumbnail, title, overview, slug }) => {
   );
 };
 
-const Grid = ({ data }) => {
+const WorksGrid = ({ data }) => {
   return (
     <article className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12">
       {data.map((item) => (
@@ -48,4 +48,4 @@ const Grid = ({ data }) => {
   );
 };
 
-export default Grid;
+export default WorksGrid;

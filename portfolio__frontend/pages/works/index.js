@@ -1,5 +1,5 @@
 import React from "react";
-import { MainSection, Article, Paragraph, Grid } from "../../components";
+import { MainSection, Article, Paragraph, WorksGrid } from "../../components";
 import { worksQuery } from "../../constants/queries";
 import { client } from "../../sanity/client";
 
@@ -12,7 +12,7 @@ const Works = ({ works }) => {
           them taught me different things during their development process.
         </Paragraph>
       </Article>
-      <Grid data={works} />
+      <WorksGrid data={works} />
     </MainSection>
   );
 };
