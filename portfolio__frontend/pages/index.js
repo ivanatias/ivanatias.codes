@@ -3,10 +3,9 @@ import {
   Article,
   Paragraph,
   LinkButton,
-  Biography,
+  BiographyItem,
   Skill,
 } from "../components";
-import { BioYear, BioDescription } from "../components/Biography";
 import { client } from "../sanity/client";
 import { biographyQuery } from "../constants/queries";
 import { socialLinks } from "../constants/socialLinks";
@@ -52,10 +51,11 @@ const Home = ({ biography }) => {
 
       <Article title="Biography" delay={0.5}>
         {biography.map((item) => (
-          <Biography key={item._id}>
-            <BioYear>{item.year}</BioYear>
-            <BioDescription>{item.description}</BioDescription>
-          </Biography>
+          <BiographyItem
+            key={item._id}
+            year={item.year}
+            desc={item.description}
+          />
         ))}
       </Article>
 
