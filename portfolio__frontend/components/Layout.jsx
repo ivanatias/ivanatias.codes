@@ -8,11 +8,11 @@ const Layout = ({ children, router }) => {
     <>
       <Navbar />
       <Head>
-        <title>Ivan Atias - Home</title>
+        <title>Ivan Atias Personal website - Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Ivan Atias is a Frontend Developer and UI Designer who enjoys a lot building good looking and functional websites and apps. He is familiar with technologies such as React.js, Next.js, Gatsby.js, TailwindCSS, Bootstrap, etc."
+          content="Ivan Atias is a Frontend Developer and UI Designer who enjoys a lot building good looking and functional websites and apps."
         />
         <meta
           name="keywords"
