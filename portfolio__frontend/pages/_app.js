@@ -5,12 +5,7 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <ThemeProvider
-      enableColorScheme={false}
-      attribute="class"
-      defaultTheme="system"
-      enableSystem={true}
-    >
+    <ThemeProvider attribute="class">
       <Layout router={router}>
         <AnimatePresence
           initial={true}
