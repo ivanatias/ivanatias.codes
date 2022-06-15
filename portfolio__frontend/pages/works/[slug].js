@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import { AiOutlineGithub, AiOutlineEye } from "react-icons/ai";
-import { MainSection } from "../../components";
+import { MainSection, Paragraph } from "../../components";
 import { client } from "../../sanity/client";
 import { worksQuery, workQuery } from "../../constants/queries";
 
@@ -14,29 +14,27 @@ const Work = ({ work }) => {
         <div className="flex items-center gap-2">
           <Link href="/works" scroll={false}>
             <a>
-              <h2 className="text-black dark:text-white font-bold text-sm 2xl:text-base">
+              <h2 className="text-sm font-bold text-black dark:text-white 2xl:text-base">
                 Works
               </h2>
             </a>
           </Link>
           <ChevronRightIcon className="w-5 text-black font-bold dark:text-white ml-[-4px]" />
-          <h3 className="text-pink-800 dark:text-pink-600 font-bold text-base 2xl:text-lg">
+          <h3 className="text-base font-bold text-pink-800 dark:text-pink-600 2xl:text-lg">
             {work.title}
           </h3>
         </div>
-        <p className="text-black dark:text-gray-300 text-base 2xl:text-lg">
-          {work.description}
-        </p>
-        <div className="flex flex-col gap-3 text-black dark:text-white font-semibold text-sm 2xl:text-base">
+        <Paragraph textIndent="indent-4">{work.description}</Paragraph>
+        <div className="flex flex-col gap-3 text-sm font-semibold text-black dark:text-white 2xl:text-base">
           <div className="flex items-center gap-3">
-            <span className="inline-block text-xs 2xl:text-sm text-white font-semibold py-1 px-4 bg-indigo-800 dark:bg-indigo-600 rounded-lg">
+            <span className="inline-block px-4 py-1 text-xs font-semibold text-white bg-indigo-800 rounded-lg 2xl:text-sm dark:bg-indigo-600">
               Stack
             </span>
-            <div className="flex items-center flex-wrap gap-1">
+            <div className="flex flex-wrap items-center gap-1">
               {work.stack.map((item) => (
                 <span
                   key={item._key}
-                  className="text-black underline dark:text-gray-300 text-xs 2xl:text-sm"
+                  className="text-xs text-black underline dark:text-gray-300 2xl:text-sm"
                 >
                   {item.tech}
                 </span>
@@ -48,7 +46,7 @@ const Work = ({ work }) => {
               href={work.githubUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="hover:underline w-fit flex items-center gap-2"
+              className="flex items-center gap-2 hover:underline w-fit"
             >
               <AiOutlineGithub fontSize={24} /> Source code
             </a>
@@ -56,7 +54,7 @@ const Work = ({ work }) => {
               href={work.projectUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="hover:underline w-fit flex items-center gap-2"
+              className="flex items-center gap-2 hover:underline w-fit"
             >
               <AiOutlineEye fontSize={24} /> Live project
             </a>
@@ -74,7 +72,7 @@ const Work = ({ work }) => {
                 blurDataURL={image.asset.url}
                 alt="Work snapshot"
                 layout="fill"
-                className="grid__image rounded-lg"
+                className="rounded-lg grid__image"
                 objectFit="contain"
               />
             </div>
