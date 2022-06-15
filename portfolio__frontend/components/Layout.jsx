@@ -42,14 +42,14 @@ const Layout = ({ children, router }) => {
       </Head>
       <div className="flex">
         <main className="flex flex-col flex-1 max-w-3xl mx-auto px-5">
-          {router.pathname !== "/404" && (
+          {router.pathname !== "/404" && router.pathname !== "/500" && (
             <div className="flex flex-col gap-5 items-center pt-24 pb-12">
               <div className="relative w-[120px] h-[120px] ring-2 ring-gray-900 dark:ring-gray-100 rounded-full md:w-[150px] md:h-[150px]">
                 <Image
                   src="/me.jpg"
                   placeholder="blur"
                   blurDataURL="/me.jpg"
-                  priority={true}
+                  priority
                   layout="fill"
                   objectFit="cover"
                   className="rounded-full"
@@ -69,7 +69,7 @@ const Layout = ({ children, router }) => {
           {children}
         </main>
       </div>
-      {router.pathname !== "/404" && <Footer />}
+      {router.pathname !== "/404" && router.pathname !== "/500" && <Footer />}
     </>
   );
 };
