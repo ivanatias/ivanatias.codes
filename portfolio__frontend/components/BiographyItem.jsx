@@ -16,8 +16,13 @@ export const BioDescription = ({ children }) => {
   );
 };
 
-const Biography = ({ children }) => {
-  return <div className="flex gap-3">{children}</div>;
+const BiographyItem = ({ year, desc }) => {
+  return (
+    <div className="flex gap-3">
+      <BioYear>{year}</BioYear>
+      <BioDescription>{desc}</BioDescription>
+    </div>
+  );
 };
 
-export default Biography;
+export default BiographyItem;
