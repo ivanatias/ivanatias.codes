@@ -31,9 +31,9 @@ const Navbar = () => {
     />
   );
 
-  const closeMenu = useCallback(() => {
+  const closeMenu = () => {
     setMenuOpen(false);
-  }, [menuOpen]);
+  };
 
   const handleImageLoaded = useCallback(() => {
     setImageLoaded(true);
