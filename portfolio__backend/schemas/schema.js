@@ -3,9 +3,9 @@ import createSchema from "part:@sanity/base/schema-creator";
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
-import biography from "./biography";
-import technology from "./technology";
-import work from "./work";
+import biography from "./documents/biography";
+import work from "./documents/work";
+import technology from "./objects/technology";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
