@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,12 +12,11 @@ const ThemeToggleButton = dynamic(() => import("./ThemeToggle"), {
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const { theme } = useTheme();
 
   const openMenuIcon = (
     <MenuAlt2Icon
-      className="w-6 cursor-pointer md:hidden text-black dark:text-white"
+      className="w-6 text-black cursor-pointer md:hidden dark:text-white"
       onClick={() => setMenuOpen(true)}
       aria-label="Open Menu"
     />
@@ -25,7 +24,7 @@ const Navbar = () => {
 
   const closeMenuIcon = (
     <XIcon
-      className="w-6 cursor-pointer md:hidden text-black dark:text-white"
+      className="w-6 text-black cursor-pointer md:hidden dark:text-white"
       onClick={() => setMenuOpen(false)}
       aria-label="Close Menu"
     />
@@ -35,19 +34,11 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
-  const handleImageLoaded = useCallback(() => {
-    setImageLoaded(true);
-  }, []);
-
   return (
     <nav className="fixed top-0 z-50 w-full bg-white dark:bg-neutral-900">
       <div className=" flex items-center justify-between max-w-[824px] mx-auto px-4 md:px-5">
         <div className="flex items-center gap-4">
-          <div
-            className={`flex items-center ${
-              imageLoaded ? "opacity-100" : "opacity-0"
-            } transition-opacity `}
-          >
+          <div className={`flex items-center`}>
             <Link href="/" passHref scroll={false}>
               <a className="pt-2">
                 <Image
@@ -55,7 +46,6 @@ const Navbar = () => {
                   width={140}
                   height={80}
                   alt="Logo"
-                  onLoad={handleImageLoaded}
                 />
               </a>
             </Link>
@@ -64,7 +54,7 @@ const Navbar = () => {
             {links.map((link, index) => (
               <li key={index + link.name}>
                 <Link href={link.path} scroll={false}>
-                  <a className="text-black decoration-black dark:decoration-gray-300 dark:text-gray-300 font-semibold underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white transition-all duration-150">
+                  <a className="font-semibold text-black transition-all duration-150 decoration-black dark:decoration-gray-300 dark:text-gray-300 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white">
                     {link.name}
                   </a>
                 </Link>
@@ -72,7 +62,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="flex gap-4 flex-1 justify-end">
+        <div className="flex justify-end flex-1 gap-4">
           <ThemeToggleButton />
           {menuOpen ? closeMenuIcon : openMenuIcon}
         </div>
