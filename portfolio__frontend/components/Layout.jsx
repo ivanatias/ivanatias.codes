@@ -26,14 +26,14 @@ const Layout = ({ children, router }) => {
           type="image/x-icon"
         />
         <link rel="icon" href="/images/favicon.ico" />
-        <meta name="twitter:title" content="Ivan Atias - Home" />
+        <meta name="twitter:title" content="Ivan Atias Portfolio - Home" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:image"
           content="https://www.ivanatias.codes/ivanatiasprofile.jpg"
         />
-        <meta property="og:site_name" content="Ivan Atias Personal Website" />
-        <meta name="og:title" content="Ivan Atias - Home" />
+        <meta property="og:site_name" content="Ivan Atias Portfolio" />
+        <meta name="og:title" content="Ivan Atias Portfolio - Home" />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
