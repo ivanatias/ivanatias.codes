@@ -8,7 +8,7 @@ const Layout = ({ children, router }) => {
     <>
       <Navbar />
       <Head>
-        <title>Ivan Atias Personal website - Home</title>
+        <title>Ivan Atias Portfolio - Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"

@@ -13,7 +13,7 @@ const Section = ({ children, title }) => {
     <>
       {title && (
         <Head>
-          <title>{title} - Ivan Atias Personal website</title>
+          <title>{title} - Ivan Atias Portfolio</title>
           <meta name="og:title" content={`${title} - Ivan Atias`} />
           <meta name="twitter:title" content={`${title} - Ivan Atias`} />
         </Head>
