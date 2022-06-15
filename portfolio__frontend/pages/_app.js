@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps, router }) {
       enableColorScheme={false}
       attribute="class"
       defaultTheme="system"
+      enableSystem={true}
     >
       <Layout router={router}>
         <AnimatePresence
