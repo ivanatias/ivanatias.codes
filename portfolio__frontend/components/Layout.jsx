@@ -29,14 +29,14 @@ const Layout = ({ children, router }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:image"
-          content={`${process.env.NEXT_PUBLIC_URL}/me.jpg`}
+          content={`${process.env.NEXT_PUBLIC_URL}/ivanatiasprofile.jpg`}
         />
         <meta property="og:site_name" content="Ivan Atias Personal Website" />
         <meta name="og:title" content="Ivan Atias - Home" />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content={`${process.env.NEXT_PUBLIC_URL}/me.jpg`}
+          content={`${process.env.NEXT_PUBLIC_URL}/ivanatiasprofile.jpg`}
         />
         <meta charSet="UTF-8" />
       </Head>
@@ -46,14 +46,14 @@ const Layout = ({ children, router }) => {
             <div className="flex flex-col gap-5 items-center pt-28 pb-12">
               <div className="relative w-[120px] h-[120px] ring-2 ring-gray-900 dark:ring-gray-100 rounded-full md:w-[150px] md:h-[150px]">
                 <Image
-                  src="/profile.jpg"
+                  src="/ivanatiasprofile.jpg"
                   placeholder="blur"
-                  blurDataURL="/profile.jpg"
+                  blurDataURL="/ivanatiasprofile.jpg"
                   priority
                   layout="fill"
                   objectFit="cover"
                   className="rounded-full"
-                  alt="Ivan Atias"
+                  alt="Ivan Atias Profile photo."
                 />
               </div>
               <div className="flex flex-col gap-2">
