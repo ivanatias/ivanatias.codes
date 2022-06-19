@@ -31,10 +31,11 @@ export const workQuery = (slug) => {
     projectUrl,
     githubUrl,
     description,
+    slug,
     thumbNail  {
-    asset -> {
-    url
-  }
+      asset -> {
+      url
+    }
   },
   stack[] {
     ... {
@@ -49,7 +50,7 @@ export const workQuery = (slug) => {
     _id  
        }
     }
-   }
+  }
   
   
   }`;

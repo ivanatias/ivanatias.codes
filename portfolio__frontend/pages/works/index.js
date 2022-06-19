@@ -5,7 +5,7 @@ import { client } from "../../sanity/client";
 
 const Works = ({ works }) => {
   return (
-    <MainSection title="Works">
+    <MainSection title="Works" canonicalUrlPath="/works">
       <Article title="Works" delay={0.1}>
         <Paragraph>
           These are some of my favorite projects that I have built, each one of

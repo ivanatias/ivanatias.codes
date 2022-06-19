@@ -9,7 +9,10 @@ import { worksQuery, workQuery } from "../../constants/queries";
 
 const Work = ({ work }) => {
   return (
-    <MainSection title={work.title}>
+    <MainSection
+      title={work.title}
+      canonicalUrlPath={`/works/${work.slug.current}`}
+    >
       <article className="flex flex-col gap-5">
         <div className="flex items-center gap-2">
           <Link href="/works" scroll={false}>
