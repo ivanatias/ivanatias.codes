@@ -38,7 +38,7 @@ const Section = ({
 
         <link
           rel="canonical"
-          href={`https://ivanatias.codes${canonicalUrlPath || "/"}`}
+          href={`https://www.ivanatias.codes${canonicalUrlPath || "/"}`}
         />
       </Head>
 
