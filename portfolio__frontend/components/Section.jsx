@@ -13,9 +13,15 @@ const Section = ({ children, title }) => {
     <>
       {title && (
         <Head>
-          <title>{title} - Ivan Atias</title>
-          <meta name="og:title" content={`${title} - Ivan Atias`} />
-          <meta name="twitter:title" content={`${title} - Ivan Atias`} />
+          <title>{title} - Ivan Atias · Frontend Developer, UI Designer</title>
+          <meta
+            name="og:title"
+            content={`${title} - Ivan Atias · Frontend Developer, UI Designer`}
+          />
+          <meta
+            name="twitter:title"
+            content={`${title} - Ivan Atias · Frontend Developer, UI Designer`}
+          />
         </Head>
       )}
       <motion.section
