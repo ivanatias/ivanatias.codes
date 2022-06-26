@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const Menu = ({ closeMenu }) => {
   return (
-    <div className="z-50 absolute bottom-[-85px] right-4 w-[200px] bg-white dark:bg-neutral-800 py-5 px-4  rounded-lg shadow-md dark:shadow-gray-600 md:hidden">
-      <ul className="flex flex-col justify-center gap-2 w-full">
+    <div className="z-50 absolute bottom-[-120px] right-4 w-[200px] bg-white dark:bg-neutral-800 py-5 px-4  rounded-lg shadow-md dark:shadow-gray-600 md:hidden">
+      <ul className="flex flex-col justify-center w-full gap-2">
         {links.map((link, index) => (
           <li key={index + link.name}>
             <Link href={link.path} scroll={false}>
               <a
-                className="text-black block decoration-black dark:decoration-white dark:text-white font-semibold underline-offset-4 hover:underline transition-all duration-150"
+                className="block font-semibold text-black transition-all duration-150 decoration-black dark:decoration-white dark:text-white underline-offset-4 hover:underline"
                 onClick={closeMenu}
               >
                 {link.name}

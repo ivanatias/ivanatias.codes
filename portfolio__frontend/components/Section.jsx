@@ -12,36 +12,39 @@ const Section = ({
   children,
   title,
   canonicalUrlPath,
-  ogImage,
-  twitterImage,
+  socialCardImage,
+  contentType,
 }) => {
   return (
     <>
       <Head>
         {title && (
-          <title>{title} - Ivan Atias · Frontend Developer, UI Designer</title>
+          <>
+            <title>{title} - Ivan Atias</title>
+            <meta name="og:title" content={`${title} - Ivan Atias`} />
+            <meta name="twitter:title" content={`${title} - Ivan Atias`} />
+          </>
         )}
-        {title && (
-          <meta
-            name="og:title"
-            content={`${title} - Ivan Atias · Frontend Developer, UI Designer`}
-          />
-        )}
-        {title && (
-          <meta
-            name="twitter:title"
-            content={`${title} - Ivan Atias · Frontend Developer, UI Designer`}
-          />
-        )}
-        {ogImage && <meta name="og:image" content={ogImage} />}
-        {twitterImage && <meta name="twitter:image" content={twitterImage} />}
-
+        <meta
+          name="og:image"
+          content={
+            socialCardImage ||
+            "https://www.ivanatias.codes/ivanatiasprofile.jpg"
+          }
+        />
+        <meta
+          name="twitter:image"
+          content={
+            socialCardImage ||
+            "https://www.ivanatias.codes/ivanatiasprofile.jpg"
+          }
+        />
+        <meta name="og:type" content={contentType || "website"} />
         <link
           rel="canonical"
           href={`https://www.ivanatias.codes${canonicalUrlPath || "/"}`}
         />
       </Head>
-
       <motion.section
         className="flex flex-col gap-10"
         initial="hidden"

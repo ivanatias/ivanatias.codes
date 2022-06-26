@@ -5,14 +5,13 @@ import Link from "next/link";
 import { Menu } from "../components";
 import { links } from "../constants/links";
 import { MenuAlt2Icon, XIcon } from "@heroicons/react/outline";
-import { useTheme } from "next-themes";
 const ThemeToggleButton = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
 });
+import logo from "../public/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme } = useTheme();
 
   const openMenuIcon = (
     <MenuAlt2Icon
@@ -35,18 +34,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-white dark:bg-neutral-900">
+    <nav className="fixed top-0 z-50 w-full py-3 bg-white dark:bg-neutral-900">
       <div className=" flex items-center justify-between max-w-[824px] mx-auto px-4 md:px-5">
         <div className="flex items-center gap-4">
           <div className={`flex items-center`}>
             <Link href="/" passHref scroll={false}>
               <a className="pt-2">
-                <Image
-                  src={`/FullLogo${theme}.svg`}
-                  width={140}
-                  height={80}
-                  alt="Logo"
-                />
+                <Image src={logo} alt="Logo" />
               </a>
             </Link>
           </div>

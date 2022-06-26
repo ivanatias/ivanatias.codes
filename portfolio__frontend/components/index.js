@@ -1,5 +1,6 @@
 export { default as Navbar } from "./Navbar";
 export { default as Footer } from "./Footer";
+export { default as MetaData } from "./MetaData";
 export { default as Layout } from "./Layout";
 export { default as Menu } from "./Menu";
 export { default as ThemeToggle } from "./ThemeToggle";
@@ -9,4 +10,6 @@ export { default as Paragraph } from "./Paragraph";
 export { default as LinkButton } from "./LinkButton";
 export { default as BiographyItem } from "./BiographyItem";
 export { default as WorksGrid } from "./WorksGrid";
+export { default as BlogGrid } from "./BlogGrid";
 export { default as Skill } from "./Skill";
+export { default as CustomPortableText } from "./CustomPortableText";

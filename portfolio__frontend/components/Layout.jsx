@@ -1,52 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import Head from "next/head";
-import { Navbar, Footer } from "../components";
+import { Navbar, Footer, MetaData } from "../components";
 
 const Layout = ({ children, router }) => {
   return (
     <>
       <Navbar />
-      <Head>
-        <title>Ivan Atias · Frontend Developer, UI Designer - Home</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="Ivan Atias is a Frontend Developer and UI Designer who enjoys a lot building good looking and functional websites and apps."
-        />
-        <meta
-          name="keywords"
-          content="Frontend Developer, UI Designer, Ivan Atias, Portfolio"
-        />
-        <meta name="author" content="Ivan Atias" />
-        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
-        <link
-          rel="shortcut icon"
-          href="/images/favicon.ico"
-          type="image/x-icon"
-        />
-        <link rel="icon" href="/images/favicon.ico" />
-        <meta
-          name="twitter:title"
-          content="Ivan Atias · Frontend Developer, UI Designer - Home"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:image"
-          content="https://www.ivanatias.codes/ivanatiasprofile.jpg"
-        />
-        <meta property="og:site_name" content="Ivan Atias Portfolio" />
-        <meta
-          name="og:title"
-          content="Ivan Atias · Frontend Developer, UI Designer - Home"
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://www.ivanatias.codes/ivanatiasprofile.jpg"
-        />
-        <meta charSet="UTF-8" />
-      </Head>
+      <MetaData />
       <div className="flex">
         <main className="flex flex-col flex-1 max-w-3xl px-5 mx-auto">
           {router.pathname !== "/404" && router.pathname !== "/500" && (
@@ -60,6 +20,7 @@ const Layout = ({ children, router }) => {
                   layout="fill"
                   objectFit="cover"
                   className="rounded-full"
+                  sizes="(max-width: 560px) 256px, (max-width: 1080px) 384px, 520px"
                   alt="Ivan Atias Profile photo."
                 />
               </div>

@@ -48,7 +48,6 @@ const Home = ({ biography }) => {
           <Skill skillImage="/images/figma.svg" skillText="Figma" />
         </div>
       </Article>
-
       <Article title="Biography" delay={0.5}>
         {biography.map((item) => (
           <BiographyItem
@@ -58,7 +57,6 @@ const Home = ({ biography }) => {
           />
         ))}
       </Article>
-
       <Article title="Find me online" delay={0.7}>
         <Paragraph>You can also check my online presence:</Paragraph>
         <div className="flex items-center gap-3">

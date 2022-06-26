@@ -1,7 +1,6 @@
 import React from "react";
 import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -9,7 +8,7 @@ const ThemeToggle = () => {
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
       <motion.div
-        className="flex items-center justify-center w-12 h-10 bg-indigo-700  dark:bg-orange-600 rounded-md cursor-pointer"
+        className="flex items-center justify-center w-12 h-10 bg-indigo-700 rounded-md cursor-pointer dark:bg-orange-600"
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         aria-label="Toggle Theme"
         key={theme}

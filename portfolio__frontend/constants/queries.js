@@ -17,9 +17,9 @@ export const worksQuery = () => {
     thumbNail  {
     asset -> {
     url
+   }
   }
-  }
-  }`;
+}`;
 
   return query;
 };
@@ -53,6 +53,62 @@ export const workQuery = (slug) => {
   }
   
   
+  }`;
+
+  return query;
+};
+
+export const blogQuery = () => {
+  const query = `*[_type == "blog"] | order(_createdAt desc) {
+    _id,
+    slug,
+    articleTitle,
+    publishDate,
+    coverImage {
+      altText,
+      image {
+       asset -> {
+         url
+          }  
+        }
+     } 
+  }`;
+
+  return query;
+};
+
+export const blogPostQuery = (slug) => {
+  const query = `*[_type == "blog" && slug.current == "${slug}"] {
+    _id,
+    slug,
+    articleBody,
+    articleTitle,
+    publishDate,
+    socialShareImage {
+        asset -> {
+          url
+        }
+    },
+    coverImage {
+      altText,
+      image {
+       asset -> {
+         url
+          }  
+        }
+     } 
+  }`;
+
+  return query;
+};
+
+export const blogPostReadingTimeQuery = (slug) => {
+  const query = `*[_type == "blog" && slug.current == "${slug}"] {
+    articleTitle,
+    "numberOfCharacters": length(pt::text(articleBody)),
+    "estimatedWordCount": round(length(pt::text(articleBody)) / 5),
+    // Words per minute: 180
+    "estimatedReadingTime": round(length(pt::text(articleBody)) / 5 / 180 )
   }`;
 
   return query;

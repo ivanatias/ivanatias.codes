@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-col items-center justify-between pt-12 pb-6 dark:bg-neutral-900">
       <div className="flex flex-col gap-5 max-w-[824px] w-full mx-auto px-4 md:px-5">
-        <h2 className="text-xl font-bold text-black  dark:text-gray-100 md:text-2xl">
+        <h2 className="text-xl font-bold text-black dark:text-gray-100 md:text-2xl">
           Feel free to reach out to me!
         </h2>
         <p className="text-black dark:text-gray-300 2xl:text-lg">
@@ -19,7 +19,7 @@ const Footer = () => {
         </a>
       </div>
       <small className="mt-5 text-xs font-semibold text-black dark:text-gray-500 2xl:text-sm">
-        © {new Date().getFullYear()} Ivan Atias. All rights reserved.
+        © {new Date().getFullYear()} Ivan Atias
       </small>
     </footer>
   );
