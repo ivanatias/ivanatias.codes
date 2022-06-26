@@ -56,9 +56,9 @@ const BlogArticle = ({ post, readingTime }) => {
         <CustomPortableText value={post.articleBody} />
       </article>
       <div className="flex flex-col gap-5">
-        <h5 className="text-lg font-bold text-black 2xl:text-xl dark:text-gray-100">
+        <h2 className="text-lg font-bold text-black 2xl:text-xl dark:text-gray-100">
           Share on social media
-        </h5>
+        </h2>
         <div className="flex flex-wrap items-center gap-3">
           <FacebookShareButton
             url={`https://www.ivanatias.codes/blog/${post.slug.current}`}

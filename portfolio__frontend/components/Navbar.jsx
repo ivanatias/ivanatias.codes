@@ -8,7 +8,7 @@ import { MenuAlt2Icon, XIcon } from "@heroicons/react/outline";
 const ThemeToggleButton = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
 });
-import logo from "../public/logo.png";
+import logo from "../public/logo.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
