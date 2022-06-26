@@ -1,7 +1,10 @@
+import { MdWork } from "react-icons/md";
+
 export default {
   name: "work",
   title: "Work",
   type: "document",
+  icon: MdWork,
   fields: [
     {
       name: "title",
@@ -67,4 +70,18 @@ export default {
       },
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+      image: "thumbNail",
+      desc: "overview",
+    },
+    prepare({ title, image, desc }) {
+      return {
+        title,
+        media: image,
+        subtitle: desc,
+      };
+    },
+  },
 };
