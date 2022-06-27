@@ -30,7 +30,11 @@ const Section = ({
           name="twitter:title"
           content={title ? `${title} - Ivan Atias` : defaultTitle}
         />
-        <meta property="og:image" content={socialCardImage || defaultImage} />
+        <meta
+          name="image"
+          property="og:image"
+          content={socialCardImage || defaultImage}
+        />
         <meta name="twitter:image" content={socialCardImage || defaultImage} />
         <meta property="og:type" content={contentType || defaultOgType} />
         <meta
