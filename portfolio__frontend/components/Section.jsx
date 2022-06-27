@@ -15,31 +15,24 @@ const Section = ({
   socialCardImage,
   contentType,
 }) => {
+  const defaultTitle = "Ivan Atias · Frontend Developer, UI Designer";
+  const defaultImage = "https://www.ivanatias.codes/ivanatiasprofile.webp";
+  const defaultOgType = "website";
   return (
     <>
       <Head>
-        {title && (
-          <>
-            <title>{title} - Ivan Atias</title>
-            <meta property="og:title" content={`${title} - Ivan Atias`} />
-            <meta name="twitter:title" content={`${title} - Ivan Atias`} />
-          </>
-        )}
+        <title>{title ? `${title} - Ivan Atias` : defaultTitle}</title>
         <meta
-          property="og:image"
-          content={
-            socialCardImage ||
-            "https://www.ivanatias.codes/ivanatiasprofile.webp"
-          }
+          property="og:title"
+          content={title ? `${title} - Ivan Atias` : defaultTitle}
         />
         <meta
-          name="twitter:image"
-          content={
-            socialCardImage ||
-            "https://www.ivanatias.codes/ivanatiasprofile.webp"
-          }
+          name="twitter:title"
+          content={title ? `${title} - Ivan Atias` : defaultTitle}
         />
-        <meta property="og:type" content={contentType || "website"} />
+        <meta property="og:image" content={socialCardImage || defaultImage} />
+        <meta name="twitter:image" content={socialCardImage || defaultImage} />
+        <meta property="og:type" content={contentType || defaultOgType} />
         <meta
           property="og:url"
           content={`https://www.ivanatias.codes${canonicalUrlPath || ""}`}

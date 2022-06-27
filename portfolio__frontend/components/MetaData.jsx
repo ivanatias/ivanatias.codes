@@ -4,7 +4,6 @@ import Head from "next/head";
 const MetaData = () => {
   return (
     <Head>
-      <title>Ivan Atias · Frontend Developer, UI Designer - Home</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta
         name="description"
@@ -44,16 +43,8 @@ const MetaData = () => {
         sizes="16x16"
         href="/images/favicon-16x16.png"
       />
-      <meta
-        name="twitter:title"
-        content="Ivan Atias · Frontend Developer, UI Designer - Home"
-      />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="og:site_name" content="Ivan Atias Website" />
-      <meta
-        property="og:title"
-        content="Ivan Atias · Frontend Developer, UI Designer - Home"
-      />
       <meta charSet="UTF-8" />
     </Head>
   );
