@@ -49,9 +49,9 @@ const MetaData = () => {
         content="Ivan Atias · Frontend Developer, UI Designer - Home"
       />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta property="og:site_name" content="Ivan Atias Portfolio" />
+      <meta property="og:site_name" content="Ivan Atias Website" />
       <meta
-        name="og:title"
+        property="og:title"
         content="Ivan Atias · Frontend Developer, UI Designer - Home"
       />
       <meta charSet="UTF-8" />

@@ -13,9 +13,9 @@ const Layout = ({ children, router }) => {
             <div className="flex flex-col items-center gap-5 pb-12 pt-28">
               <div className="relative w-[120px] h-[120px] ring-2 ring-gray-900 dark:ring-gray-100 rounded-full md:w-[150px] md:h-[150px]">
                 <Image
-                  src="/ivanatiasprofile.jpg"
+                  src="/ivanatiasprofile.webp"
                   placeholder="blur"
-                  blurDataURL="/ivanatiasprofile.jpg"
+                  blurDataURL="/ivanatiasprofile.webp"
                   priority
                   layout="fill"
                   objectFit="cover"

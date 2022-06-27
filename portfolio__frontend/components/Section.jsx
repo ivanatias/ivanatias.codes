@@ -21,28 +21,32 @@ const Section = ({
         {title && (
           <>
             <title>{title} - Ivan Atias</title>
-            <meta name="og:title" content={`${title} - Ivan Atias`} />
+            <meta property="og:title" content={`${title} - Ivan Atias`} />
             <meta name="twitter:title" content={`${title} - Ivan Atias`} />
           </>
         )}
         <meta
-          name="og:image"
+          property="og:image"
           content={
             socialCardImage ||
-            "https://www.ivanatias.codes/ivanatiasprofile.jpg"
+            "https://www.ivanatias.codes/ivanatiasprofile.webp"
           }
         />
         <meta
           name="twitter:image"
           content={
             socialCardImage ||
-            "https://www.ivanatias.codes/ivanatiasprofile.jpg"
+            "https://www.ivanatias.codes/ivanatiasprofile.webp"
           }
         />
-        <meta name="og:type" content={contentType || "website"} />
+        <meta property="og:type" content={contentType || "website"} />
+        <meta
+          property="og:url"
+          content={`https://www.ivanatias.codes${canonicalUrlPath || ""}`}
+        />
         <link
           rel="canonical"
-          href={`https://www.ivanatias.codes${canonicalUrlPath || "/"}`}
+          href={`https://www.ivanatias.codes${canonicalUrlPath || ""}`}
         />
       </Head>
       <motion.section
