@@ -26,7 +26,7 @@ const BlogArticle = ({ post, readingTime }) => {
       socialCardImage={post.socialShareImage && post.socialShareImage.asset.url}
       contentType="article"
     >
-      <article>
+      <article className="flex flex-col gap-5">
         <div className="flex flex-col w-full gap-3">
           <div className="relative flex-shrink-0 w-14 h-14 2xl:w-16 2xl:h-16">
             <Image
@@ -43,7 +43,7 @@ const BlogArticle = ({ post, readingTime }) => {
             {post.articleTitle}
           </h2>
         </div>
-        <div className="flex items-center gap-3 mt-4">
+        <div className="flex items-center gap-3">
           <span className="text-xs text-black 2xl:text-sm dark:text-gray-400">
             {new Date(post.publishDate).toDateString()}
           </span>
@@ -54,29 +54,29 @@ const BlogArticle = ({ post, readingTime }) => {
           </span>
         </div>
         <CustomPortableText value={post.articleBody} />
-      </article>
-      <div className="flex flex-col gap-5">
-        <h2 className="text-lg font-bold text-black 2xl:text-xl dark:text-gray-100">
-          Share on social media
-        </h2>
-        <div className="flex flex-wrap items-center gap-3">
-          <FacebookShareButton
-            url={`https://www.ivanatias.codes/blog/${post.slug.current}`}
-          >
-            <FacebookIcon size={32} round />
-          </FacebookShareButton>
-          <TwitterShareButton
-            url={`https://www.ivanatias.codes/blog/${post.slug.current}`}
-          >
-            <TwitterIcon size={32} round />
-          </TwitterShareButton>
-          <LinkedinShareButton
-            url={`https://www.ivanatias.codes/blog/${post.slug.current}`}
-          >
-            <LinkedinIcon size={32} round />
-          </LinkedinShareButton>
+        <div className="flex flex-col gap-5 mt-5">
+          <h2 className="text-lg font-bold text-black 2xl:text-xl dark:text-gray-100">
+            Share on social media
+          </h2>
+          <div className="flex flex-wrap items-center gap-3">
+            <FacebookShareButton
+              url={`https://www.ivanatias.codes/blog/${post.slug.current}`}
+            >
+              <FacebookIcon size={32} round />
+            </FacebookShareButton>
+            <TwitterShareButton
+              url={`https://www.ivanatias.codes/blog/${post.slug.current}`}
+            >
+              <TwitterIcon size={32} round />
+            </TwitterShareButton>
+            <LinkedinShareButton
+              url={`https://www.ivanatias.codes/blog/${post.slug.current}`}
+            >
+              <LinkedinIcon size={32} round />
+            </LinkedinShareButton>
+          </div>
         </div>
-      </div>
+      </article>
     </MainSection>
   );
 };
