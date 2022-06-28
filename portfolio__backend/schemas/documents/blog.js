@@ -20,6 +20,11 @@ export default {
       },
     },
     {
+      title: "Excerpt",
+      name: "excerpt",
+      type: "text",
+    },
+    {
       title: "Publish Date",
       name: "publishDate",
       type: "datetime",

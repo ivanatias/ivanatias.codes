@@ -2,11 +2,18 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const GridItem = ({ coverImage, altText, title, slug, publishedAt }) => {
+const GridItem = ({
+  coverImage,
+  altText,
+  title,
+  slug,
+  excerpt,
+  publishedAt,
+}) => {
   return (
     <Link href={`/blog/${slug}`} passHref scroll={false}>
       <a>
-        <div className="flex items-center w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-800">
+        <div className="flex w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-800/40">
           <div className="relative flex-shrink-0 w-10 h-10 2xl:w-12 2xl:h-12">
             <Image
               src={coverImage}
@@ -22,6 +29,9 @@ const GridItem = ({ coverImage, altText, title, slug, publishedAt }) => {
             <h3 className="text-base font-bold text-black 2xl:text-lg dark:text-gray-300">
               {title}
             </h3>
+            <p className="text-sm text-black dark:text-gray-300 2xl:text-base">
+              {excerpt}
+            </p>
             <span className="text-xs text-black 2xl:text-sm dark:text-gray-400">
               {new Date(publishedAt).toDateString()}
             </span>
@@ -41,6 +51,7 @@ const BlogGrid = ({ data }) => {
           coverImage={item.coverImage.image.asset.url}
           title={item.articleTitle}
           slug={item.slug.current}
+          excerpt={item.excerpt}
           altText={item.coverImage.altText}
           publishedAt={item.publishDate}
         />

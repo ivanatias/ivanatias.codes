@@ -62,6 +62,7 @@ export const blogQuery = () => {
   const query = `*[_type == "blog"] | order(_createdAt desc) {
     _id,
     slug,
+    excerpt,
     articleTitle,
     publishDate,
     coverImage {
@@ -81,6 +82,7 @@ export const blogPostQuery = (slug) => {
   const query = `*[_type == "blog" && slug.current == "${slug}"] {
     _id,
     slug,
+    excerpt,
     articleBody,
     articleTitle,
     publishDate,

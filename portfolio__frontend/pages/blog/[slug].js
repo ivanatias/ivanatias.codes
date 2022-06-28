@@ -22,6 +22,7 @@ const BlogArticle = ({ post, readingTime }) => {
   return (
     <MainSection
       title={post.articleTitle}
+      description={post.excerpt}
       canonicalUrlPath={`/blog/${post.slug.current}`}
       socialCardImage={post.socialShareImage && post.socialShareImage.asset.url}
       contentType="article"

@@ -11,6 +11,7 @@ const variants = {
 const Section = ({
   children,
   title,
+  description,
   canonicalUrlPath,
   socialCardImage,
   contentType,
@@ -19,6 +20,7 @@ const Section = ({
     <>
       <MetaData
         title={title}
+        description={description}
         canonicalUrlPath={canonicalUrlPath}
         socialCardImage={socialCardImage}
         contentType={contentType}

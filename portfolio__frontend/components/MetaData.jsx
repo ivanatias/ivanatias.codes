@@ -3,22 +3,22 @@ import Head from "next/head";
 
 const MetaData = ({
   title,
+  description,
   canonicalUrlPath,
   socialCardImage,
   contentType,
 }) => {
   const defaultTitle = "Ivan Atias · Frontend Developer, UI Designer";
-  const defaultImage = "https://www.ivanatias.codes/ivanatiasprofile.webp";
+  const defaultDescription =
+    "Ivan Atias is a Frontend Developer and UI Designer who enjoys a lot building good looking and functional websites and apps.";
+  const defaultImage = "https://www.ivanatias.codes/card.png";
   const defaultOgType = "website";
 
   return (
     <Head>
       <title>{title ? `${title} - Ivan Atias` : defaultTitle}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta
-        name="description"
-        content="Ivan Atias is a Frontend Developer and UI Designer who enjoys a lot building good looking and functional websites and apps."
-      />
+      <meta name="description" content={description || defaultDescription} />
       <meta
         name="keywords"
         content="Frontend Developer, UI Designer, Ivan Atias, Portfolio"
@@ -28,11 +28,19 @@ const MetaData = ({
         property="og:title"
         content={title ? `${title} - Ivan Atias` : defaultTitle}
       />
+      <meta
+        property="og:description"
+        content={description || defaultDescription}
+      />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="og:site_name" content="Ivan Atias Website" />
       <meta
         name="twitter:title"
         content={title ? `${title} - Ivan Atias` : defaultTitle}
+      />
+      <meta
+        name="twitter:description"
+        content={description || defaultDescription}
       />
       <meta
         name="image"
