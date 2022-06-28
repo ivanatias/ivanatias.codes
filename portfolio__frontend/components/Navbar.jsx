@@ -40,7 +40,7 @@ const Navbar = () => {
           <div className={`flex items-center`}>
             <Link href="/" passHref scroll={false}>
               <a className="pt-2">
-                <Image src={logo} alt="Logo" width={100} height={60} />
+                <Image src={logo} alt="Ivan Atias Logo" />
               </a>
             </Link>
           </div>
