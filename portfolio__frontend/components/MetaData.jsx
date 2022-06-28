@@ -21,7 +21,7 @@ const MetaData = ({
       <meta name="description" content={description || defaultDescription} />
       <meta
         name="keywords"
-        content="Frontend Developer, UI Designer, Ivan Atias, Portfolio"
+        content="Frontend Developer, UI Designer, Ivan Atias, Portfolio, Blog"
       />
       <meta name="author" content="Ivan Atias" />
       <meta
