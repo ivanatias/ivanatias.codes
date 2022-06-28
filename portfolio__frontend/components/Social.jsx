@@ -12,6 +12,7 @@ const Social = () => {
           target="_blank"
           rel="noreferrer noopener"
         >
+          <span className="sr-only">{item.name}</span>
           {item.icon}
         </a>
       ))}
