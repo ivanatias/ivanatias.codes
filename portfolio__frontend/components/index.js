@@ -1,16 +1,25 @@
+//Layout
+export { default as Footer } from "./layout/Footer";
+export { default as Header } from "./layout/Header";
+export { default as Article } from "./layout/Article";
+export { default as Paragraph } from "./layout/Paragraph";
+export { default as Layout } from "./layout/Layout";
+export { default as MainSection } from "./layout/Section";
+
+//Grids
+export { default as WorksGrid } from "./grids/WorksGrid";
+export { default as BlogGrid } from "./grids/BlogGrid";
+
+//Sanity block contents
+export { default as CustomCode } from "./sanity-block-contents/CustomCode";
+export { default as CustomImage } from "./sanity-block-contents/CustomImage";
+export { default as CustomPortableText } from "./sanity-block-contents/CustomPortableText";
+
 export { default as Navbar } from "./Navbar";
-export { default as Footer } from "./Footer";
 export { default as MetaData } from "./MetaData";
-export { default as Layout } from "./Layout";
 export { default as Menu } from "./Menu";
 export { default as ThemeToggle } from "./ThemeToggle";
-export { default as MainSection } from "./Section";
-export { default as Article } from "./Article";
-export { default as Paragraph } from "./Paragraph";
 export { default as LinkButton } from "./LinkButton";
 export { default as BiographyItem } from "./BiographyItem";
-export { default as WorksGrid } from "./WorksGrid";
-export { default as BlogGrid } from "./BlogGrid";
 export { default as Skill } from "./Skill";
-export { default as CustomCode } from "./CustomCode";
-export { default as CustomPortableText } from "./CustomPortableText";
+export { default as Social } from "./Social";

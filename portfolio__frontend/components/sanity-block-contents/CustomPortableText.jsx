@@ -1,30 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { PortableText } from "@portabletext/react";
-import { Paragraph, CustomCode } from "../components";
-import { getImageDimensions } from "@sanity/asset-utils";
-import { urlFor } from "../sanity/client";
-
-const CustomImageComponent = ({ value }) => {
-  const { width, height } = getImageDimensions(value?.image);
-  return (
-    <figure>
-      <Image
-        src={urlFor(value?.image).url()}
-        placeholder="blur"
-        blurDataURL={urlFor(value?.image).url()}
-        width={width}
-        height={height}
-        layout="responsive"
-        alt={value?.altText || ""}
-        className="rounded-md"
-      />
-      <figcaption className="mt-2 text-sm text-black 2xl:text-base dark:text-gray-300">
-        {value?.caption || ""}
-      </figcaption>
-    </figure>
-  );
-};
+import { Paragraph, CustomCode, CustomImage } from "../../components";
 
 const components = {
   block: {
@@ -47,7 +23,7 @@ const components = {
   },
 
   types: {
-    articleImage: ({ value }) => <CustomImageComponent value={value} />,
+    articleImage: ({ value }) => <CustomImage value={value} />,
     customCode: ({ value }) => <CustomCode value={value} />,
   },
   marks: {

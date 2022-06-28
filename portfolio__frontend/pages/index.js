@@ -5,10 +5,10 @@ import {
   LinkButton,
   BiographyItem,
   Skill,
+  Social,
 } from "../components";
 import { client } from "../sanity/client";
 import { biographyQuery } from "../constants/queries";
-import { socialLinks } from "../constants/socialLinks";
 
 const Home = ({ biography }) => {
   return (
@@ -25,7 +25,7 @@ const Home = ({ biography }) => {
           <br />
           For my designs, Figma is my predilect design and prototyping tool.
         </Paragraph>
-        <LinkButton>My portfolio</LinkButton>
+        <LinkButton path="/works">My portfolio</LinkButton>
       </Article>
 
       <Article title="Skills" delay={0.3}>
@@ -57,21 +57,20 @@ const Home = ({ biography }) => {
           />
         ))}
       </Article>
-      <Article title="Find me online" delay={0.7}>
+      <Article title="My personal blog" delay={0.7}>
+        <Paragraph>
+          A space for sharing and expanding knowledge. I write about a wide
+          variety of topics related to technology in this section, expressing my
+          personal opinions on subjects such as web development, web
+          performance, user interface design, and other miscellaneous ones. The
+          aim of this blog is to document my journey as a Web Developer and UI
+          Designer one article at a time.
+        </Paragraph>
+        <LinkButton path="/blog">See blog</LinkButton>
+      </Article>
+      <Article title="Find me online" delay={0.9}>
         <Paragraph>You can also check my online presence:</Paragraph>
-        <div className="flex items-center gap-3">
-          {socialLinks.map((item) => (
-            <a
-              className="text-2xl text-pink-800 dark:text-pink-600"
-              key={item.name}
-              href={item.path}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              {item.icon}
-            </a>
-          ))}
-        </div>
+        <Social />
       </Article>
     </MainSection>
   );

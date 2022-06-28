@@ -6,7 +6,7 @@ const GridItem = ({ coverImage, altText, title, slug, publishedAt }) => {
   return (
     <Link href={`/blog/${slug}`} passHref scroll={false}>
       <a>
-        <div className="flex items-center w-full gap-5 p-2 transition-colors duration-300 hover:bg-slate-200 dark:hover:bg-slate-800">
+        <div className="flex items-center w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-800">
           <div className="relative flex-shrink-0 w-10 h-10 2xl:w-12 2xl:h-12">
             <Image
               src={coverImage}

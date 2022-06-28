@@ -6,11 +6,7 @@ import "../styles/prism-theme.css";
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <ThemeProvider
-      enableColorScheme={false}
-      defaultTheme="light"
-      attribute="class"
-    >
+    <ThemeProvider defaultTheme="light" attribute="class">
       <Layout router={router}>
         <AnimatePresence
           initial={true}

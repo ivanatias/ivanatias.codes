@@ -27,6 +27,9 @@ Refractor.registerLanguage(xml);
 const CustomCode = ({ value }) => {
   return (
     <div className="w-full xxs:max-w-[280px] xs:max-w-[335px] prevsm:max-w-[460px] sm:max-w-[600px] md:max-w-full mx-auto">
+      <div className="bg-pink-900 mb-[-8px] py-1 px-2 text-white w-fit text-base 2xl:text-lg rounded-t">
+        {value?.codeFilename}
+      </div>
       <Refractor language={value?.code?.language} value={value?.code?.code} />
     </div>
   );

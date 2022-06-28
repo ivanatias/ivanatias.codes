@@ -1,9 +1,19 @@
 import React from "react";
 import Head from "next/head";
 
-const MetaData = () => {
+const MetaData = ({
+  title,
+  canonicalUrlPath,
+  socialCardImage,
+  contentType,
+}) => {
+  const defaultTitle = "Ivan Atias · Frontend Developer, UI Designer";
+  const defaultImage = "https://www.ivanatias.codes/ivanatiasprofile.webp";
+  const defaultOgType = "website";
+
   return (
     <Head>
+      <title>{title ? `${title} - Ivan Atias` : defaultTitle}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta
         name="description"
@@ -14,37 +24,31 @@ const MetaData = () => {
         content="Frontend Developer, UI Designer, Ivan Atias, Portfolio"
       />
       <meta name="author" content="Ivan Atias" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/images/apple-icon-180x180.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="192x192"
-        href="/images/android-icon-192x192.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/images/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="96x96"
-        href="/images/favicon-96x96.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/images/favicon-16x16.png"
+      <meta
+        property="og:title"
+        content={title ? `${title} - Ivan Atias` : defaultTitle}
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="og:site_name" content="Ivan Atias Website" />
+      <meta
+        name="twitter:title"
+        content={title ? `${title} - Ivan Atias` : defaultTitle}
+      />
+      <meta
+        name="image"
+        property="og:image"
+        content={socialCardImage || defaultImage}
+      />
+      <meta name="twitter:image" content={socialCardImage || defaultImage} />
+      <meta property="og:type" content={contentType || defaultOgType} />
+      <meta
+        property="og:url"
+        content={`https://www.ivanatias.codes${canonicalUrlPath || ""}`}
+      />
+      <link
+        rel="canonical"
+        href={`https://www.ivanatias.codes${canonicalUrlPath || ""}`}
+      />
       <meta charSet="UTF-8" />
     </Head>
   );
