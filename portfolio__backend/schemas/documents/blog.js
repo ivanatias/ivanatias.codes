@@ -46,7 +46,7 @@ export default {
   preview: {
     select: {
       title: "articleTitle",
-      image: "coverImage",
+      image: "socialShareImage",
       publishDate: "publishDate",
     },
     prepare({ title, image, publishDate }) {
