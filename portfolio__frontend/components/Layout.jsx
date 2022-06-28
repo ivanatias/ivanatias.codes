@@ -16,7 +16,6 @@ const Layout = ({ children, router }) => {
                   src="/ivanatiasprofile.webp"
                   placeholder="blur"
                   blurDataURL="/ivanatiasprofile.webp"
-                  priority
                   layout="fill"
                   objectFit="cover"
                   className="rounded-full"

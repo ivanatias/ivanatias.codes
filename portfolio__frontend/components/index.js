@@ -12,4 +12,5 @@ export { default as BiographyItem } from "./BiographyItem";
 export { default as WorksGrid } from "./WorksGrid";
 export { default as BlogGrid } from "./BlogGrid";
 export { default as Skill } from "./Skill";
+export { default as CustomCode } from "./CustomCode";
 export { default as CustomPortableText } from "./CustomPortableText";
