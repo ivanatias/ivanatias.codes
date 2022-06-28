@@ -1,9 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
-import { Paragraph } from "../components";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { Paragraph, CustomCode } from "../components";
 import { getImageDimensions } from "@sanity/asset-utils";
 import { urlFor } from "../sanity/client";
 
@@ -21,7 +19,7 @@ const CustomImageComponent = ({ value }) => {
         alt={value?.altText || ""}
         className="rounded-md"
       />
-      <figcaption className="mt-2 text-sm text-center text-black 2xl:text-base dark:text-gray-300">
+      <figcaption className="mt-2 text-sm text-black 2xl:text-base dark:text-gray-300">
         {value?.caption || ""}
       </figcaption>
     </figure>
@@ -50,22 +48,8 @@ const components = {
 
   types: {
     articleImage: ({ value }) => <CustomImageComponent value={value} />,
-    customCode: ({ value }) => (
-      <div>
-        <span className="text-sm 2xl:text-base underline underline-offset-2 text-black dark:text-gray-100 mb-[-22px]">
-          {value?.codeFilename || ""}
-        </span>
-        <SyntaxHighlighter
-          language={value?.code?.language}
-          style={dracula}
-          showLineNumbers
-        >
-          {value?.code?.code}
-        </SyntaxHighlighter>
-      </div>
-    ),
+    customCode: ({ value }) => <CustomCode value={value} />,
   },
-
   marks: {
     em: ({ children }) => <em className="italic">{children}</em>,
     strong: ({ children }) => <strong className="font-bold">{children}</strong>,
@@ -111,11 +95,7 @@ const components = {
 };
 
 const CustomPortableText = ({ value }) => {
-  return (
-    <div className="flex flex-col gap-5 mt-5">
-      <PortableText value={value} components={components} />
-    </div>
-  );
+  return <PortableText value={value} components={components} />;
 };
 
 export default CustomPortableText;
