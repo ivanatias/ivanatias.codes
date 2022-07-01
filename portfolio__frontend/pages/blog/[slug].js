@@ -11,9 +11,11 @@ const DynamicSocialShare = dynamic(() =>
   import("../../components/SocialShare")
 );
 import { client } from "../../sanity/client";
-import { dateFormat } from "../../utils/dateFormat";
+import { dateFormat, readingTimeFormat } from "../../utils/helpers";
 
-const BlogArticle = ({ post, readingTimeText, date }) => {
+const BlogArticle = ({ post, readingTimeMinutes }) => {
+  const date = dateFormat(post.publishDate);
+  const readingTime = readingTimeFormat(readingTimeMinutes);
   return (
     <MainSection
       title={post.articleTitle}
@@ -44,7 +46,7 @@ const BlogArticle = ({ post, readingTimeText, date }) => {
             {date}
           </span>
           <span className="text-xs text-black underline 2xl:text-sm dark:text-gray-400">
-            {readingTimeText}
+            {readingTime}
           </span>
         </div>
         <CustomPortableText value={post.articleBody} />
@@ -74,19 +76,10 @@ export async function getStaticProps({ params }) {
   const post = await client.fetch(postInfo);
   const readingTime = await client.fetch(readingTimeInfo);
 
-  const readingTimeMinutes = readingTime[0].estimatedReadingTime;
-  const readingTimeText =
-    readingTimeMinutes > 1
-      ? `${readingTimeMinutes} minutes read`
-      : `${readingTimeMinutes} minute read`;
-
-  const date = dateFormat(post[0].publishDate);
-
   return {
     props: {
       post: post[0],
-      readingTimeText,
-      date,
+      readingTimeMinutes: readingTime[0].estimatedReadingTime,
     },
   };
 }
