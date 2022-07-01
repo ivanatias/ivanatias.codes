@@ -1,6 +1,9 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import { PortableText } from "@portabletext/react";
-import { Paragraph, CustomCode, CustomImage } from "../../components";
+import { Paragraph } from "../../components";
+const DynamicCustomCode = dynamic(() => import("./CustomCode"));
+const DynamicCustomImage = dynamic(() => import("./CustomImage"));
 
 const components = {
   block: {
@@ -23,8 +26,8 @@ const components = {
   },
 
   types: {
-    articleImage: ({ value }) => <CustomImage value={value} />,
-    customCode: ({ value }) => <CustomCode value={value} />,
+    articleImage: ({ value }) => <DynamicCustomImage value={value} />,
+    customCode: ({ value }) => <DynamicCustomCode value={value} />,
   },
   marks: {
     em: ({ children }) => <em className="italic">{children}</em>,

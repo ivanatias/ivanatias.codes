@@ -10,7 +10,6 @@ import sass from "refractor/lang/sass";
 import scss from "refractor/lang/scss";
 import batch from "refractor/lang/batch";
 import json from "refractor/lang/json";
-import xml from "refractor/lang/xml-doc";
 
 //Register languages
 Refractor.registerLanguage(javascript);
@@ -22,7 +21,6 @@ Refractor.registerLanguage(sass);
 Refractor.registerLanguage(scss);
 Refractor.registerLanguage(batch);
 Refractor.registerLanguage(json);
-Refractor.registerLanguage(xml);
 
 const CustomCode = ({ value }) => {
   return (
