@@ -23,3 +23,4 @@ export { default as LinkButton } from "./LinkButton";
 export { default as BiographyItem } from "./BiographyItem";
 export { default as Skill } from "./Skill";
 export { default as Social } from "./Social";
+export { default as SocialShare } from "./SocialShare";

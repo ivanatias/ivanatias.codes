@@ -1,4 +1,5 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { MainSection, CustomPortableText } from "../../components";
 import {
@@ -6,19 +7,13 @@ import {
   blogPostReadingTimeQuery,
   blogQuery,
 } from "../../constants/queries";
-import {
-  FacebookShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  FacebookIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from "next-share";
+const DynamicSocialShare = dynamic(() =>
+  import("../../components/SocialShare")
+);
 import { client } from "../../sanity/client";
+import { dateFormat } from "../../utils/dateFormat";
 
-const BlogArticle = ({ post, readingTime }) => {
-  const { estimatedReadingTime } = readingTime; //Estimated reading time for article in minutes.
-
+const BlogArticle = ({ post, readingTimeText, date }) => {
   return (
     <MainSection
       title={post.articleTitle}
@@ -29,7 +24,7 @@ const BlogArticle = ({ post, readingTime }) => {
     >
       <article className="flex flex-col gap-5">
         <div className="flex flex-col w-full gap-3">
-          <div className="relative flex-shrink-0 w-14 h-14 2xl:w-16 2xl:h-16">
+          <div className="relative flex-shrink-0 w-14 h-14">
             <Image
               src={post.coverImage.image.asset.url}
               placeholder="blur"
@@ -37,7 +32,7 @@ const BlogArticle = ({ post, readingTime }) => {
               alt={post.coverImage.altText}
               layout="fill"
               objectFit="contain"
-              sizes="(max-width: 560px) 256px, (max-width: 1080px) 384px, 520px"
+              sizes="56px"
             />
           </div>
           <h2 className="text-2xl font-bold text-black dark:text-gray-100 2xl:text-3xl">
@@ -46,37 +41,14 @@ const BlogArticle = ({ post, readingTime }) => {
         </div>
         <div className="flex items-center gap-3">
           <span className="text-xs text-black 2xl:text-sm dark:text-gray-400">
-            {new Date(post.publishDate).toDateString()}
+            {date}
           </span>
           <span className="text-xs text-black underline 2xl:text-sm dark:text-gray-400">
-            {estimatedReadingTime > 1
-              ? `${estimatedReadingTime} minutes read`
-              : `${estimatedReadingTime} minute read`}
+            {readingTimeText}
           </span>
         </div>
         <CustomPortableText value={post.articleBody} />
-        <div className="flex flex-col gap-5 mt-5">
-          <h2 className="text-lg font-bold text-black 2xl:text-xl dark:text-gray-100">
-            Share on social media
-          </h2>
-          <div className="flex flex-wrap items-center gap-3">
-            <FacebookShareButton
-              url={`https://www.ivanatias.codes/blog/${post.slug.current}`}
-            >
-              <FacebookIcon size={32} round />
-            </FacebookShareButton>
-            <TwitterShareButton
-              url={`https://www.ivanatias.codes/blog/${post.slug.current}`}
-            >
-              <TwitterIcon size={32} round />
-            </TwitterShareButton>
-            <LinkedinShareButton
-              url={`https://www.ivanatias.codes/blog/${post.slug.current}`}
-            >
-              <LinkedinIcon size={32} round />
-            </LinkedinShareButton>
-          </div>
-        </div>
+        <DynamicSocialShare slug={post.slug.current} />
       </article>
     </MainSection>
   );
@@ -102,10 +74,19 @@ export async function getStaticProps({ params }) {
   const post = await client.fetch(postInfo);
   const readingTime = await client.fetch(readingTimeInfo);
 
+  const readingTimeMinutes = readingTime[0].estimatedReadingTime;
+  const readingTimeText =
+    readingTimeMinutes > 1
+      ? `${readingTimeMinutes} minutes read`
+      : `${readingTimeMinutes} minute read`;
+
+  const date = dateFormat(post[0].publishDate);
+
   return {
     props: {
       post: post[0],
-      readingTime: readingTime[0],
+      readingTimeText,
+      date,
     },
   };
 }
