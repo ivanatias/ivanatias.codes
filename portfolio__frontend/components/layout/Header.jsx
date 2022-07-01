@@ -5,7 +5,7 @@ import { Social } from "../../components";
 const Header = () => {
   return (
     <div className="flex flex-col items-center gap-5 pb-12 pt-28">
-      <div className="relative w-[120px] h-[120px] ring-2 ring-gray-900 dark:ring-gray-100 rounded-full md:w-[150px] md:h-[150px]">
+      <div className="relative w-[128px] h-[128px] ring-2 ring-gray-900 dark:ring-gray-100 rounded-full md:w-[150px] md:h-[150px]">
         <Image
           src="/ivanatiasprofile.webp"
           placeholder="blur"
@@ -13,7 +13,7 @@ const Header = () => {
           layout="fill"
           objectFit="cover"
           className="rounded-full"
-          sizes="(max-width: 560px) 256px, (max-width: 1080px) 384px, 520px"
+          sizes="(max-width: 768px) 128px, 150px"
           alt="Ivan Atias Profile photo."
         />
       </div>

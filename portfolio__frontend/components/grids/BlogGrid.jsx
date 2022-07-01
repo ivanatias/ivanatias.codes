@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { dateFormat } from "../../utils/dateFormat";
 
 const GridItem = ({
   coverImage,
@@ -10,11 +11,12 @@ const GridItem = ({
   excerpt,
   publishedAt,
 }) => {
+  const date = dateFormat(publishedAt);
   return (
     <Link href={`/blog/${slug}`} passHref scroll={false}>
       <a>
         <div className="flex w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-800/40">
-          <div className="relative flex-shrink-0 w-10 h-10 2xl:w-12 2xl:h-12">
+          <div className="relative flex-shrink-0 w-12 h-12">
             <Image
               src={coverImage}
               placeholder="blur"
@@ -22,7 +24,7 @@ const GridItem = ({
               alt={altText}
               layout="fill"
               objectFit="contain"
-              sizes="(max-width: 560px) 256px, (max-width: 1080px) 384px, 520px"
+              sizes="48px"
             />
           </div>
           <div className="flex flex-col gap-1">
@@ -33,7 +35,7 @@ const GridItem = ({
               {excerpt}
             </p>
             <span className="text-xs text-black 2xl:text-sm dark:text-gray-400">
-              {new Date(publishedAt).toDateString()}
+              {date}
             </span>
           </div>
         </div>

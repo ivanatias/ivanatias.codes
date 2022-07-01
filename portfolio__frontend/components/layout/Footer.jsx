@@ -19,7 +19,7 @@ const Footer = () => {
         </a>
       </div>
       <small className="mt-5 text-xs font-semibold text-black dark:text-gray-500 2xl:text-sm">
-        © {new Date().getFullYear()} Ivan Atias
+        © 2022 Ivan Atias
       </small>
     </footer>
   );
