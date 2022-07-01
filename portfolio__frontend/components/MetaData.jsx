@@ -18,12 +18,21 @@ const MetaData = ({
     <Head>
       <title>{title ? `${title} - Ivan Atias` : defaultTitle}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta charSet="UTF-8" />
       <meta name="description" content={description || defaultDescription} />
       <meta
         name="keywords"
         content="Frontend Developer, UI Designer, Ivan Atias, Portfolio, Blog"
       />
       <meta name="author" content="Ivan Atias" />
+      <link
+        rel="canonical"
+        href={`https://www.ivanatias.codes${canonicalUrlPath || ""}`}
+      />
+      <meta
+        property="og:url"
+        content={`https://www.ivanatias.codes${canonicalUrlPath || ""}`}
+      />
       <meta
         property="og:title"
         content={title ? `${title} - Ivan Atias` : defaultTitle}
@@ -49,15 +58,6 @@ const MetaData = ({
       />
       <meta name="twitter:image" content={socialCardImage || defaultImage} />
       <meta property="og:type" content={contentType || defaultOgType} />
-      <meta
-        property="og:url"
-        content={`https://www.ivanatias.codes${canonicalUrlPath || ""}`}
-      />
-      <link
-        rel="canonical"
-        href={`https://www.ivanatias.codes${canonicalUrlPath || ""}`}
-      />
-      <meta charSet="UTF-8" />
     </Head>
   );
 };

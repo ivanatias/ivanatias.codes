@@ -5,17 +5,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta
-            name="theme-color"
-            media="(prefers-color-scheme: light)"
-            content="#ffffff"
-          />
-          <meta
-            name="theme-color"
-            media="(prefers-color-scheme: dark)"
-            content="#020105"
-          />
-
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -44,6 +33,16 @@ class MyDocument extends Document {
             type="image/png"
             sizes="16x16"
             href="/images/favicon-16x16.png"
+          />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#ffffff"
+          />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#020105"
           />
         </Head>
         <body className="bg-white dark:bg-[#020105]">
