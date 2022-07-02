@@ -4,7 +4,7 @@ import { Social } from "../../components";
 
 const Header = () => {
   return (
-    <div className="flex flex-col items-center gap-5 pb-12 pt-28">
+    <header className="flex flex-col items-center gap-5 pb-12 pt-28">
       <div className="relative w-[128px] h-[128px] ring-2 ring-gray-900 dark:ring-gray-100 rounded-full md:w-[150px] md:h-[150px]">
         <Image
           src="/ivanatiasprofile.webp"
@@ -26,7 +26,7 @@ const Header = () => {
         </p>
       </div>
       <Social />
-    </div>
+    </header>
   );
 };
 
