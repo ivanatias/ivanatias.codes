@@ -17,10 +17,10 @@ export { default as CustomPortableText } from "./sanity-block-contents/CustomPor
 
 export { default as Navbar } from "./Navbar";
 export { default as MetaData } from "./MetaData";
-export { default as Menu } from "./Menu";
 export { default as ThemeToggle } from "./ThemeToggle";
 export { default as LinkButton } from "./LinkButton";
 export { default as BiographyItem } from "./BiographyItem";
 export { default as Skill } from "./Skill";
 export { default as Social } from "./Social";
 export { default as SocialShare } from "./SocialShare";
+export { default as AnimateTransition } from "./AnimateTransition";
