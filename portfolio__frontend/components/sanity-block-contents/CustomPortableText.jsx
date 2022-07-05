@@ -32,6 +32,11 @@ const components = {
   marks: {
     em: ({ children }) => <em className="italic">{children}</em>,
     strong: ({ children }) => <strong className="font-bold">{children}</strong>,
+    code: ({ children }) => (
+      <code className="bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-black italic px-1 text-base 2xl:text-lg tracking-tighter">
+        {children}
+      </code>
+    ),
     link: ({ value, children }) => {
       const rel = value?.isExternal ? "noreferrer noopener" : undefined;
       const target = value?.isExternal ? "_blank" : undefined;
