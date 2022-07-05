@@ -10,7 +10,7 @@ export default {
       title: "Code Filename",
       name: "codeFilename",
       type: "string",
-      description: "example.js",
+      description: "example-code-filename",
     },
     {
       title: "Code",
