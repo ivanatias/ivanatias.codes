@@ -1,5 +1,6 @@
 import React from "react";
 import Refractor from "react-refractor";
+
 //Languages
 import javascript from "refractor/lang/javascript";
 import typescript from "refractor/lang/typescript";
@@ -24,12 +25,22 @@ Refractor.registerLanguage(json);
 
 const CustomCode = ({ value }) => {
   return (
-    <div className="w-full xxs:max-w-[280px] xs:max-w-[335px] prevsm:max-w-[460px] sm:max-w-[600px] md:max-w-full mx-auto">
-      <div className="bg-pink-900 mb-[-8px] py-1 px-2 text-white w-fit text-base 2xl:text-lg rounded-t">
-        {value?.codeFilename}
+    <>
+      <div className="flex justify-between items-center mb-[-28px]">
+        <div className="tracking-tighter flex-1 text-black italic dark:text-gray-100 text-base 2xl:text-lg">
+          {value?.codeFilename}
+        </div>
+        <div className="uppercase font-semibold py-1 text-black dark:text-gray-100 text-base 2xl:text-lg">
+          {value?.code?.language}
+        </div>
       </div>
-      <Refractor language={value?.code?.language} value={value?.code?.code} />
-    </div>
+      <Refractor
+        language={value?.code?.language}
+        value={value?.code?.code}
+        className="max-h-[450px]"
+        inline={value?.isInline}
+      />
+    </>
   );
 };
 
