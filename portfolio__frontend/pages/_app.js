@@ -1,20 +1,25 @@
-import dynamic from "next/dynamic";
+import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
-const DynamicLayout = dynamic(() => import("../components/layout/Layout.jsx"));
-const DynamicAnimatePresence = dynamic(() =>
-  import("../components/AnimateTransition")
-);
+import { Layout } from "../components";
 import "../styles/globals.css";
 import "../styles/prism-theme.css";
 
 function MyApp({ Component, pageProps, router }) {
   return (
     <ThemeProvider defaultTheme="light" attribute="class">
-      <DynamicLayout router={router}>
-        <DynamicAnimatePresence>
+      <Layout router={router}>
+        <AnimatePresence
+          initial={true}
+          exitBeforeEnter
+          onExitComplete={() => {
+            if (window !== "undefined") {
+              scrollTo({ top: 0 });
+            }
+          }}
+        >
           <Component {...pageProps} key={router.asPath} />
-        </DynamicAnimatePresence>
-      </DynamicLayout>
+        </AnimatePresence>
+      </Layout>
     </ThemeProvider>
   );
 }
