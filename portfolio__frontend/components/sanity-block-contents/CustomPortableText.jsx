@@ -55,10 +55,10 @@ const components = {
 
   list: {
     bullet: ({ children }) => (
-      <ul className="flex flex-col gap-2">{children}</ul>
+      <ul className="flex flex-col gap-2 pl-3">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="flex flex-col gap-2">{children}</ol>
+      <ol className="flex flex-col gap-2 pl-3">{children}</ol>
     ),
   },
 
