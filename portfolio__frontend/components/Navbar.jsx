@@ -7,7 +7,6 @@ import { MenuAlt2Icon, XIcon } from "@heroicons/react/outline";
 const ThemeToggleButton = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
 });
-import logo from "../public/logo.svg";
 
 const Menu = ({ closeMenu }) => {
   return (
@@ -60,7 +59,12 @@ const Navbar = () => {
           <div className={`flex items-center`}>
             <Link href="/" passHref scroll={false}>
               <a className="pt-2">
-                <Image src={logo} alt="Ivan Atias Logo" />
+                <Image
+                  src="/logo.svg"
+                  alt="Ivan Atias Logo"
+                  width={50}
+                  height={50}
+                />
               </a>
             </Link>
           </div>
