@@ -2,7 +2,7 @@ import React from "react";
 
 export const BioYear = ({ children }) => {
   return (
-    <span className="font-bold text-sm 2xl:text-base text-pink-800 dark:text-pink-600">
+    <span className="text-sm font-bold text-pink-800 2xl:text-base dark:text-pink-600">
       {children}
     </span>
   );
@@ -10,7 +10,7 @@ export const BioYear = ({ children }) => {
 
 export const BioDescription = ({ children }) => {
   return (
-    <p className="text-ellipsis text-black dark:text-gray-300 text-base 2xl:text-lg">
+    <p className="text-base text-black text-ellipsis dark:text-gray-300 2xl:text-lg">
       {children}
     </p>
   );
@@ -18,7 +18,7 @@ export const BioDescription = ({ children }) => {
 
 const BiographyItem = ({ year, desc }) => {
   return (
-    <div className="flex gap-3">
+    <div className="flex flex-col gap-3 sm:flex-row">
       <BioYear>{year}</BioYear>
       <BioDescription>{desc}</BioDescription>
     </div>
