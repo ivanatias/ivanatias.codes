@@ -33,7 +33,7 @@ const components = {
     em: ({ children }) => <em className="italic">{children}</em>,
     strong: ({ children }) => <strong className="font-bold">{children}</strong>,
     code: ({ children }) => (
-      <code className="bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-black italic px-1 text-base 2xl:text-lg tracking-tighter">
+      <code className="px-1 text-base italic tracking-tighter text-black bg-gray-200 dark:bg-gray-800 dark:text-gray-300 2xl:text-lg">
         {children}
       </code>
     ),
@@ -54,8 +54,12 @@ const components = {
   },
 
   list: {
-    bullet: ({ children }) => <ul>{children}</ul>,
-    number: ({ children }) => <ol>{children}</ol>,
+    bullet: ({ children }) => (
+      <ul className="flex flex-col gap-2">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="flex flex-col gap-2">{children}</ol>
+    ),
   },
 
   listItem: {
