@@ -17,7 +17,7 @@ const CustomImage = ({ value }) => {
         alt={value?.altText || ""}
         className="rounded-md"
       />
-      <figcaption className="mt-2 text-sm text-black 2xl:text-base dark:text-gray-300">
+      <figcaption className="mt-1 text-sm text-black 2xl:text-base dark:text-gray-300">
         {value?.caption || ""}
       </figcaption>
     </figure>
