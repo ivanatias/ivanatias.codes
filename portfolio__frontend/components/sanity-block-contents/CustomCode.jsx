@@ -23,24 +23,9 @@ Refractor.registerLanguage(scss);
 Refractor.registerLanguage(batch);
 Refractor.registerLanguage(json);
 
-const CustomCode = ({ value }) => {
+const CustomCode = ({ code, language }) => {
   return (
-    <>
-      <div className="flex justify-between items-center mb-[-28px]">
-        <div className="tracking-tighter flex-1 text-black italic dark:text-gray-100 text-base 2xl:text-lg">
-          {value?.codeFilename}
-        </div>
-        <div className="uppercase font-semibold py-1 text-black dark:text-gray-100 text-base 2xl:text-lg">
-          {value?.code?.language}
-        </div>
-      </div>
-      <Refractor
-        language={value?.code?.language}
-        value={value?.code?.code}
-        className="max-h-[450px]"
-        inline={value?.isInline}
-      />
-    </>
+    <Refractor language={language} value={code} className="max-h-[450px]" />
   );
 };
 

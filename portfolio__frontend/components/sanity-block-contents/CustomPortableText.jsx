@@ -1,9 +1,15 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { PortableText } from "@portabletext/react";
-import { Paragraph } from "../../components";
-const DynamicCustomCode = dynamic(() => import("./CustomCode"));
-const DynamicCustomImage = dynamic(() => import("./CustomImage"));
+import { Paragraph, SuspenseWrapper } from "../../components";
+const DynamicCustomCode = dynamic(() => import("./CustomCode"), {
+  suspense: true,
+});
+const DynamicCustomImage = dynamic(() => import("./CustomImage"), {
+  suspense: true,
+});
+import { getImageDimensions } from "@sanity/asset-utils";
+import { urlFor } from "../../sanity/client";
 
 const components = {
   block: {
@@ -26,8 +32,43 @@ const components = {
   },
 
   types: {
-    articleImage: ({ value }) => <DynamicCustomImage value={value} />,
-    customCode: ({ value }) => <DynamicCustomCode value={value} />,
+    articleImage: ({ value }) => {
+      const { width, height } = getImageDimensions(value?.image);
+      const imageUrl = urlFor(value?.image).url();
+      return (
+        <SuspenseWrapper
+          loadingMessage="Loading image"
+          containerHeight={height}
+          threshold={0.15}
+        >
+          <DynamicCustomImage
+            image={imageUrl}
+            caption={value?.caption}
+            altText={value?.altText}
+            width={width}
+            height={height}
+          />
+        </SuspenseWrapper>
+      );
+    },
+    customCode: ({ value }) => (
+      <>
+        <div className="flex justify-between items-center mb-[-28px]">
+          <div className="flex-1 text-base italic tracking-tighter text-black dark:text-gray-100 2xl:text-lg">
+            {value?.codeFilename}
+          </div>
+          <div className="py-1 text-base font-semibold text-black uppercase dark:text-gray-100 2xl:text-lg">
+            {value?.code?.language}
+          </div>
+        </div>
+        <SuspenseWrapper loadingMessage="Loading code" rootMargin="-10px">
+          <DynamicCustomCode
+            code={value?.code?.code}
+            language={value?.code?.language}
+          />
+        </SuspenseWrapper>
+      </>
+    ),
   },
   marks: {
     em: ({ children }) => <em className="italic">{children}</em>,
