@@ -10,7 +10,7 @@ const Loading = ({ message, containerHeight = "auto" }) => {
       <div className="animate-spin">
         <FaSpinner fontSize={30} />
       </div>
-      <p className="text-sm font-semibold text-gray-300 2xl:text-base">
+      <p className="text-sm font-semibold text-black dark:text-gray-300 2xl:text-base">
         {message}
       </p>
     </div>
