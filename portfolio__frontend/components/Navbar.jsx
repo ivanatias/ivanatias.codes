@@ -3,7 +3,8 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { links } from "../constants/links";
-import { MenuAlt2Icon, XIcon } from "@heroicons/react/outline";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai";
 const ThemeToggleButton = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
 });
@@ -33,16 +34,18 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const openMenuIcon = (
-    <MenuAlt2Icon
-      className="w-6 text-black cursor-pointer md:hidden dark:text-white"
+    <HiOutlineMenuAlt2
+      className="text-black cursor-pointer md:hidden dark:text-white"
+      fontSize={24}
       onClick={() => setMenuOpen(true)}
       aria-label="Open Menu"
     />
   );
 
   const closeMenuIcon = (
-    <XIcon
-      className="w-6 text-black cursor-pointer md:hidden dark:text-white"
+    <AiOutlineClose
+      className="text-black cursor-pointer md:hidden dark:text-white"
+      fontSize={24}
       onClick={() => setMenuOpen(false)}
       aria-label="Close Menu"
     />

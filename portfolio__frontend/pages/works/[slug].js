@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRightIcon } from "@heroicons/react/solid";
+import { HiChevronRight } from "react-icons/hi";
 import { AiOutlineGithub, AiOutlineEye } from "react-icons/ai";
 import { MainSection, Paragraph } from "../../components";
 import { client } from "../../sanity/client";
@@ -22,7 +22,10 @@ const Work = ({ work }) => {
               </h2>
             </a>
           </Link>
-          <ChevronRightIcon className="w-5 text-black font-bold dark:text-white ml-[-4px]" />
+          <HiChevronRight
+            fontSize={20}
+            className="text-black font-bold dark:text-white ml-[-4px]"
+          />
           <h3 className="text-base font-bold text-pink-800 dark:text-pink-600 2xl:text-lg">
             {work.title}
           </h3>
