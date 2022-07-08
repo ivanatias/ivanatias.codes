@@ -14,15 +14,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
-    "@heroicons/react": "^1.0.6",
     "@portabletext/react": "^1.0.6",
     "@sanity/asset-utils": "^1.2.3",
     "@sanity/client": "^3.3.2",
     "@sanity/image-url": "^1.0.1",
     "framer-motion": "^6.3.11",
+    "intersection-observer": "^0.12.2",
     "next": "12.1.6",
     "next-share": "^0.14.0",
     "next-themes": "^0.2.0",
@@ -32,7 +35,9 @@
     "react-refractor": "^2.1.7"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^12.2.1",
     "autoprefixer": "^10.4.7",
+    "cross-env": "^7.0.3",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
     "postcss": "^8.4.14",
