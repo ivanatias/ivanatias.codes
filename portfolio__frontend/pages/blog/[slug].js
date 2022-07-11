@@ -13,9 +13,7 @@ const DynamicSocialShare = dynamic(() =>
 import { client } from "../../sanity/client";
 import { dateFormat, readingTimeFormat } from "../../utils/helpers";
 
-const BlogArticle = ({ post, readingTimeMinutes }) => {
-  const date = dateFormat(post.publishDate);
-  const readingTime = readingTimeFormat(readingTimeMinutes);
+const BlogArticle = ({ post, readingTime, date }) => {
   return (
     <MainSection
       title={post.articleTitle}
@@ -76,10 +74,16 @@ export async function getStaticProps({ params }) {
   const post = await client.fetch(postInfo);
   const readingTime = await client.fetch(readingTimeInfo);
 
+  const { estimatedReadingTime } = readingTime[0];
+  const readingTimeText = readingTimeFormat(estimatedReadingTime);
+  const { publishDate } = post[0];
+  const date = dateFormat(publishDate);
+
   return {
     props: {
       post: post[0],
-      readingTimeMinutes: readingTime[0].estimatedReadingTime,
+      readingTime: readingTimeText,
+      date,
     },
   };
 }
