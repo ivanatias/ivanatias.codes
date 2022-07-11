@@ -1,6 +1,6 @@
 import { client } from "../sanity/client";
 
-const BASE_URL = "https://www.ivanatias.codes/";
+const BASE_URL = "https://www.ivanatias.codes";
 
 const DEFAULT_PATHS = [
   { path: "/", changefreq: "daily", priority: 1 },
