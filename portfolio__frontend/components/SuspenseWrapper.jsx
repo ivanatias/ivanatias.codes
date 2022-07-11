@@ -6,7 +6,7 @@ const SuspenseWrapper = ({
   children,
   loadingMessage,
   containerHeight,
-  threshold = 1, //Default threshold: 100% (For code blocks)
+  threshold,
   rootMargin,
 }) => {
   const { isNearScreen, fromRef } = useNearScreen(threshold, rootMargin);

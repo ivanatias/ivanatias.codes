@@ -6,7 +6,7 @@ import {
   startTransition,
 } from "react";
 
-export const useNearScreen = (threshold, rootMargin = "0px") => {
+export const useNearScreen = (threshold = 1, rootMargin = "0px") => {
   const [isNearScreen, setIsNearScreen] = useState(false);
   const fromRef = useRef();
 
