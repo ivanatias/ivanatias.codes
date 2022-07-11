@@ -15,6 +15,7 @@ const Header = () => {
           className="rounded-full"
           sizes="(max-width: 768px) 128px, 150px"
           alt="Ivan Atias Profile photo."
+          priority
         />
       </div>
       <div className="flex flex-col gap-2">
