@@ -23,7 +23,7 @@ const Header = () => {
           Ivan Atias
         </h1>
         <p className="text-base font-semibold text-center text-black dark:text-gray-300 2xl:text-lg">
-          Frontend Developer and UI Designer based in Venezuela
+          Front-End Engineer and UI Designer based in Venezuela
         </p>
       </div>
       <Social />

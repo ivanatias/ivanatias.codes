@@ -15,7 +15,7 @@ const Home = ({ biography }) => {
     <MainSection>
       <Article title="Work" delay={0.1}>
         <Paragraph>
-          I&apos;m a Frontend Developer and UI Designer that enjoys a lot
+          I&apos;m a Front-End Engineer and UI Designer that enjoys a lot
           building and designing good looking and functional websites and apps.
           These days, most of my work revolves around technologies such as
           React.js, Next.js, Gatsby.js and recently, React Native. I&apos;m also
@@ -63,8 +63,8 @@ const Home = ({ biography }) => {
           variety of topics related to technology in this section, expressing my
           personal opinions on subjects such as web development, web
           performance, user interface design, and other miscellaneous ones. The
-          aim of this blog is to document my journey as a Web Developer and UI
-          Designer one article at a time.
+          aim of this blog is to document my journey as a Front-End Engineer and
+          UI Designer one article at a time.
         </Paragraph>
         <LinkButton path="/blog">See blog</LinkButton>
       </Article>
