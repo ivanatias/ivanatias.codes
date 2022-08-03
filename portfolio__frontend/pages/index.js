@@ -37,7 +37,7 @@ const Home = ({ biography }) => {
           <Skill skillImage="/images/reactjs.svg" skillText="React.js" />
           <Skill skillImage="/images/nextjs.svg" skillText="Next.js" />
           <Skill skillImage="/images/gatsbyjs.svg" skillText="Gatsby.js" />
-          <Skill skillImage="/images/javascript.svg" skillText="Javascript" />
+          <Skill skillImage="/images/javascript.svg" skillText="JavaScript" />
           <Skill skillImage="/images/css.svg" skillText="CSS" />
           <Skill skillImage="/images/html.svg" skillText="HTML" />
           <Skill skillImage="/images/sass.svg" skillText="Sass" />
