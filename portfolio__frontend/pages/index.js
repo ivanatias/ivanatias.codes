@@ -1,12 +1,11 @@
-import {
-  MainSection,
-  Article,
-  Paragraph,
-  LinkButton,
-  BiographyItem,
-  Skill,
-  Social,
-} from "../components";
+import React from "react";
+import MainSection from "../components/layout/Section";
+import Article from "../components/layout/Article";
+import Paragraph from "../components/layout/Paragraph";
+import LinkButton from "../components/LinkButton";
+import BiographyItem from "../components/BiographyItem";
+import Skill from "../components/Skill";
+import Social from "../components/Social";
 import { client } from "../sanity/client";
 import { biographyQuery } from "../constants/queries";
 

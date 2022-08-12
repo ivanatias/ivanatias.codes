@@ -1,5 +1,8 @@
 import React from "react";
-import { MainSection, Article, Paragraph, WorksGrid } from "../../components";
+import MainSection from "../../components/layout/Section";
+import Article from "../../components/layout/Article";
+import Paragraph from "../../components/layout/Paragraph";
+import WorksGrid from "../../components/grids/WorksGrid";
 import { worksQuery } from "../../constants/queries";
 import { client } from "../../sanity/client";
 

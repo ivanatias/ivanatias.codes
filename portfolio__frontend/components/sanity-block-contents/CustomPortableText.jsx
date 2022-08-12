@@ -1,13 +1,14 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import { PortableText } from "@portabletext/react";
-import { Paragraph, SuspenseWrapper } from "../../components";
+import Paragraph from "../layout/Paragraph";
+import SuspenseWrapper from "../SuspenseWrapper";
 const DynamicCustomCode = dynamic(() => import("./CustomCode"), {
   suspense: true,
 });
 const DynamicCustomImage = dynamic(() => import("./CustomImage"), {
   suspense: true,
 });
+import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
 import { urlFor } from "../../sanity/client";
 

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { links } from "../constants/links";
-import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { AiOutlineClose } from "react-icons/ai";
 const ThemeToggleButton = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
 });
+import { links } from "../constants/links";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Menu = ({ closeMenu }) => {
   return (

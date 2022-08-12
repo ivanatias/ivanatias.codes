@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
-import { Layout } from "../components";
+import Layout from "../components/layout";
 import "../styles/globals.css";
 import "../styles/prism-theme.css";
 

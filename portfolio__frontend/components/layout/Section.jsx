@@ -1,6 +1,6 @@
 import React from "react";
-import { MetaData } from "../../components";
 import { motion } from "framer-motion";
+import MetaData from "../MetaData";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
@@ -25,6 +25,7 @@ const Section = ({
         socialCardImage={socialCardImage}
         contentType={contentType}
       />
+
       <motion.section
         className="flex flex-col gap-10"
         initial="hidden"

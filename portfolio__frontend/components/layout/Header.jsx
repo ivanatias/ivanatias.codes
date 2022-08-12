@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Social } from "../../components";
+import Social from "../Social";
 
 const Header = () => {
   return (

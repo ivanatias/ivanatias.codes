@@ -1,5 +1,7 @@
 import React from "react";
-import { Navbar, Header, Footer } from "../../components";
+import Navbar from "../Navbar";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children, router }) => {
   return (

@@ -50,10 +50,8 @@ export const workQuery = (slug) => {
     _id  
        }
     }
-  }
-  
-  
-  }`;
+  } 
+}`;
 
   return query;
 };

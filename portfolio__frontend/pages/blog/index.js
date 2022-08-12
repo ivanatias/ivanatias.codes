@@ -1,5 +1,8 @@
 import React from "react";
-import { Article, BlogGrid, MainSection, Paragraph } from "../../components";
+import MainSection from "../../components/layout/Section";
+import Article from "../../components/layout/Article";
+import BlogGrid from "../../components/grids/BlogGrid";
+import Paragraph from "../../components/layout/Paragraph";
 import { blogQuery } from "../../constants/queries";
 import { client } from "../../sanity/client";
 

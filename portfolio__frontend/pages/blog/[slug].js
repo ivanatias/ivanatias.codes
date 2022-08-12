@@ -1,15 +1,16 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { MainSection, CustomPortableText } from "../../components";
+import MainSection from "../../components/layout/Section";
+import CustomPortableText from "../../components/sanity-block-contents/CustomPortableText";
+const DynamicSocialShare = dynamic(() =>
+  import("../../components/SocialShare")
+);
 import {
   blogPostQuery,
   blogPostReadingTimeQuery,
   blogQuery,
 } from "../../constants/queries";
-const DynamicSocialShare = dynamic(() =>
-  import("../../components/SocialShare")
-);
 import { client } from "../../sanity/client";
 import { dateFormat, readingTimeFormat } from "../../utils/helpers";
 

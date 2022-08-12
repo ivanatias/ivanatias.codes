@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Loading } from "../components";
+import Loading from "./Loading";
 import { useNearScreen } from "../hooks/useNearScreen";
 
 const SuspenseWrapper = ({
