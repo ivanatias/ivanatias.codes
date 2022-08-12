@@ -3,10 +3,10 @@ export const biographyQuery = () => {
     _id,
     year,
     description
-  }`;
+  }`
 
-  return query;
-};
+  return query
+}
 
 export const worksQuery = () => {
   const query = `*[_type == "work"] | order(_createdAt asc) {
@@ -19,10 +19,10 @@ export const worksQuery = () => {
     url
    }
   }
-}`;
+}`
 
-  return query;
-};
+  return query
+}
 
 export const workQuery = (slug) => {
   const query = `*[_type == "work" && slug.current == "${slug}"] {
@@ -51,10 +51,10 @@ export const workQuery = (slug) => {
        }
     }
   } 
-}`;
+}`
 
-  return query;
-};
+  return query
+}
 
 export const blogQuery = () => {
   const query = `*[_type == "blog"] | order(_createdAt desc) {
@@ -71,10 +71,10 @@ export const blogQuery = () => {
           }  
         }
      } 
-  }`;
+  }`
 
-  return query;
-};
+  return query
+}
 
 export const blogPostQuery = (slug) => {
   const query = `*[_type == "blog" && slug.current == "${slug}"] {
@@ -97,10 +97,10 @@ export const blogPostQuery = (slug) => {
           }  
         }
      } 
-  }`;
+  }`
 
-  return query;
-};
+  return query
+}
 
 export const blogPostReadingTimeQuery = (slug) => {
   const query = `*[_type == "blog" && slug.current == "${slug}"] {
@@ -109,7 +109,7 @@ export const blogPostReadingTimeQuery = (slug) => {
     "estimatedWordCount": round(length(pt::text(articleBody)) / 5),
     // Words per minute: 180
     "estimatedReadingTime": round(length(pt::text(articleBody)) / 5 / 180 )
-  }`;
+  }`
 
-  return query;
-};
+  return query
+}

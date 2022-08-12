@@ -15,6 +15,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "prettier": "prettier --write \"./**/*.{js,jsx,json}\"",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
@@ -40,7 +41,9 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.20.0",
     "eslint-config-next": "^12.2.2",
+    "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
     "tailwindcss": "^3.0.24"
   }
 }

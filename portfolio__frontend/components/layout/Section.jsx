@@ -1,12 +1,12 @@
-import React from "react";
-import { motion } from "framer-motion";
-import MetaData from "../MetaData";
+import React from 'react'
+import { motion } from 'framer-motion'
+import MetaData from '../MetaData'
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
   enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: -0, y: 20 },
-};
+  exit: { opacity: 0, x: -0, y: 20 }
+}
 
 const Section = ({
   children,
@@ -14,7 +14,7 @@ const Section = ({
   description,
   canonicalUrlPath,
   socialCardImage,
-  contentType,
+  contentType
 }) => {
   return (
     <>
@@ -27,17 +27,17 @@ const Section = ({
       />
 
       <motion.section
-        className="flex flex-col gap-10"
-        initial="hidden"
-        animate="enter"
-        exit="exit"
+        className='flex flex-col gap-10'
+        initial='hidden'
+        animate='enter'
+        exit='exit'
         variants={variants}
-        transition={{ duration: 0.4, type: "easeInOut" }}
+        transition={{ duration: 0.4, type: 'easeInOut' }}
       >
         {children}
       </motion.section>
     </>
-  );
-};
+  )
+}
 
-export default Section;
+export default Section

@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { dateFormat } from "../../utils/helpers";
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { dateFormat } from '../../utils/helpers'
 
 const GridItem = ({
   coverImage,
@@ -9,44 +9,44 @@ const GridItem = ({
   title,
   slug,
   excerpt,
-  publishedAt,
+  publishedAt
 }) => {
-  const date = dateFormat(publishedAt);
+  const date = dateFormat(publishedAt)
   return (
     <Link href={`/blog/${slug}`} passHref scroll={false}>
       <a>
-        <div className="flex w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-800/40">
-          <div className="relative flex-shrink-0 w-12 h-12">
+        <div className='flex w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-800/40'>
+          <div className='relative flex-shrink-0 w-12 h-12'>
             <Image
               src={coverImage}
-              placeholder="blur"
+              placeholder='blur'
               blurDataURL={coverImage}
               alt={altText}
-              layout="fill"
-              objectFit="contain"
-              sizes="48px"
+              layout='fill'
+              objectFit='contain'
+              sizes='48px'
             />
           </div>
-          <div className="flex flex-col gap-1">
-            <h3 className="text-base font-bold text-black 2xl:text-lg dark:text-gray-300">
+          <div className='flex flex-col gap-1'>
+            <h3 className='text-base font-bold text-black 2xl:text-lg dark:text-gray-300'>
               {title}
             </h3>
-            <p className="text-sm text-black dark:text-gray-300 2xl:text-base">
+            <p className='text-sm text-black dark:text-gray-300 2xl:text-base'>
               {excerpt}
             </p>
-            <span className="text-xs text-black 2xl:text-sm dark:text-gray-400">
+            <span className='text-xs text-black 2xl:text-sm dark:text-gray-400'>
               {date}
             </span>
           </div>
         </div>
       </a>
     </Link>
-  );
-};
+  )
+}
 
 const BlogGrid = ({ data }) => {
   return (
-    <article className="grid grid-cols-1 gap-8">
+    <article className='grid grid-cols-1 gap-8'>
       {data.map((item) => (
         <GridItem
           key={item._id}
@@ -59,7 +59,7 @@ const BlogGrid = ({ data }) => {
         />
       ))}
     </article>
-  );
-};
+  )
+}
 
-export default BlogGrid;
+export default BlogGrid

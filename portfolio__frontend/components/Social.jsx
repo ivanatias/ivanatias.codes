@@ -1,51 +1,51 @@
-import React from "react";
+import React from 'react'
 import {
   AiFillGithub,
   AiFillLinkedin,
-  AiOutlineInstagram,
-} from "react-icons/ai";
-import { BsStackOverflow } from "react-icons/bs";
+  AiOutlineInstagram
+} from 'react-icons/ai'
+import { BsStackOverflow } from 'react-icons/bs'
 
 const socialLinks = [
   {
-    path: "https://github.com/ivanatias",
+    path: 'https://github.com/ivanatias',
     icon: <AiFillGithub />,
-    name: "Github",
+    name: 'Github'
   },
   {
-    path: "https://www.linkedin.com/in/ivandatiasr/",
+    path: 'https://www.linkedin.com/in/ivandatiasr/',
     icon: <AiFillLinkedin />,
-    name: "Linkedin",
+    name: 'Linkedin'
   },
   {
-    path: "https://stackoverflow.com/users/17195992/ivanatias",
+    path: 'https://stackoverflow.com/users/17195992/ivanatias',
     icon: <BsStackOverflow />,
-    name: "Stackoverflow",
+    name: 'Stackoverflow'
   },
   {
-    path: "https://instagram.com/ivanatias",
+    path: 'https://instagram.com/ivanatias',
     icon: <AiOutlineInstagram />,
-    name: "Instagram",
-  },
-];
+    name: 'Instagram'
+  }
+]
 
 const Social = () => {
   return (
-    <div className="flex items-center gap-3">
+    <div className='flex items-center gap-3'>
       {socialLinks.map((item) => (
         <a
-          className="text-2xl text-pink-800 dark:text-pink-600"
+          className='text-2xl text-pink-800 dark:text-pink-600'
           key={item.name}
           href={item.path}
-          target="_blank"
-          rel="noreferrer noopener"
+          target='_blank'
+          rel='noreferrer noopener'
         >
-          <span className="sr-only">{item.name}</span>
+          <span className='sr-only'>{item.name}</span>
           {item.icon}
         </a>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Social;
+export default Social

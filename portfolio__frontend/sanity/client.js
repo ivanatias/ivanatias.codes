@@ -1,15 +1,15 @@
-import sanityClient from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import sanityClient from '@sanity/client'
+import imageUrlBuilder from '@sanity/image-url'
 
 export const client = sanityClient({
-  projectId: "uaj0umn5",
-  dataset: "production",
-  apiVersion: "2022-06-09",
-  useCdn: true,
-});
+  projectId: 'uaj0umn5',
+  dataset: 'production',
+  apiVersion: '2022-06-09',
+  useCdn: true
+})
 
-const builder = imageUrlBuilder(client);
+const builder = imageUrlBuilder(client)
 
 export const urlFor = (source) => {
-  return builder.image(source);
-};
+  return builder.image(source)
+}
