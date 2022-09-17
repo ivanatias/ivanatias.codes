@@ -2,10 +2,9 @@ import React, { Suspense } from 'react'
 import Loading from './Loading'
 import { useNearScreen } from '../hooks/useNearScreen'
 
-const SuspenseWrapper = ({
+const NearScreenSuspense = ({
   children,
   loadingMessage,
-  containerHeight,
   threshold,
   rootMargin
 }) => {
@@ -13,21 +12,14 @@ const SuspenseWrapper = ({
   return (
     <div ref={fromRef}>
       {isNearScreen ? (
-        <Suspense
-          fallback={
-            <Loading
-              message={loadingMessage}
-              containerHeight={containerHeight}
-            />
-          }
-        >
+        <Suspense fallback={<Loading message={loadingMessage} />}>
           {children}
         </Suspense>
       ) : (
-        <Loading message={loadingMessage} containerHeight={containerHeight} />
+        <Loading message={loadingMessage} />
       )}
     </div>
   )
 }
 
-export default SuspenseWrapper
+export default NearScreenSuspense
