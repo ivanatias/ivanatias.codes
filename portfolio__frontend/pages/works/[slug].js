@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from 'next/link'
 import MainSection from '../../components/layout/Section'
 import Paragraph from '../../components/layout/Paragraph'
@@ -7,6 +7,7 @@ import { HiChevronRight } from 'react-icons/hi'
 import { AiOutlineGithub, AiOutlineEye } from 'react-icons/ai'
 import { client } from '../../sanity/client'
 import { worksQuery, workQuery } from '../../constants/queries'
+import { getImageDimensions } from '@sanity/asset-utils'
 
 const Work = ({ work }) => {
   return (
@@ -68,22 +69,20 @@ const Work = ({ work }) => {
           </div>
         </div>
         <div className='grid grid-cols-1 gap-8'>
-          {work.additionalImages.map((image) => (
-            <div
-              key={image.asset._id}
-              className='relative grid__image-container'
-            >
+          {work.additionalImages.map((image) => {
+            const { width, height } = getImageDimensions(image)
+            return (
               <Image
+                key={image.asset._id}
                 src={image.asset.url}
-                placeholder='blur'
-                blurDataURL={image.asset.url}
-                alt='Work snapshot'
-                layout='fill'
-                className='rounded-lg grid__image'
-                objectFit='contain'
+                width={width}
+                height={height}
+                sizes='100vw'
+                alt='Work screenshot'
+                className='w-full h-auto rounded-lg'
               />
-            </div>
-          ))}
+            )
+          })}
         </div>
       </article>
     </MainSection>

@@ -1,28 +1,27 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from 'next/link'
+import { getImageDimensions } from '@sanity/asset-utils'
 
 const GridItem = ({ thumbnail, title, overview, slug }) => {
+  const { width, height } = getImageDimensions(thumbnail)
   return (
     <Link href={`/works/${slug}`} passHref scroll={false}>
       <a>
-        <div className='flex flex-col items-center justify-center w-full h-full lg:hover:scale-110 transition-transform duration-300'>
-          <div className='relative w-full grid__image-container'>
-            <Image
-              src={thumbnail}
-              placeholder='blur'
-              blurDataURL={thumbnail}
-              alt={title}
-              layout='fill'
-              className='grid__image rounded-lg'
-              objectFit='contain'
-            />
-          </div>
-          <div className='w-full flex flex-col items-center justify-center mt-3 gap-1'>
-            <h3 className='text-center text-base 2xl:text-lg font-bold text-black dark:text-gray-300'>
+        <div className='flex flex-col items-center justify-center lg:transition-transform lg:duration-300 lg:hover:scale-110'>
+          <Image
+            src={thumbnail}
+            alt={title}
+            sizes='(max-width: 768px) 100vw, 50vw'
+            width={width}
+            height={height}
+            className='w-full h-auto rounded-lg'
+          />
+          <div className='flex flex-col items-center justify-center w-full gap-1 mt-3'>
+            <h3 className='text-base font-bold text-center text-black 2xl:text-lg dark:text-gray-300'>
               {title}
             </h3>
-            <p className='text-center text-sm 2xl:text-base text-black dark:text-gray-300'>
+            <p className='text-sm text-center text-black 2xl:text-base dark:text-gray-300'>
               {overview}
             </p>
           </div>
@@ -34,7 +33,7 @@ const GridItem = ({ thumbnail, title, overview, slug }) => {
 
 const WorksGrid = ({ data }) => {
   return (
-    <article className='grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12'>
+    <article className='grid grid-cols-1 gap-8 md:grid-cols-2'>
       {data.map((item) => (
         <GridItem
           key={item._id}

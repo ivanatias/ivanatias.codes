@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from 'next/link'
 import { dateFormat } from '../../utils/helpers'
 
@@ -16,17 +16,15 @@ const GridItem = ({
     <Link href={`/blog/${slug}`} passHref scroll={false}>
       <a>
         <div className='flex w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-800/40'>
-          <div className='relative flex-shrink-0 w-12 h-12'>
-            <Image
-              src={coverImage}
-              placeholder='blur'
-              blurDataURL={coverImage}
-              alt={altText}
-              layout='fill'
-              objectFit='contain'
-              sizes='48px'
-            />
-          </div>
+          <Image
+            src={coverImage}
+            placeholder='blur'
+            blurDataURL={coverImage}
+            alt={altText}
+            width='48'
+            height='48'
+            className='flex-shrink-0 w-12 h-12'
+          />
           <div className='flex flex-col gap-1'>
             <h3 className='text-base font-bold text-black 2xl:text-lg dark:text-gray-300'>
               {title}

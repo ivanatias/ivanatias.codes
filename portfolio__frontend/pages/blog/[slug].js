@@ -1,6 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import MainSection from '../../components/layout/Section'
 import CustomPortableText from '../../components/sanity-block-contents/CustomPortableText'
 const DynamicSocialShare = dynamic(() => import('../../components/SocialShare'))
@@ -23,17 +23,13 @@ const BlogArticle = ({ post, readingTime, date }) => {
     >
       <article className='flex flex-col gap-5'>
         <div className='flex flex-col w-full gap-3'>
-          <div className='relative flex-shrink-0 w-14 h-14'>
-            <Image
-              src={post.coverImage.image.asset.url}
-              placeholder='blur'
-              blurDataURL={post.coverImage.image.asset.url}
-              alt={post.coverImage.altText}
-              layout='fill'
-              objectFit='contain'
-              sizes='56px'
-            />
-          </div>
+          <Image
+            src={post.coverImage.image.asset.url}
+            alt={post.coverImage.altText}
+            width='56'
+            height='56'
+            className='flex-shrink-0 w-14 h-14'
+          />
           <h2 className='text-2xl font-bold text-black dark:text-gray-100 2xl:text-3xl'>
             {post.articleTitle}
           </h2>
