@@ -6,7 +6,7 @@ const ThemeToggle = () => {
   const { theme, setTheme } = useTheme()
 
   return (
-    <AnimatePresence exitBeforeEnter initial={false}>
+    <AnimatePresence mode='wait' initial={false}>
       <motion.div
         className='flex items-center justify-center w-12 h-10 bg-indigo-700 rounded-md cursor-pointer dark:bg-orange-600'
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

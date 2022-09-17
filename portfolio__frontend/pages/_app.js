@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps, router }) {
       <Layout router={router}>
         <AnimatePresence
           initial={true}
-          exitBeforeEnter
+          mode='wait'
           onExitComplete={() => {
             if (window !== 'undefined') {
               scrollTo({ top: 0 })
