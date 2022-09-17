@@ -1,16 +1,18 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Paragraph from '../layout/Paragraph'
-import SuspenseWrapper from '../SuspenseWrapper'
+import NearScreenSuspense from '../NearScreenSuspense'
+
+// Note: remove loading: undefined from dynamic imports once Next.js console warning bug has been solved.
 const DynamicCustomCode = dynamic(() => import('./CustomCode'), {
-  suspense: true
+  suspense: true,
+  loading: undefined
 })
 const DynamicCustomImage = dynamic(() => import('./CustomImage'), {
-  suspense: true
+  suspense: true,
+  loading: undefined
 })
 import { PortableText } from '@portabletext/react'
-import { getImageDimensions } from '@sanity/asset-utils'
-import { urlFor } from '../../sanity/client'
 
 const components = {
   block: {
@@ -34,22 +36,10 @@ const components = {
 
   types: {
     articleImage: ({ value }) => {
-      const { width, height } = getImageDimensions(value?.image)
-      const imageUrl = urlFor(value?.image).url()
       return (
-        <SuspenseWrapper
-          loadingMessage='Loading image'
-          containerHeight={height}
-          threshold={0.15}
-        >
-          <DynamicCustomImage
-            image={imageUrl}
-            caption={value?.caption}
-            altText={value?.altText}
-            width={width}
-            height={height}
-          />
-        </SuspenseWrapper>
+        <NearScreenSuspense loadingMessage='Loading image' threshold={0.15}>
+          <DynamicCustomImage imageData={value} />
+        </NearScreenSuspense>
       )
     },
     customCode: ({ value }) => (
@@ -62,12 +52,12 @@ const components = {
             {value?.code?.language}
           </div>
         </div>
-        <SuspenseWrapper loadingMessage='Loading code' rootMargin='-10px'>
+        <NearScreenSuspense loadingMessage='Loading code' rootMargin='-10px'>
           <DynamicCustomCode
             code={value?.code?.code}
             language={value?.code?.language}
           />
-        </SuspenseWrapper>
+        </NearScreenSuspense>
       </>
     )
   },

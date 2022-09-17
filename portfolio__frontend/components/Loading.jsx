@@ -1,12 +1,9 @@
 import React from 'react'
 import { FaSpinner } from 'react-icons/fa'
 
-const Loading = ({ message, containerHeight = 'auto' }) => {
+const Loading = ({ message }) => {
   return (
-    <div
-      className='flex flex-col items-center gap-3 mt-5 text-black dark:text-gray-100'
-      style={{ height: containerHeight }} //Receives images height as containerHeight to avoid CLS
-    >
+    <div className='flex flex-col items-center gap-3 mt-5 text-black dark:text-gray-100'>
       <div className='animate-spin'>
         <FaSpinner fontSize={30} />
       </div>
