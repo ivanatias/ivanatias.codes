@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../Navbar'
-import Header from './Header'
-import Footer from './Footer'
+import Navbar from '@/components/Navbar'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 
 const Layout = ({ children, router }) => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/future/image'
-import Social from '../Social'
+import Social from '@/components/Social'
 
 const Header = () => {
   return (

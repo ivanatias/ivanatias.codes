@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/future/image'
 import { getImageDimensions } from '@sanity/asset-utils'
-import { urlFor } from '../../sanity/client'
+import { urlFor } from '@/sanity/client'
 
 const CustomImage = ({ imageData }) => {
   const { image, altText, caption } = imageData

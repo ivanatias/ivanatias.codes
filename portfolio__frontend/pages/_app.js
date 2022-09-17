@@ -1,8 +1,8 @@
 import { AnimatePresence } from 'framer-motion'
 import { ThemeProvider } from 'next-themes'
-import Layout from '../components/layout'
-import '../styles/globals.css'
-import '../styles/prism-theme.css'
+import Layout from '@/components/layout'
+import '@/styles/globals.css'
+import '@/styles/prism-theme.css'
 
 function MyApp({ Component, pageProps, router }) {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import Paragraph from '../layout/Paragraph'
-import NearScreenSuspense from '../NearScreenSuspense'
+import Paragraph from '@/components/layout/Paragraph'
+import NearScreenSuspense from '@/components/NearScreenSuspense'
 
 // Note: remove loading: undefined from dynamic imports once Next.js console warning bug has been solved.
 const DynamicCustomCode = dynamic(() => import('./CustomCode'), {

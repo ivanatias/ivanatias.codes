@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import MetaData from '../MetaData'
+import MetaData from '@/components/MetaData'
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },

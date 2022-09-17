@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/future/image'
 import Link from 'next/link'
-import MainSection from '../../components/layout/Section'
-import Paragraph from '../../components/layout/Paragraph'
+import MainSection from '@/components/layout/Section'
+import Paragraph from '@/components/layout/Paragraph'
 import { HiChevronRight } from 'react-icons/hi'
 import { AiOutlineGithub, AiOutlineEye } from 'react-icons/ai'
-import { client } from '../../sanity/client'
-import { worksQuery, workQuery } from '../../constants/queries'
+import { client } from '@/sanity/client'
+import { worksQuery, workQuery } from '@/constants/queries'
 import { getImageDimensions } from '@sanity/asset-utils'
 
 const Work = ({ work }) => {

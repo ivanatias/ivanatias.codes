@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
-import Loading from './Loading'
-import { useNearScreen } from '../hooks/useNearScreen'
+import Loading from '@/components/Loading'
+import { useNearScreen } from '@/hooks/useNearScreen'
 
 const NearScreenSuspense = ({
   children,
