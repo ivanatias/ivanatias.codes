@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <header className='flex flex-col items-center gap-5 pb-12 pt-28'>
       <Image
-        src='/ivanatiasprofile.webp'
-        className='object-cover w-[150px h-[150px] rounded-full ring-2 ring-gray-900 dark:ring-gray-100'
+        src='/profile-pic.webp'
+        className='rounded-full ring-2 ring-gray-900 dark:ring-gray-100'
         width='150'
         height='150'
         alt='Ivan Atias'
