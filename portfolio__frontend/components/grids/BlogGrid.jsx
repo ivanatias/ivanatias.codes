@@ -18,8 +18,6 @@ const GridItem = ({
         <div className='flex w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-800/40'>
           <Image
             src={coverImage}
-            placeholder='blur'
-            blurDataURL={coverImage}
             alt={altText}
             width='48'
             height='48'
