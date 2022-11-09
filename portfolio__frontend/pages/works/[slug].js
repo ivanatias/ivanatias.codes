@@ -109,7 +109,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      work: work[0]
+      work
     }
   }
 }

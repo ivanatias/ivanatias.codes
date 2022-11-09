@@ -51,7 +51,7 @@ export const workQuery = (slug) => {
        }
     }
   } 
-}`
+}[0]`
 
   return query
 }
@@ -97,7 +97,7 @@ export const blogPostQuery = (slug) => {
           }  
         }
      } 
-  }`
+  }[0]`
 
   return query
 }
@@ -109,7 +109,7 @@ export const blogPostReadingTimeQuery = (slug) => {
     "estimatedWordCount": round(length(pt::text(articleBody)) / 5),
     // Words per minute: 180
     "estimatedReadingTime": round(length(pt::text(articleBody)) / 5 / 180 )
-  }`
+  }[0]`
 
   return query
 }

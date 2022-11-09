@@ -66,17 +66,15 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const postInfo = blogPostQuery(params.slug)
   const readingTimeInfo = blogPostReadingTimeQuery(params.slug)
-  const post = await client.fetch(postInfo)
-  const readingTime = await client.fetch(readingTimeInfo)
+  const { publishDate, ...post } = await client.fetch(postInfo)
+  const { estimatedReadingTime } = await client.fetch(readingTimeInfo)
 
-  const { estimatedReadingTime } = readingTime[0]
   const readingTimeText = readingTimeFormat(estimatedReadingTime)
-  const { publishDate } = post[0]
   const date = dateFormat(publishDate)
 
   return {
     props: {
-      post: post[0],
+      post,
       readingTime: readingTimeText,
       date
     }
