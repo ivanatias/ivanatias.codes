@@ -1,5 +1,5 @@
 export const biographyQuery = () => {
-  const query = `*[_type == "biography"] | order(_createdAt asc) {
+  const query = `*[_type == "biography"] | order(_createdAt desc) {
     _id,
     year,
     description
