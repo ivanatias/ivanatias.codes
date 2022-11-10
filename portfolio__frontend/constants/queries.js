@@ -78,25 +78,33 @@ export const blogQuery = () => {
 
 export const blogPostQuery = (slug) => {
   const query = `*[_type == "blog" && slug.current == "${slug}"] {
-    _id,
-    slug,
-    excerpt,
-    articleBody,
-    articleTitle,
-    publishDate,
-    socialShareImage {
+    "currentPost": {
+      _id,
+      slug,
+      excerpt,
+      articleBody,
+      articleTitle,
+      publishDate,
+      socialShareImage {
         asset -> {
           url
         }
-    },
-    coverImage {
-      altText,
-      image {
-       asset -> {
-         url
-          }  
-        }
+      },
+      coverImage {
+        altText,
+        image {
+         asset -> {
+           url
+         }  
+       }
      } 
+   },
+   "previousPost": *[_type == "blog" && ^.publishDate > publishDate]| order(publishDate desc)[0] {
+      slug
+   },
+   "nextPost": *[_type == "blog" && ^.publishDate < publishDate] | order(publishDate asc)[0] {
+      slug
+   }
   }[0]`
 
   return query

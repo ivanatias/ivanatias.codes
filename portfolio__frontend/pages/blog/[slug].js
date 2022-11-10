@@ -2,6 +2,7 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/future/image'
 import MainSection from '@/components/layout/Section'
+import SwitchArticle from '@/components/SwitchArticle'
 import CustomPortableText from '@/components/sanity-block-contents/CustomPortableText'
 const DynamicSocialShare = dynamic(() => import('@/components/SocialShare'))
 import {
@@ -12,26 +13,32 @@ import {
 import { client } from '@/sanity/client'
 import { dateFormat, readingTimeFormat } from '@/utils/helpers'
 
-const BlogArticle = ({ post, readingTime, date }) => {
+const BlogArticle = ({
+  currentPost,
+  previousPost,
+  nextPost,
+  readingTime,
+  date
+}) => {
   return (
     <MainSection
-      title={post.articleTitle}
-      description={post.excerpt}
-      canonicalUrlPath={`/blog/${post.slug.current}`}
-      socialCardImage={post.socialShareImage && post.socialShareImage.asset.url}
+      title={currentPost.articleTitle}
+      description={currentPost.excerpt}
+      canonicalUrlPath={`/blog/${currentPost.slug.current}`}
+      socialCardImage={currentPost.socialShareImage.asset.url}
       contentType='article'
     >
       <article className='flex flex-col gap-5'>
         <div className='flex flex-col w-full gap-3'>
           <Image
-            src={post.coverImage.image.asset.url}
-            alt={post.coverImage.altText}
+            src={currentPost.coverImage.image.asset.url}
+            alt={currentPost.coverImage.altText}
             width='56'
             height='56'
             className='flex-shrink-0 w-14 h-14'
           />
           <h2 className='text-2xl font-bold text-black dark:text-gray-100 2xl:text-3xl'>
-            {post.articleTitle}
+            {currentPost.articleTitle}
           </h2>
         </div>
         <div className='flex items-center gap-3'>
@@ -42,8 +49,9 @@ const BlogArticle = ({ post, readingTime, date }) => {
             {readingTime}
           </span>
         </div>
-        <CustomPortableText value={post.articleBody} />
-        <DynamicSocialShare slug={post.slug.current} />
+        <CustomPortableText value={currentPost.articleBody} />
+        <SwitchArticle previousPost={previousPost} nextPost={nextPost} />
+        <DynamicSocialShare slug={currentPost.slug.current} />
       </article>
     </MainSection>
   )
@@ -66,15 +74,17 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const postInfo = blogPostQuery(params.slug)
   const readingTimeInfo = blogPostReadingTimeQuery(params.slug)
-  const { publishDate, ...post } = await client.fetch(postInfo)
+  const { currentPost, previousPost, nextPost } = await client.fetch(postInfo)
   const { estimatedReadingTime } = await client.fetch(readingTimeInfo)
 
   const readingTimeText = readingTimeFormat(estimatedReadingTime)
-  const date = dateFormat(publishDate)
+  const date = dateFormat(currentPost.publishDate)
 
   return {
     props: {
-      post,
+      currentPost,
+      previousPost,
+      nextPost,
       readingTime: readingTimeText,
       date
     }
