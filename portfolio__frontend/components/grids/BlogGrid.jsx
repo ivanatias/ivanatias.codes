@@ -42,19 +42,20 @@ const GridItem = ({
 
 const BlogGrid = ({ data }) => {
   return (
-    <article className='grid grid-cols-1 gap-8'>
+    <section className='grid grid-cols-1 gap-8'>
       {data.map((item) => (
-        <GridItem
-          key={item._id}
-          coverImage={item.coverImage.image.asset.url}
-          title={item.articleTitle}
-          slug={item.slug.current}
-          excerpt={item.excerpt}
-          altText={item.coverImage.altText}
-          publishedAt={item.publishDate}
-        />
+        <article key={item._id}>
+          <GridItem
+            coverImage={item.coverImage.image.asset.url}
+            title={item.articleTitle}
+            slug={item.slug.current}
+            excerpt={item.excerpt}
+            altText={item.coverImage.altText}
+            publishedAt={item.publishDate}
+          />
+        </article>
       ))}
-    </article>
+    </section>
   )
 }
 
