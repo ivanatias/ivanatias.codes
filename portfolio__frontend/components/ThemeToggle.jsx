@@ -7,8 +7,8 @@ const ThemeToggle = () => {
 
   return (
     <AnimatePresence mode='wait' initial={false}>
-      <motion.div
-        className='flex items-center justify-center w-12 h-10 bg-indigo-700 rounded-md cursor-pointer dark:bg-orange-600'
+      <motion.button
+        className='flex items-center justify-center w-12 h-10 bg-indigo-700 border-none rounded-md outline-none cursor-pointer dark:bg-orange-600'
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         aria-label='Toggle Theme'
         key={theme}
@@ -17,10 +17,10 @@ const ThemeToggle = () => {
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.2 }}
       >
-        <p className='text-sm md:text-base'>
+        <p aria-hidden={true} className='text-sm md:text-base'>
           {theme === 'light' ? '🌙' : '☀️'}
         </p>
-      </motion.div>
+      </motion.button>
     </AnimatePresence>
   )
 }
