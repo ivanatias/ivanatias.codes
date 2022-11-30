@@ -2,22 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  overflow-x: hidden;
-}
+@layer utilities {
+  .normal-title {
+    @apply text-xl font-bold text-black dark:text-gray-100 md:text-2xl;
+  }
 
-.grid__image-container {
-  width: 100%;
-}
-
-.grid__image-container > span {
-  position: unset !important;
-}
-
-.grid__image {
-  object-fit: cover;
-  width: 100% !important;
-  /* min-height: 250px !important; */
-  position: relative !important;
-  height: unset !important;
+  .large-title {
+    @apply text-2xl font-bold text-black dark:text-gray-100 md:text-3xl;
+  }
 }
