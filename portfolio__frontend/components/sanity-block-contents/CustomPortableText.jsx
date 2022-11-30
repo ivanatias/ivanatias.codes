@@ -1,6 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Paragraph from '@/components/layout/Paragraph'
+import { NormalTitle, SmallTitle } from '@/components/layout/Title'
 import NearScreenSuspense from '@/components/NearScreenSuspense'
 
 // Note: remove loading: undefined from dynamic imports once Next.js console warning bug has been solved.
@@ -17,14 +18,14 @@ import { PortableText } from '@portabletext/react'
 const components = {
   block: {
     h3: ({ children }) => (
-      <h3 className='text-xl font-semibold text-black 2xl:text-2xl dark:text-gray-100'>
+      <NormalTitle semibold titleTag='h3'>
         {children}
-      </h3>
+      </NormalTitle>
     ),
     h4: ({ children }) => (
-      <h4 className='text-lg font-semibold text-black 2xl:text-xl dark:text-gray-100'>
+      <SmallTitle semibold titleTag='h4'>
         {children}
-      </h4>
+      </SmallTitle>
     ),
     normal: ({ children }) => <Paragraph>{children}</Paragraph>,
     blockquote: ({ children }) => (
