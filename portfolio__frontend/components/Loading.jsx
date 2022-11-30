@@ -8,7 +8,9 @@ const Loading = ({ message }) => {
       <div className='animate-spin'>
         <FaSpinner fontSize={30} />
       </div>
-      <Paragraph smallParagraph>{message}</Paragraph>
+      <Paragraph smallParagraph semibold>
+        {message}
+      </Paragraph>
     </div>
   )
 }
