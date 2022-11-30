@@ -1,14 +1,13 @@
 import React from 'react'
-import Image from 'next/future/image'
-import CustomLink from '@/components/CustomLink'
 import MainSection from '@/components/layout/Section'
 import { Article } from '@/components/layout/Article'
+import WorkHeader from '@/components/pages/work-page/WorkHeader'
+import WorkStack from '@/components/pages/work-page/WorkStack'
+import WorkLinks from '@/components/pages/work-page/WorkLinks'
+import WorkImage from '@/components/pages/work-page/WorkImage'
 import Paragraph from '@/components/layout/Paragraph'
-import { HiChevronRight } from 'react-icons/hi'
-import { AiOutlineGithub, AiOutlineEye } from 'react-icons/ai'
 import { client } from '@/sanity/client'
 import { worksQuery, workQuery } from '@/constants/queries'
-import { getImageDimensions } from '@sanity/asset-utils'
 
 const Work = ({ work }) => {
   return (
@@ -17,73 +16,16 @@ const Work = ({ work }) => {
       canonicalUrlPath={`/works/${work.slug.current}`}
     >
       <Article>
-        <div className='flex items-center gap-2'>
-          <CustomLink href='/works'>
-            <a>
-              <h2 className='text-sm font-bold text-black dark:text-white 2xl:text-base'>
-                Works
-              </h2>
-            </a>
-          </CustomLink>
-          <HiChevronRight
-            fontSize={20}
-            className='text-black font-bold dark:text-white ml-[-4px]'
-          />
-          <h3 className='text-base font-bold text-pink-800 dark:text-pink-600 2xl:text-lg'>
-            {work.title}
-          </h3>
-        </div>
+        <WorkHeader workTitle={work.title} />
         <Paragraph>{work.description}</Paragraph>
         <div className='flex flex-col gap-3 text-sm font-semibold text-black dark:text-white 2xl:text-base'>
-          <div className='flex items-center gap-3'>
-            <span className='inline-block px-4 py-1 text-xs font-semibold text-white bg-indigo-800 rounded-lg 2xl:text-sm dark:bg-indigo-600'>
-              Stack
-            </span>
-            <div className='flex flex-wrap items-center gap-1'>
-              {work.stack.map((item) => (
-                <span
-                  key={item._key}
-                  className='text-xs text-black underline dark:text-gray-300 2xl:text-sm'
-                >
-                  {item.tech}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className='flex flex-col gap-3 mt-2'>
-            <a
-              href={work.githubUrl}
-              target='_blank'
-              rel='noreferrer noopener'
-              className='flex items-center gap-2 hover:underline w-fit'
-            >
-              <AiOutlineGithub fontSize={24} /> Source code
-            </a>
-            <a
-              href={work.projectUrl}
-              target='_blank'
-              rel='noreferrer noopener'
-              className='flex items-center gap-2 hover:underline w-fit'
-            >
-              <AiOutlineEye fontSize={24} /> Live project
-            </a>
-          </div>
+          <WorkStack workStack={work.stack} />
+          <WorkLinks githubUrl={work.githubUrl} projectUrl={work.projectUrl} />
         </div>
         <div className='grid grid-cols-1 gap-8'>
-          {work.additionalImages.map((image) => {
-            const { width, height } = getImageDimensions(image)
-            return (
-              <Image
-                key={image.asset._id}
-                src={image.asset.url}
-                width={width}
-                height={height}
-                sizes='100vw'
-                alt='Work screenshot'
-                className='w-full h-auto rounded-lg'
-              />
-            )
-          })}
+          {work.additionalImages.map((image) => (
+            <WorkImage key={image.asset._id} image={image} />
+          ))}
         </div>
       </Article>
     </MainSection>
