@@ -1,15 +1,14 @@
 import React from 'react'
+import Title from '@/components/layout/Title'
 import { motion } from 'framer-motion'
 
 export const Article = ({ children }) => (
   <article className='flex flex-col w-full gap-4'>{children}</article>
 )
 
-export const ArticleWithTitle = ({ children, title }) => (
+export const ArticleWithTitle = ({ children, title, largeTitle, titleTag }) => (
   <Article>
-    <h2 className='text-xl font-bold text-black dark:text-gray-100 md:text-2xl'>
-      {title}
-    </h2>
+    <Title title={title} largeTitle={largeTitle} titleTag={titleTag} />
     {children}
   </Article>
 )
@@ -24,11 +23,15 @@ export const AnimatedArticle = ({ children, delay = 0 }) => (
   </motion.div>
 )
 
-export const AnimatedArticleWithTitle = ({ children, title, delay = 0 }) => (
+export const AnimatedArticleWithTitle = ({
+  children,
+  title,
+  largeTitle,
+  titleTag,
+  delay = 0
+}) => (
   <AnimatedArticle delay={delay}>
-    <h2 className='text-xl font-bold text-black dark:text-gray-100 md:text-2xl'>
-      {title}
-    </h2>
+    <Title title={title} largeTitle={largeTitle} titleTag={titleTag} />
     {children}
   </AnimatedArticle>
 )

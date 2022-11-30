@@ -12,7 +12,12 @@ import { client } from '@/sanity/client'
 const Works = ({ works }) => {
   return (
     <MainSection title='Works' canonicalUrlPath='/works'>
-      <AnimatedArticleWithTitle title='Works' delay={0.1}>
+      <AnimatedArticleWithTitle
+        title='Works'
+        largeTitle
+        titleTag='h2'
+        delay={0.1}
+      >
         <Paragraph>
           These are some of my favorite projects that I have built, each one of
           them taught me different things during their development process.

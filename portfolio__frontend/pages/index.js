@@ -12,7 +12,12 @@ import { biographyQuery } from '@/constants/queries'
 const Home = ({ biography }) => {
   return (
     <MainSection>
-      <AnimatedArticleWithTitle title='Work' delay={0.1}>
+      <AnimatedArticleWithTitle
+        title='Work'
+        titleTag='h2'
+        largeTitle
+        delay={0.1}
+      >
         <Paragraph>
           I&apos;m a Front-End Engineer and UI Designer that enjoys a lot
           building and designing good looking and functional websites and apps.
@@ -27,7 +32,12 @@ const Home = ({ biography }) => {
         <LinkButton path='/works'>My portfolio</LinkButton>
       </AnimatedArticleWithTitle>
 
-      <AnimatedArticleWithTitle title='Skills' delay={0.3}>
+      <AnimatedArticleWithTitle
+        title='Skills'
+        titleTag='h2'
+        largeTitle
+        delay={0.3}
+      >
         <Paragraph>
           These are some of the technologies and tools I&apos;m comfortable
           with:
@@ -50,7 +60,12 @@ const Home = ({ biography }) => {
           <Skill skillImage='/images/figma.svg' skillText='Figma' />
         </div>
       </AnimatedArticleWithTitle>
-      <AnimatedArticleWithTitle title='Biography' delay={0.5}>
+      <AnimatedArticleWithTitle
+        title='Biography'
+        titleTag='h2'
+        largeTitle
+        delay={0.5}
+      >
         {biography.map((item) => (
           <BiographyItem
             key={item._id}
@@ -59,7 +74,12 @@ const Home = ({ biography }) => {
           />
         ))}
       </AnimatedArticleWithTitle>
-      <AnimatedArticleWithTitle title='My personal blog' delay={0.7}>
+      <AnimatedArticleWithTitle
+        title='My personal blog'
+        titleTag='h2'
+        largeTitle
+        delay={0.7}
+      >
         <Paragraph>
           A space for sharing and expanding knowledge. I write about a wide
           variety of topics related to technology in this section, expressing my
@@ -70,7 +90,12 @@ const Home = ({ biography }) => {
         </Paragraph>
         <LinkButton path='/blog'>See blog</LinkButton>
       </AnimatedArticleWithTitle>
-      <AnimatedArticleWithTitle title='Find me online' delay={0.9}>
+      <AnimatedArticleWithTitle
+        title='Find me online'
+        titleTag='h2'
+        largeTitle
+        delay={0.9}
+      >
         <Paragraph>You can also check my online presence:</Paragraph>
         <Social />
       </AnimatedArticleWithTitle>

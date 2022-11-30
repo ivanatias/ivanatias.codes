@@ -9,13 +9,22 @@ import { client } from '@/sanity/client'
 const BlogPage = ({ blog }) => {
   return (
     <MainSection title='Blog' canonicalUrlPath='/blog'>
-      <AnimatedArticleWithTitle title='Blog' delay={0.1}>
+      <AnimatedArticleWithTitle
+        title='Blog'
+        delay={0.1}
+        largeTitle
+        titleTag='h2'
+      >
         <Paragraph>
           Writing about web development and performance, my personal experiences
           in this field, or simply random thoughts that cross my mind.
         </Paragraph>
       </AnimatedArticleWithTitle>
-      <AnimatedArticleWithTitle title='Latest articles' delay={0.3}>
+      <AnimatedArticleWithTitle
+        title='Latest articles'
+        titleTag='h3'
+        delay={0.3}
+      >
         <BlogGrid data={blog} />
       </AnimatedArticleWithTitle>
     </MainSection>

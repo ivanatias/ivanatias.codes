@@ -1,4 +1,5 @@
 import React from 'react'
+import Paragraph from '@/components/layout/Paragraph'
 
 export const BioYear = ({ children }) => {
   return (
@@ -8,13 +9,9 @@ export const BioYear = ({ children }) => {
   )
 }
 
-export const BioDescription = ({ children }) => {
-  return (
-    <p className='text-base text-black text-ellipsis dark:text-gray-300 2xl:text-lg'>
-      {children}
-    </p>
-  )
-}
+export const BioDescription = ({ children }) => (
+  <Paragraph>{children}</Paragraph>
+)
 
 const BiographyItem = ({ year, desc }) => {
   return (
