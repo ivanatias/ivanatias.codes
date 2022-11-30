@@ -3,6 +3,8 @@ import { LargeTitle } from '@/components/layout/Title'
 import Paragraph from '@/components/layout/Paragraph'
 
 const Footer = () => {
+  const currentYear = new Date().getUTCFullYear()
+
   return (
     <footer className='flex flex-col items-center justify-between pt-12 pb-6'>
       <div className='flex flex-col gap-5 max-w-[824px] w-full mx-auto px-4 md:px-5'>
@@ -19,7 +21,7 @@ const Footer = () => {
         </a>
       </div>
       <small className='mt-5 text-xs font-semibold text-black dark:text-gray-500 2xl:text-sm'>
-        © 2022 Ivan Atias
+        © {currentYear} Ivan Atias
       </small>
     </footer>
   )
