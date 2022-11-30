@@ -1,4 +1,5 @@
 import React from 'react'
+import { Article } from '@/components/layout/Article'
 import Image from 'next/future/image'
 import CustomLink from '@/components/CustomLink'
 import { dateFormat } from '@/utils/helpers'
@@ -44,7 +45,7 @@ const BlogGrid = ({ data }) => {
   return (
     <section className='grid grid-cols-1 gap-8'>
       {data.map((item) => (
-        <article key={item._id}>
+        <Article key={item._id}>
           <GridItem
             coverImage={item.coverImage.image.asset.url}
             title={item.articleTitle}
@@ -53,7 +54,7 @@ const BlogGrid = ({ data }) => {
             altText={item.coverImage.altText}
             publishedAt={item.publishDate}
           />
-        </article>
+        </Article>
       ))}
     </section>
   )

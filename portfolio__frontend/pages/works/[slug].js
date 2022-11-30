@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/future/image'
-import Link from 'next/link'
 import CustomLink from '@/components/CustomLink'
 import MainSection from '@/components/layout/Section'
+import { Article } from '@/components/layout/Article'
 import Paragraph from '@/components/layout/Paragraph'
 import { HiChevronRight } from 'react-icons/hi'
 import { AiOutlineGithub, AiOutlineEye } from 'react-icons/ai'
@@ -16,7 +16,7 @@ const Work = ({ work }) => {
       title={work.title}
       canonicalUrlPath={`/works/${work.slug.current}`}
     >
-      <article className='flex flex-col gap-5'>
+      <Article>
         <div className='flex items-center gap-2'>
           <CustomLink href='/works'>
             <a>
@@ -85,7 +85,7 @@ const Work = ({ work }) => {
             )
           })}
         </div>
-      </article>
+      </Article>
     </MainSection>
   )
 }

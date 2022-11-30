@@ -2,6 +2,7 @@ import React from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/future/image'
 import MainSection from '@/components/layout/Section'
+import { Article } from '@/components/layout/Article'
 import SwitchArticle from '@/components/SwitchArticle'
 import CustomPortableText from '@/components/sanity-block-contents/CustomPortableText'
 const DynamicSocialShare = dynamic(() => import('@/components/SocialShare'))
@@ -28,7 +29,7 @@ const BlogArticle = ({
       socialCardImage={currentPost.socialShareImage.asset.url}
       contentType='article'
     >
-      <article className='flex flex-col gap-5'>
+      <Article>
         <div className='flex flex-col w-full gap-3'>
           <Image
             src={currentPost.coverImage.image.asset.url}
@@ -52,7 +53,7 @@ const BlogArticle = ({
         <CustomPortableText value={currentPost.articleBody} />
         <SwitchArticle previousPost={previousPost} nextPost={nextPost} />
         <DynamicSocialShare slug={currentPost.slug.current} />
-      </article>
+      </Article>
     </MainSection>
   )
 }

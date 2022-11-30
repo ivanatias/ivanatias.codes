@@ -1,6 +1,6 @@
 import React from 'react'
 import MainSection from '@/components/layout/Section'
-import Article from '@/components/layout/Article'
+import { AnimatedArticleWithTitle } from '@/components/layout/Article'
 import Paragraph from '@/components/layout/Paragraph'
 import LinkButton from '@/components/LinkButton'
 import BiographyItem from '@/components/BiographyItem'
@@ -12,7 +12,7 @@ import { biographyQuery } from '@/constants/queries'
 const Home = ({ biography }) => {
   return (
     <MainSection>
-      <Article title='Work' delay={0.1}>
+      <AnimatedArticleWithTitle title='Work' delay={0.1}>
         <Paragraph>
           I&apos;m a Front-End Engineer and UI Designer that enjoys a lot
           building and designing good looking and functional websites and apps.
@@ -25,9 +25,9 @@ const Home = ({ biography }) => {
           For my designs, Figma is my predilect design and prototyping tool.
         </Paragraph>
         <LinkButton path='/works'>My portfolio</LinkButton>
-      </Article>
+      </AnimatedArticleWithTitle>
 
-      <Article title='Skills' delay={0.3}>
+      <AnimatedArticleWithTitle title='Skills' delay={0.3}>
         <Paragraph>
           These are some of the technologies and tools I&apos;m comfortable
           with:
@@ -49,8 +49,8 @@ const Home = ({ biography }) => {
           <Skill skillImage='/images/git.svg' skillText='Git' />
           <Skill skillImage='/images/figma.svg' skillText='Figma' />
         </div>
-      </Article>
-      <Article title='Biography' delay={0.5}>
+      </AnimatedArticleWithTitle>
+      <AnimatedArticleWithTitle title='Biography' delay={0.5}>
         {biography.map((item) => (
           <BiographyItem
             key={item._id}
@@ -58,8 +58,8 @@ const Home = ({ biography }) => {
             desc={item.description}
           />
         ))}
-      </Article>
-      <Article title='My personal blog' delay={0.7}>
+      </AnimatedArticleWithTitle>
+      <AnimatedArticleWithTitle title='My personal blog' delay={0.7}>
         <Paragraph>
           A space for sharing and expanding knowledge. I write about a wide
           variety of topics related to technology in this section, expressing my
@@ -69,11 +69,11 @@ const Home = ({ biography }) => {
           UI Designer one article at a time.
         </Paragraph>
         <LinkButton path='/blog'>See blog</LinkButton>
-      </Article>
-      <Article title='Find me online' delay={0.9}>
+      </AnimatedArticleWithTitle>
+      <AnimatedArticleWithTitle title='Find me online' delay={0.9}>
         <Paragraph>You can also check my online presence:</Paragraph>
         <Social />
-      </Article>
+      </AnimatedArticleWithTitle>
     </MainSection>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/future/image'
+import { Article } from '@/components/layout/Article'
 import CustomLink from '@/components/CustomLink'
 import { getImageDimensions } from '@sanity/asset-utils'
 
@@ -35,14 +36,14 @@ const WorksGrid = ({ data }) => {
   return (
     <section className='grid grid-cols-1 gap-8 md:grid-cols-2'>
       {data.map((item) => (
-        <article key={item._id}>
+        <Article key={item._id}>
           <GridItem
             thumbnail={item.thumbNail.asset.url}
             title={item.title}
             overview={item.overview}
             slug={item.slug.current}
           />
-        </article>
+        </Article>
       ))}
     </section>
   )
