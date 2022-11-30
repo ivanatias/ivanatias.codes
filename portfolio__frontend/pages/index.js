@@ -17,15 +17,13 @@ const Home = ({ biography }) => {
       <AnimatedArticle delay={0.1}>
         <LargeTitle titleTag='h2'>Work</LargeTitle>
         <Paragraph>
-          I&apos;m a Front-End Engineer and UI Designer that enjoys a lot
+          I&apos;m a Front-end Engineer and UI Designer who enjoys a lot
           building and designing good looking and functional websites and apps.
           These days, most of my work revolves around technologies such as
           React.js, Next.js, Gatsby.js and recently, React Native. I&apos;m also
           comfortable using CSS technologies such as Sass, Bootstrap, Material
-          UI, TailwindCSS, etc.
-          <br />
-          <br />
-          For my designs, Figma is my predilect design and prototyping tool.
+          UI and TailwindCSS. For my designs, Figma is my predilect design and
+          prototyping tool.
         </Paragraph>
         <LinkButton path='/works'>My portfolio</LinkButton>
       </AnimatedArticle>
