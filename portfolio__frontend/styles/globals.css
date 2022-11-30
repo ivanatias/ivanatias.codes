@@ -16,7 +16,7 @@
   }
 
   .small-title {
-    @apply text-base text-black md:text-lg dark:text-gray-300;
+    @apply text-base text-black md:text-lg dark:text-gray-100;
   }
 
   .normal-paragraph {
