@@ -7,23 +7,21 @@ import WorksGrid from '@/components/grids/WorksGrid'
 import { worksQuery } from '@/constants/queries'
 import { client } from '@/sanity/client'
 
-const Works = ({ works }) => {
-  return (
-    <MainSection title='Works' canonicalUrlPath='/works'>
-      <AnimatedArticle delay={0.1}>
-        <LargeTitle titleTag='h2'>Works</LargeTitle>
-        <Paragraph>
-          These are some of my favorite projects that I have built, each one of
-          them taught me different things during their development process.
-        </Paragraph>
-      </AnimatedArticle>
+const Works = ({ works }) => (
+  <MainSection title='Works' canonicalUrlPath='/works'>
+    <AnimatedArticle delay={0.1}>
+      <LargeTitle titleTag='h2'>Works</LargeTitle>
+      <Paragraph>
+        These are some of my favorite projects that I have built, each one of
+        them taught me different things during their development process.
+      </Paragraph>
+    </AnimatedArticle>
 
-      <AnimatedArticle delay={0.3}>
-        <WorksGrid data={works} />
-      </AnimatedArticle>
-    </MainSection>
-  )
-}
+    <AnimatedArticle delay={0.3}>
+      <WorksGrid data={works} />
+    </AnimatedArticle>
+  </MainSection>
+)
 
 export async function getStaticProps() {
   const worksInfo = worksQuery()

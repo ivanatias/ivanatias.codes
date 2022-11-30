@@ -39,23 +39,21 @@ const GridItem = ({
   )
 }
 
-const BlogGrid = ({ data }) => {
-  return (
-    <section className='grid grid-cols-1 gap-8'>
-      {data.map((item) => (
-        <Article key={item._id}>
-          <GridItem
-            coverImage={item.coverImage.image.asset.url}
-            title={item.articleTitle}
-            slug={item.slug.current}
-            excerpt={item.excerpt}
-            altText={item.coverImage.altText}
-            publishedAt={item.publishDate}
-          />
-        </Article>
-      ))}
-    </section>
-  )
-}
+const BlogGrid = ({ data }) => (
+  <section className='grid grid-cols-1 gap-8'>
+    {data.map((item) => (
+      <Article key={item._id}>
+        <GridItem
+          coverImage={item.coverImage.image.asset.url}
+          title={item.articleTitle}
+          slug={item.slug.current}
+          excerpt={item.excerpt}
+          altText={item.coverImage.altText}
+          publishedAt={item.publishDate}
+        />
+      </Article>
+    ))}
+  </section>
+)
 
 export default BlogGrid

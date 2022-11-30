@@ -15,29 +15,27 @@ const Section = ({
   canonicalUrlPath,
   socialCardImage,
   contentType
-}) => {
-  return (
-    <>
-      <MetaData
-        title={title}
-        description={description}
-        canonicalUrlPath={canonicalUrlPath}
-        socialCardImage={socialCardImage}
-        contentType={contentType}
-      />
+}) => (
+  <>
+    <MetaData
+      title={title}
+      description={description}
+      canonicalUrlPath={canonicalUrlPath}
+      socialCardImage={socialCardImage}
+      contentType={contentType}
+    />
 
-      <motion.section
-        className='flex flex-col gap-10'
-        initial='hidden'
-        animate='enter'
-        exit='exit'
-        variants={variants}
-        transition={{ duration: 0.4, type: 'easeInOut' }}
-      >
-        {children}
-      </motion.section>
-    </>
-  )
-}
+    <motion.section
+      className='flex flex-col gap-10'
+      initial='hidden'
+      animate='enter'
+      exit='exit'
+      variants={variants}
+      transition={{ duration: 0.4, type: 'easeInOut' }}
+    >
+      {children}
+    </motion.section>
+  </>
+)
 
 export default Section

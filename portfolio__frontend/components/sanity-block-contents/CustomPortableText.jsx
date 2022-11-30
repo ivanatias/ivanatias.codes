@@ -36,13 +36,11 @@ const components = {
   },
 
   types: {
-    articleImage: ({ value }) => {
-      return (
-        <NearScreenSuspense loadingMessage='Loading image' threshold={0.15}>
-          <DynamicCustomImage imageData={value} />
-        </NearScreenSuspense>
-      )
-    },
+    articleImage: ({ value }) => (
+      <NearScreenSuspense loadingMessage='Loading image' threshold={0.15}>
+        <DynamicCustomImage imageData={value} />
+      </NearScreenSuspense>
+    ),
     customCode: ({ value }) => (
       <>
         <div className='flex justify-between items-center mb-[-28px]'>
@@ -115,8 +113,8 @@ const components = {
   }
 }
 
-const CustomPortableText = ({ value }) => {
-  return <PortableText value={value} components={components} />
-}
+const CustomPortableText = ({ value }) => (
+  <PortableText value={value} components={components} />
+)
 
 export default CustomPortableText

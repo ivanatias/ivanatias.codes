@@ -21,29 +21,27 @@ const BlogArticle = ({
   nextPost,
   readingTime,
   date
-}) => {
-  return (
-    <MainSection
-      title={currentPost.articleTitle}
-      description={currentPost.excerpt}
-      canonicalUrlPath={`/blog/${currentPost.slug.current}`}
-      socialCardImage={currentPost.socialShareImage.asset.url}
-      contentType='article'
-    >
-      <Article>
-        <ArticleHeader
-          coverImageUrl={currentPost.coverImage.image.asset.url}
-          coverImageAltText={currentPost.coverImage.altText}
-          articleTitle={currentPost.articleTitle}
-        />
-        <ArticleMetaInfo date={date} readingTime={readingTime} />
-        <CustomPortableText value={currentPost.articleBody} />
-        <SwitchArticle previousPost={previousPost} nextPost={nextPost} />
-        <DynamicSocialShare slug={currentPost.slug.current} />
-      </Article>
-    </MainSection>
-  )
-}
+}) => (
+  <MainSection
+    title={currentPost.articleTitle}
+    description={currentPost.excerpt}
+    canonicalUrlPath={`/blog/${currentPost.slug.current}`}
+    socialCardImage={currentPost.socialShareImage.asset.url}
+    contentType='article'
+  >
+    <Article>
+      <ArticleHeader
+        coverImageUrl={currentPost.coverImage.image.asset.url}
+        coverImageAltText={currentPost.coverImage.altText}
+        articleTitle={currentPost.articleTitle}
+      />
+      <ArticleMetaInfo date={date} readingTime={readingTime} />
+      <CustomPortableText value={currentPost.articleBody} />
+      <SwitchArticle previousPost={previousPost} nextPost={nextPost} />
+      <DynamicSocialShare slug={currentPost.slug.current} />
+    </Article>
+  </MainSection>
+)
 
 export async function getStaticPaths() {
   const blogInfo = blogQuery()

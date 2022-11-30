@@ -8,9 +8,7 @@ const DEFAULT_PATHS = [
   { path: '/blog', changefreq: 'weekly', priority: 0.8 }
 ]
 
-const Sitemap = () => {
-  return null
-}
+const Sitemap = () => null
 
 export async function getServerSideProps({ res }) {
   const blogPosts = await client.fetch(`

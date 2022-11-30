@@ -23,10 +23,8 @@ Refractor.registerLanguage(scss)
 Refractor.registerLanguage(batch)
 Refractor.registerLanguage(json)
 
-const CustomCode = ({ code, language }) => {
-  return (
-    <Refractor language={language} value={code} className='max-h-[450px]' />
-  )
-}
+const CustomCode = ({ code, language }) => (
+  <Refractor language={language} value={code} className='max-h-[450px]' />
+)
 
 export default CustomCode

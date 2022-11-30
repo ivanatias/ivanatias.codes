@@ -9,28 +9,26 @@ import Paragraph from '@/components/layout/Paragraph'
 import { client } from '@/sanity/client'
 import { worksQuery, workQuery } from '@/constants/queries'
 
-const Work = ({ work }) => {
-  return (
-    <MainSection
-      title={work.title}
-      canonicalUrlPath={`/works/${work.slug.current}`}
-    >
-      <Article>
-        <WorkHeader workTitle={work.title} />
-        <Paragraph>{work.description}</Paragraph>
-        <div className='flex flex-col gap-3 text-sm font-semibold text-black dark:text-white 2xl:text-base'>
-          <WorkStack workStack={work.stack} />
-          <WorkLinks githubUrl={work.githubUrl} projectUrl={work.projectUrl} />
-        </div>
-        <div className='grid grid-cols-1 gap-8'>
-          {work.additionalImages.map((image) => (
-            <WorkImage key={image.asset._id} image={image} />
-          ))}
-        </div>
-      </Article>
-    </MainSection>
-  )
-}
+const Work = ({ work }) => (
+  <MainSection
+    title={work.title}
+    canonicalUrlPath={`/works/${work.slug.current}`}
+  >
+    <Article>
+      <WorkHeader workTitle={work.title} />
+      <Paragraph>{work.description}</Paragraph>
+      <div className='flex flex-col gap-3 text-sm font-semibold text-black dark:text-white 2xl:text-base'>
+        <WorkStack workStack={work.stack} />
+        <WorkLinks githubUrl={work.githubUrl} projectUrl={work.projectUrl} />
+      </div>
+      <div className='grid grid-cols-1 gap-8'>
+        {work.additionalImages.map((image) => (
+          <WorkImage key={image.asset._id} image={image} />
+        ))}
+      </div>
+    </Article>
+  </MainSection>
+)
 
 export async function getStaticPaths() {
   const worksInfo = worksQuery()

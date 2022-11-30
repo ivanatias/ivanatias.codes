@@ -30,21 +30,19 @@ const GridItem = ({ thumbnail, title, overview, slug }) => {
   )
 }
 
-const WorksGrid = ({ data }) => {
-  return (
-    <section className='grid grid-cols-1 gap-8 md:grid-cols-2'>
-      {data.map((item) => (
-        <Article key={item._id}>
-          <GridItem
-            thumbnail={item.thumbNail.asset.url}
-            title={item.title}
-            overview={item.overview}
-            slug={item.slug.current}
-          />
-        </Article>
-      ))}
-    </section>
-  )
-}
+const WorksGrid = ({ data }) => (
+  <section className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+    {data.map((item) => (
+      <Article key={item._id}>
+        <GridItem
+          thumbnail={item.thumbNail.asset.url}
+          title={item.title}
+          overview={item.overview}
+          slug={item.slug.current}
+        />
+      </Article>
+    ))}
+  </section>
+)
 
 export default WorksGrid
