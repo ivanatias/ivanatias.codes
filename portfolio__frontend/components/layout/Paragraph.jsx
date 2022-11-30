@@ -5,7 +5,8 @@ const Paragraph = ({
   smallParagraph,
   xsParagraph,
   semibold,
-  underlined
+  underlined,
+  centered
 }) => {
   const paragraphSize = smallParagraph
     ? 'small-paragraph'
@@ -17,7 +18,7 @@ const Paragraph = ({
     <p
       className={`${paragraphSize} ${semibold ? 'font-semibold' : ''} ${
         underlined ? 'underline' : ''
-      }`}
+      } ${centered ? 'text-center' : ''}`}
     >
       {children}
     </p>
