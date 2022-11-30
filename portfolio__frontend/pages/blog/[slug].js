@@ -1,9 +1,9 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import Image from 'next/future/image'
 import MainSection from '@/components/layout/Section'
 import { Article } from '@/components/layout/Article'
-import Title, { LargeTitle } from '@/components/layout/Title'
+import ArticleHeader from '@/components/pages/blog-article-page/ArticleHeader'
+import ArticleMetaInfo from '@/components/pages/blog-article-page/ArticleMetaInfo'
 import SwitchArticle from '@/components/SwitchArticle'
 import CustomPortableText from '@/components/sanity-block-contents/CustomPortableText'
 const DynamicSocialShare = dynamic(() => import('@/components/SocialShare'))
@@ -31,24 +31,12 @@ const BlogArticle = ({
       contentType='article'
     >
       <Article>
-        <div className='flex flex-col w-full gap-3'>
-          <Image
-            src={currentPost.coverImage.image.asset.url}
-            alt={currentPost.coverImage.altText}
-            width='56'
-            height='56'
-            className='flex-shrink-0 w-14 h-14'
-          />
-          <LargeTitle titleTag='h2'>{currentPost.articleTitle}</LargeTitle>
-        </div>
-        <div className='flex items-center gap-3'>
-          <span className='text-xs text-black 2xl:text-sm dark:text-gray-400'>
-            {date}
-          </span>
-          <span className='text-xs text-black underline 2xl:text-sm dark:text-gray-400'>
-            {readingTime}
-          </span>
-        </div>
+        <ArticleHeader
+          coverImageUrl={currentPost.coverImage.image.asset.url}
+          coverImageAltText={currentPost.coverImage.altText}
+          articleTitle={currentPost.articleTitle}
+        />
+        <ArticleMetaInfo date={date} readingTime={readingTime} />
         <CustomPortableText value={currentPost.articleBody} />
         <SwitchArticle previousPost={previousPost} nextPost={nextPost} />
         <DynamicSocialShare slug={currentPost.slug.current} />
