@@ -59,7 +59,7 @@ const Home = ({ biography }) => {
           variety of topics related to technology in this section, expressing my
           personal opinions on subjects such as web development, web
           performance, user interface design, and other miscellaneous ones. The
-          aim of this blog is to document my journey as a Front-End Engineer and
+          aim of this blog is to document my journey as a Front-end Engineer and
           UI Designer one article at a time.
         </Paragraph>
         <LinkButton path='/blog'>See blog</LinkButton>
