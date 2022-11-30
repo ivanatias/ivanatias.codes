@@ -17,7 +17,7 @@ const Header = () => {
       />
       <div className='flex flex-col items-center gap-2'>
         <XLargeTitle>Ivan Atias</XLargeTitle>
-        <Paragraph semibold>
+        <Paragraph semibold centered>
           Front-end Engineer and UI Designer based in Venezuela
         </Paragraph>
       </div>
