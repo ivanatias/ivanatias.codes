@@ -1,6 +1,7 @@
 import React from 'react'
 import MainSection from '@/components/layout/Section'
-import { AnimatedArticleWithTitle } from '@/components/layout/Article'
+import { AnimatedArticle } from '@/components/layout/Article'
+import { LargeTitle } from '@/components/layout/Title'
 import Paragraph from '@/components/layout/Paragraph'
 import LinkButton from '@/components/LinkButton'
 import BiographyItem from '@/components/BiographyItem'
@@ -12,12 +13,8 @@ import { biographyQuery } from '@/constants/queries'
 const Home = ({ biography }) => {
   return (
     <MainSection>
-      <AnimatedArticleWithTitle
-        title='Work'
-        titleTag='h2'
-        largeTitle
-        delay={0.1}
-      >
+      <AnimatedArticle delay={0.1}>
+        <LargeTitle titleTag='h2'>Work</LargeTitle>
         <Paragraph>
           I&apos;m a Front-End Engineer and UI Designer that enjoys a lot
           building and designing good looking and functional websites and apps.
@@ -30,14 +27,10 @@ const Home = ({ biography }) => {
           For my designs, Figma is my predilect design and prototyping tool.
         </Paragraph>
         <LinkButton path='/works'>My portfolio</LinkButton>
-      </AnimatedArticleWithTitle>
+      </AnimatedArticle>
 
-      <AnimatedArticleWithTitle
-        title='Skills'
-        titleTag='h2'
-        largeTitle
-        delay={0.3}
-      >
+      <AnimatedArticle delay={0.3}>
+        <LargeTitle titleTag='h2'>Skills</LargeTitle>
         <Paragraph>
           These are some of the technologies and tools I&apos;m comfortable
           with:
@@ -59,13 +52,10 @@ const Home = ({ biography }) => {
           <Skill skillImage='/images/git.svg' skillText='Git' />
           <Skill skillImage='/images/figma.svg' skillText='Figma' />
         </div>
-      </AnimatedArticleWithTitle>
-      <AnimatedArticleWithTitle
-        title='Biography'
-        titleTag='h2'
-        largeTitle
-        delay={0.5}
-      >
+      </AnimatedArticle>
+
+      <AnimatedArticle delay={0.5}>
+        <LargeTitle titleTag='h2'>Biography</LargeTitle>
         {biography.map((item) => (
           <BiographyItem
             key={item._id}
@@ -73,13 +63,10 @@ const Home = ({ biography }) => {
             desc={item.description}
           />
         ))}
-      </AnimatedArticleWithTitle>
-      <AnimatedArticleWithTitle
-        title='My personal blog'
-        titleTag='h2'
-        largeTitle
-        delay={0.7}
-      >
+      </AnimatedArticle>
+
+      <AnimatedArticle delay={0.7}>
+        <LargeTitle titleTag='h2'>My personal blog</LargeTitle>
         <Paragraph>
           A space for sharing and expanding knowledge. I write about a wide
           variety of topics related to technology in this section, expressing my
@@ -89,16 +76,13 @@ const Home = ({ biography }) => {
           UI Designer one article at a time.
         </Paragraph>
         <LinkButton path='/blog'>See blog</LinkButton>
-      </AnimatedArticleWithTitle>
-      <AnimatedArticleWithTitle
-        title='Find me online'
-        titleTag='h2'
-        largeTitle
-        delay={0.9}
-      >
+      </AnimatedArticle>
+
+      <AnimatedArticle delay={0.9}>
+        <LargeTitle titleTag='h2'>Find me online</LargeTitle>
         <Paragraph>You can also check my online presence:</Paragraph>
         <Social />
-      </AnimatedArticleWithTitle>
+      </AnimatedArticle>
     </MainSection>
   )
 }

@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import Image from 'next/future/image'
 import MainSection from '@/components/layout/Section'
 import { Article } from '@/components/layout/Article'
-import Title from '@/components/layout/Title'
+import Title, { LargeTitle } from '@/components/layout/Title'
 import SwitchArticle from '@/components/SwitchArticle'
 import CustomPortableText from '@/components/sanity-block-contents/CustomPortableText'
 const DynamicSocialShare = dynamic(() => import('@/components/SocialShare'))
@@ -39,7 +39,7 @@ const BlogArticle = ({
             height='56'
             className='flex-shrink-0 w-14 h-14'
           />
-          <Title title={currentPost.articleTitle} titleTag='h2' largeTitle />
+          <LargeTitle titleTag='h2'>{currentPost.articleTitle}</LargeTitle>
         </div>
         <div className='flex items-center gap-3'>
           <span className='text-xs text-black 2xl:text-sm dark:text-gray-400'>
