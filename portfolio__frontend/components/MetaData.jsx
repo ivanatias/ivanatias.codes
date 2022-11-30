@@ -8,9 +8,9 @@ const MetaData = ({
   socialCardImage,
   contentType
 }) => {
-  const defaultTitle = 'Ivan Atias · Front-End Engineer, UI Designer'
+  const defaultTitle = 'Ivan Atias · Front-end Engineer, UI Designer'
   const defaultDescription =
-    'Ivan Atias is a Front-End Engineer and UI Designer who enjoys a lot building good looking and functional websites and apps.'
+    'Ivan Atias is a Front-end Engineer and UI Designer who enjoys a lot building good looking and functional websites and apps.'
   const defaultImage = 'https://www.ivanatias.codes/card.png'
   const defaultOgType = 'website'
 
@@ -22,7 +22,7 @@ const MetaData = ({
       <meta name='description' content={description || defaultDescription} />
       <meta
         name='keywords'
-        content='Frontend Developer, UI Designer, Ivan Atias, Portfolio, Blog'
+        content='Front-end Engineer, UI Designer, Ivan Atias, Portfolio, Blog'
       />
       <meta name='author' content='Ivan Atias' />
       <link
