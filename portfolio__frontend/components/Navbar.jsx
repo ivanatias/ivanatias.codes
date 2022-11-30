@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 const ThemeToggleButton = dynamic(() => import('@/components/ThemeToggle'), {
   ssr: false
 })
@@ -15,14 +15,14 @@ const Menu = ({ closeMenu }) => {
       <ul className='flex flex-col justify-center w-full gap-2'>
         {links.map((link, index) => (
           <li key={index + link.name}>
-            <Link href={link.path} scroll={false}>
+            <CustomLink href={link.path}>
               <a
                 className='block font-semibold text-black transition-all duration-150 decoration-black dark:decoration-white dark:text-white underline-offset-4 hover:underline'
                 onClick={closeMenu}
               >
                 {link.name}
               </a>
-            </Link>
+            </CustomLink>
           </li>
         ))}
       </ul>
@@ -60,7 +60,7 @@ const Navbar = () => {
       <div className=' flex items-center justify-between max-w-[824px] mx-auto px-4 md:px-5'>
         <div className='flex items-center gap-4'>
           <div className={`flex items-center`}>
-            <Link href='/' passHref scroll={false}>
+            <CustomLink href='/'>
               <a className='pt-2'>
                 <Image
                   src='/logo.svg'
@@ -69,16 +69,16 @@ const Navbar = () => {
                   height={50}
                 />
               </a>
-            </Link>
+            </CustomLink>
           </div>
           <ul className='hidden md:flex md:items-center md:gap-2'>
             {links.map((link, index) => (
               <li key={index + link.name}>
-                <Link href={link.path} scroll={false}>
+                <CustomLink href={link.path}>
                   <a className='font-semibold text-black transition-all duration-150 decoration-black dark:decoration-gray-300 dark:text-gray-300 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white'>
                     {link.name}
                   </a>
-                </Link>
+                </CustomLink>
               </li>
             ))}
           </ul>

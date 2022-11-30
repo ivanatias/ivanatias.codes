@@ -1,15 +1,15 @@
 import React from 'react'
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 import { HiChevronRight } from 'react-icons/hi'
 import { HiChevronLeft } from 'react-icons/hi'
 
 const LinkToArticle = ({ slug, children }) => {
   return (
-    <Link href={`/blog/${slug}`} scroll={false}>
+    <CustomLink href={`/blog/${slug}`}>
       <a className='flex items-center justify-center gap-1 text-sm font-bold text-black transition-colors duration-150 2xl:text-base hover:underline underline-offset-4 dark:text-gray-300 dark:hover:text-white'>
         {children}
       </a>
-    </Link>
+    </CustomLink>
   )
 }
 

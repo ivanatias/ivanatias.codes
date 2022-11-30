@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/future/image'
 import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 import MainSection from '@/components/layout/Section'
 import Paragraph from '@/components/layout/Paragraph'
 import { HiChevronRight } from 'react-icons/hi'
@@ -17,13 +18,13 @@ const Work = ({ work }) => {
     >
       <article className='flex flex-col gap-5'>
         <div className='flex items-center gap-2'>
-          <Link href='/works' scroll={false}>
+          <CustomLink href='/works'>
             <a>
               <h2 className='text-sm font-bold text-black dark:text-white 2xl:text-base'>
                 Works
               </h2>
             </a>
-          </Link>
+          </CustomLink>
           <HiChevronRight
             fontSize={20}
             className='text-black font-bold dark:text-white ml-[-4px]'

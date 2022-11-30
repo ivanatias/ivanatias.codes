@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/future/image'
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 import { dateFormat } from '@/utils/helpers'
 
 const GridItem = ({
@@ -13,7 +13,7 @@ const GridItem = ({
 }) => {
   const date = dateFormat(publishedAt)
   return (
-    <Link href={`/blog/${slug}`} passHref scroll={false}>
+    <CustomLink href={`/blog/${slug}`}>
       <a>
         <div className='flex w-full gap-5 p-2 transition-colors duration-300 hover:bg-indigo-100 dark:hover:bg-indigo-800/40'>
           <Image
@@ -36,7 +36,7 @@ const GridItem = ({
           </div>
         </div>
       </a>
-    </Link>
+    </CustomLink>
   )
 }
 

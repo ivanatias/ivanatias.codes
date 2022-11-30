@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/future/image'
-import Link from 'next/link'
+import CustomLink from '@/components/CustomLink'
 import { getImageDimensions } from '@sanity/asset-utils'
 
 const GridItem = ({ thumbnail, title, overview, slug }) => {
   const { width, height } = getImageDimensions(thumbnail)
   return (
-    <Link href={`/works/${slug}`} passHref scroll={false}>
+    <CustomLink href={`/works/${slug}`}>
       <a>
         <div className='flex flex-col items-center justify-center lg:transition-transform lg:duration-300 lg:hover:scale-110'>
           <Image
@@ -27,7 +27,7 @@ const GridItem = ({ thumbnail, title, overview, slug }) => {
           </div>
         </div>
       </a>
-    </Link>
+    </CustomLink>
   )
 }
 
