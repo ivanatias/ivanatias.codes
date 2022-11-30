@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/future/image'
 import { Article } from '@/components/layout/Article'
 import CustomLink from '@/components/CustomLink'
+import Paragraph from '@/components/layout/Paragraph'
 import { getImageDimensions } from '@sanity/asset-utils'
 
 const GridItem = ({ thumbnail, title, overview, slug }) => {
@@ -22,9 +23,7 @@ const GridItem = ({ thumbnail, title, overview, slug }) => {
             <h3 className='text-base font-bold text-center text-black 2xl:text-lg dark:text-gray-300'>
               {title}
             </h3>
-            <p className='text-sm text-center text-black 2xl:text-base dark:text-gray-300'>
-              {overview}
-            </p>
+            <Paragraph smallParagraph>{overview}</Paragraph>
           </div>
         </div>
       </a>

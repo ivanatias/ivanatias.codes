@@ -1,9 +1,27 @@
 import React from 'react'
 
-const Paragraph = ({ children, semibold }) => {
-  const paragraphStyles = semibold ? 'semi-bold-paragraph' : 'normal-paragraph'
+const Paragraph = ({
+  children,
+  smallParagraph,
+  xsParagraph,
+  semibold,
+  underlined
+}) => {
+  const paragraphSize = smallParagraph
+    ? 'small-paragraph'
+    : xsParagraph
+    ? 'xsmall-paragraph'
+    : 'normal-paragraph'
 
-  return <p className={paragraphStyles}>{children}</p>
+  return (
+    <p
+      className={`${paragraphSize} ${semibold ? 'font-semibold' : ''} ${
+        underlined ? 'underline' : ''
+      }`}
+    >
+      {children}
+    </p>
+  )
 }
 
 export default Paragraph

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/future/image'
+import Paragraph from '@/components/layout/Paragraph'
 
 const Skill = ({ skillImage, skillText }) => {
   return (
@@ -13,9 +14,9 @@ const Skill = ({ skillImage, skillText }) => {
           className='w-10 h-10'
         />
       </div>
-      <p className='text-xs text-black underline dark:text-gray-300 2xl:text-sm'>
+      <Paragraph xsParagraph underlined>
         {skillText}
-      </p>
+      </Paragraph>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Article } from '@/components/layout/Article'
 import Image from 'next/future/image'
 import CustomLink from '@/components/CustomLink'
+import Paragraph from '@/components/layout/Paragraph'
 import { dateFormat } from '@/utils/helpers'
 
 const GridItem = ({
@@ -28,9 +29,7 @@ const GridItem = ({
             <h3 className='text-base font-bold text-black 2xl:text-lg dark:text-gray-300'>
               {title}
             </h3>
-            <p className='text-sm text-black dark:text-gray-300 2xl:text-base'>
-              {excerpt}
-            </p>
+            <Paragraph smallParagraph>{excerpt}</Paragraph>
             <span className='text-xs text-black 2xl:text-sm dark:text-gray-400'>
               {date}
             </span>
