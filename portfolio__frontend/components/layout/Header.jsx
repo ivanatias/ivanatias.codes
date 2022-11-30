@@ -18,7 +18,7 @@ const Header = () => {
       <div className='flex flex-col items-center gap-2'>
         <XLargeTitle titleTag='h1'>Ivan Atias</XLargeTitle>
         <Paragraph semibold>
-          Front-End Engineer and UI Designer based in Venezuela
+          Front-end Engineer and UI Designer based in Venezuela
         </Paragraph>
       </div>
       <Social />
