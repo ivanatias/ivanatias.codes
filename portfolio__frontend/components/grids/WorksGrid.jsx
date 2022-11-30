@@ -33,17 +33,18 @@ const GridItem = ({ thumbnail, title, overview, slug }) => {
 
 const WorksGrid = ({ data }) => {
   return (
-    <article className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+    <section className='grid grid-cols-1 gap-8 md:grid-cols-2'>
       {data.map((item) => (
-        <GridItem
-          key={item._id}
-          thumbnail={item.thumbNail.asset.url}
-          title={item.title}
-          overview={item.overview}
-          slug={item.slug.current}
-        />
+        <article key={item._id}>
+          <GridItem
+            thumbnail={item.thumbNail.asset.url}
+            title={item.title}
+            overview={item.overview}
+            slug={item.slug.current}
+          />
+        </article>
       ))}
-    </article>
+    </section>
   )
 }
 
