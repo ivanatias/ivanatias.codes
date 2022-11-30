@@ -9,6 +9,7 @@ import Skill from '@/components/Skill'
 import Social from '@/components/Social'
 import { client } from '@/sanity/client'
 import { biographyQuery } from '@/constants/queries'
+import { skills } from '@/constants/skills'
 
 const Home = ({ biography }) => {
   return (
@@ -36,21 +37,9 @@ const Home = ({ biography }) => {
           with:
         </Paragraph>
         <div className='flex flex-wrap items-center justify-center w-full gap-4 sm:justify-start md:gap-6'>
-          <Skill skillImage='/images/reactjs.svg' skillText='React.js' />
-          <Skill skillImage='/images/nextjs.svg' skillText='Next.js' />
-          <Skill skillImage='/images/gatsbyjs.svg' skillText='Gatsby.js' />
-          <Skill skillImage='/images/javascript.svg' skillText='JavaScript' />
-          <Skill skillImage='/images/typescript.svg' skillText='TypeScript' />
-          <Skill skillImage='/images/nodejs.svg' skillText='Node.js' />
-          <Skill skillImage='/images/mongodb.svg' skillText='MongoDB' />
-          <Skill skillImage='/images/css.svg' skillText='CSS' />
-          <Skill skillImage='/images/html.svg' skillText='HTML' />
-          <Skill skillImage='/images/sass.svg' skillText='Sass' />
-          <Skill skillImage='/images/tailwindcss.svg' skillText='TailwindCSS' />
-          <Skill skillImage='/images/materialui.svg' skillText='Material UI' />
-          <Skill skillImage='/images/bootstrap.svg' skillText='Bootstrap' />
-          <Skill skillImage='/images/git.svg' skillText='Git' />
-          <Skill skillImage='/images/figma.svg' skillText='Figma' />
+          {skills.map((skill) => (
+            <Skill key={skill.skillText} {...skill} />
+          ))}
         </div>
       </AnimatedArticle>
 
