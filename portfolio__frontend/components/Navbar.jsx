@@ -8,6 +8,17 @@ const ThemeToggleButton = dynamic(() => import('@/components/ThemeToggle'), {
 })
 import { links } from '@/constants/links'
 
+export const Navlink = ({ children, path, onClick }) => (
+  <CustomLink href={path}>
+    <a
+      className='block font-semibold text-black transition-all duration-150 decoration-black dark:decoration-gray-300 dark:text-gray-300 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white'
+      onClick={onClick}
+    >
+      {children}
+    </a>
+  </CustomLink>
+)
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -34,13 +45,9 @@ const Navbar = () => {
             </CustomLink>
           </div>
           <ul className='hidden md:flex md:items-center md:gap-2'>
-            {links.map((link, index) => (
-              <li key={index + link.name}>
-                <CustomLink href={link.path}>
-                  <a className='font-semibold text-black transition-all duration-150 decoration-black dark:decoration-gray-300 dark:text-gray-300 underline-offset-4 hover:underline dark:hover:text-white dark:hover:decoration-white'>
-                    {link.name}
-                  </a>
-                </CustomLink>
+            {links.map(({ path, name }) => (
+              <li key={name}>
+                <Navlink path={path}>{name}</Navlink>
               </li>
             ))}
           </ul>

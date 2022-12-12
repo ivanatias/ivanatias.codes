@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomLink from '@/components/CustomLink'
+import { Navlink } from '@/components/Navbar'
 import { links } from '@/constants/links'
 
 export const MenuButton = ({ toggleMenu, isActive }) => (
@@ -34,16 +34,11 @@ const Menu = ({ closeMenu, isActive }) => {
       }`}
     >
       <ul className='flex flex-col justify-center w-full gap-2'>
-        {links.map((link, index) => (
-          <li key={index + link.name}>
-            <CustomLink href={link.path}>
-              <a
-                className='block font-semibold text-black transition-all duration-150 decoration-black dark:decoration-white dark:text-white underline-offset-4 hover:underline'
-                onClick={closeMenu}
-              >
-                {link.name}
-              </a>
-            </CustomLink>
+        {links.map(({ path, name }) => (
+          <li key={name}>
+            <Navlink path={path} onClick={closeMenu}>
+              {name}
+            </Navlink>
           </li>
         ))}
       </ul>
