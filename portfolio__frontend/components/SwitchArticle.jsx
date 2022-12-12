@@ -1,7 +1,5 @@
 import React from 'react'
 import CustomLink from '@/components/CustomLink'
-import { HiChevronRight } from 'react-icons/hi'
-import { HiChevronLeft } from 'react-icons/hi'
 
 const LinkToArticle = ({ slug, children }) => (
   <CustomLink href={`/blog/${slug}`}>
@@ -15,14 +13,12 @@ const SwitchArticle = ({ previousPost, nextPost, articleType = 'article' }) => (
   <div className='flex items-center justify-center gap-4 mt-10'>
     {previousPost && (
       <LinkToArticle slug={previousPost.slug.current}>
-        <HiChevronLeft fontSize={20} />
         Previous {articleType}
       </LinkToArticle>
     )}
     {nextPost && (
       <LinkToArticle slug={nextPost.slug.current}>
         Next {articleType}
-        <HiChevronRight fontSize={20} />
       </LinkToArticle>
     )}
   </div>
