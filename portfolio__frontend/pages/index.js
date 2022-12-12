@@ -1,7 +1,7 @@
 import React from 'react'
 import MainSection from '@/components/layout/Section'
 import { AnimatedArticle } from '@/components/layout/Article'
-import { LargeTitle } from '@/components/layout/Title'
+import { H2Title } from '@/components/layout/Title'
 import Paragraph from '@/components/layout/Paragraph'
 import LinkButton from '@/components/LinkButton'
 import BiographyItem from '@/components/BiographyItem'
@@ -14,7 +14,7 @@ import { skills } from '@/constants/skills'
 const Home = ({ biography }) => (
   <MainSection>
     <AnimatedArticle delay={0.1}>
-      <LargeTitle titleTag='h2'>Work</LargeTitle>
+      <H2Title>Work</H2Title>
       <Paragraph>
         I&apos;m a Front-end Engineer and UI Designer who enjoys a lot building
         and designing good looking and functional websites and apps. These days,
@@ -27,7 +27,7 @@ const Home = ({ biography }) => (
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.3}>
-      <LargeTitle titleTag='h2'>Skills</LargeTitle>
+      <H2Title>Skills</H2Title>
       <Paragraph>
         These are some of the technologies and tools I&apos;m comfortable with:
       </Paragraph>
@@ -39,7 +39,7 @@ const Home = ({ biography }) => (
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.5}>
-      <LargeTitle titleTag='h2'>Biography</LargeTitle>
+      <H2Title>Biography</H2Title>
       {biography.map((item) => (
         <BiographyItem
           key={item._id}
@@ -50,7 +50,7 @@ const Home = ({ biography }) => (
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.7}>
-      <LargeTitle titleTag='h2'>My personal blog</LargeTitle>
+      <H2Title>My personal blog</H2Title>
       <Paragraph>
         A space for sharing and expanding knowledge. I write about a wide
         variety of topics related to technology in this section, expressing my
@@ -63,7 +63,7 @@ const Home = ({ biography }) => (
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.9}>
-      <LargeTitle titleTag='h2'>Find me online</LargeTitle>
+      <H2Title>Find me online</H2Title>
       <Paragraph>You can also check my online presence:</Paragraph>
       <Social />
     </AnimatedArticle>

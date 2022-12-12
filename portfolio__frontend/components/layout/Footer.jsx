@@ -1,5 +1,5 @@
 import React from 'react'
-import { LargeTitle } from '@/components/layout/Title'
+import { H2Title } from '@/components/layout/Title'
 import Paragraph from '@/components/layout/Paragraph'
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className='flex flex-col items-center justify-between pt-12 pb-6'>
       <div className='flex flex-col gap-5 max-w-[824px] w-full mx-auto px-4 md:px-5'>
-        <LargeTitle titleTag='h2'>Feel free to reach out to me!</LargeTitle>
+        <H2Title>Feel free to reach out to me!</H2Title>
         <Paragraph>
           Contact me through my email to talk about web development, design or
           any other subject.

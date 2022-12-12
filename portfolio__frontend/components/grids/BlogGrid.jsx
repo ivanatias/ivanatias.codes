@@ -2,7 +2,7 @@ import React from 'react'
 import { Article } from '@/components/layout/Article'
 import Image from 'next/future/image'
 import CustomLink from '@/components/CustomLink'
-import { SmallTitle } from '@/components/layout/Title'
+import { H3Title } from '@/components/layout/Title'
 import Paragraph from '@/components/layout/Paragraph'
 import { dateFormat } from '@/utils/helpers'
 
@@ -27,7 +27,7 @@ const GridItem = ({
             className='flex-shrink-0 w-12 h-12'
           />
           <div className='flex flex-col gap-1'>
-            <SmallTitle titleTag='h3'>{title}</SmallTitle>
+            <H3Title titleStyles='small-title'>{title}</H3Title>
             <Paragraph smallParagraph>{excerpt}</Paragraph>
             <span className='text-xs text-black 2xl:text-sm dark:text-gray-400'>
               {date}

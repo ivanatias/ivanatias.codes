@@ -1,57 +1,41 @@
 import React from 'react'
 
-export const Title = ({ children, titleTag, styles, semibold }) => {
-  if (titleTag === 'h2') {
-    return (
-      <h2 className={`${styles} ${semibold ? 'font-semibold' : 'font-bold'}`}>
-        {children}
-      </h2>
-    )
-  }
-
-  if (titleTag === 'h3') {
-    return (
-      <h3 className={`${styles} ${semibold ? 'font-semibold' : 'font-bold'}`}>
-        {children}
-      </h3>
-    )
-  }
-
-  if (titleTag === 'h4') {
-    return (
-      <h4 className={`${styles} ${semibold ? 'font-semibold' : 'font-bold'}`}>
-        {children}
-      </h4>
-    )
-  }
-
-  return (
-    <h1 className={`${styles} ${semibold ? 'font-semibold' : 'font-bold'}`}>
-      {children}
-    </h1>
-  )
-}
-
-export const SmallTitle = ({ children, titleTag, semibold }) => (
-  <Title titleTag={titleTag} semibold={semibold} styles='small-title'>
+export const H1Title = ({ children, titleStyles, semibold }) => (
+  <h1
+    className={`${titleStyles ?? 'xl-title'} ${
+      semibold ? 'font-semibold' : 'font-bold'
+    }`}
+  >
     {children}
-  </Title>
+  </h1>
 )
 
-export const NormalTitle = ({ children, titleTag, semibold }) => (
-  <Title titleTag={titleTag} semibold={semibold} styles='normal-title'>
+export const H2Title = ({ children, titleStyles, semibold }) => (
+  <h2
+    className={`${titleStyles ?? 'large-title'} ${
+      semibold ? 'font-semibold' : 'font-bold'
+    }`}
+  >
     {children}
-  </Title>
+  </h2>
 )
 
-export const LargeTitle = ({ children, titleTag, semibold }) => (
-  <Title titleTag={titleTag} semibold={semibold} styles='large-title'>
+export const H3Title = ({ children, titleStyles, semibold }) => (
+  <h3
+    className={`${titleStyles ?? 'normal-title'} ${
+      semibold ? 'font-semibold' : 'font-bold'
+    }`}
+  >
     {children}
-  </Title>
+  </h3>
 )
 
-export const XLargeTitle = ({ children, titleTag, semibold }) => (
-  <Title titleTag={titleTag} semibold={semibold} styles='xl-title'>
+export const H4Title = ({ children, titleStyles, semibold }) => (
+  <h4
+    className={`${titleStyles ?? 'small-title'} ${
+      semibold ? 'font-semibold' : 'font-bold'
+    }`}
+  >
     {children}
-  </Title>
+  </h4>
 )
