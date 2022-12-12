@@ -27,7 +27,13 @@ const socialLinks = [
 const Social = () => (
   <div className='flex items-center gap-1 text-pink-800 dark:text-pink-600'>
     {socialLinks.map(({ path, iconId, name }) => (
-      <a key={name} href={path} target='_blank' rel='noreferrer noopener'>
+      <a
+        key={name}
+        href={path}
+        target='_blank'
+        rel='noreferrer noopener'
+        className='hover:drop-shadow-[0_0_12px]'
+      >
         <SVG
           id={iconId}
           title={`Ivan Atias' ${name} profile`}
