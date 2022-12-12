@@ -24,7 +24,7 @@ const ThemeToggle = () => {
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.2 }}
       >
-        <SVG id={icon} title={iconLabel} className='w-5 h-5' />
+        <SVG id={icon} title={iconLabel} className='w-6 h-6' />
       </motion.button>
     </AnimatePresence>
   )
