@@ -3,10 +3,11 @@ import CustomLink from '@/components/CustomLink'
 import { links } from '@/constants/links'
 
 export const MenuButton = ({ toggleMenu, isActive }) => (
-  <div
+  <button
     onClick={toggleMenu}
-    className='flex flex-col justify-between items-center w-7 h-[22px] cursor-pointer mt-2 md:hidden'
-    aria-label='Toggle menu'
+    className='flex flex-col justify-between items-center w-7 h-[22px] cursor-pointer mt-2 md:hidden outline-none border-none'
+    aria-expanded={isActive}
+    aria-label={isActive ? 'Close nav menu' : 'Open nav menu'}
   >
     <span
       className={`menu-line ${isActive ? 'first-line-active' : ''}`}
@@ -20,7 +21,7 @@ export const MenuButton = ({ toggleMenu, isActive }) => (
       className={`menu-line ${isActive ? 'third-line-active' : ''}`}
       aria-hidden={true}
     />
-  </div>
+  </button>
 )
 
 const Menu = ({ closeMenu, isActive }) => {
