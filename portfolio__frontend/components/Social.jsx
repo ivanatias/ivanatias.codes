@@ -28,8 +28,12 @@ const Social = () => (
   <div className='flex items-center gap-1 text-pink-800 dark:text-pink-600'>
     {socialLinks.map(({ path, iconId, name }) => (
       <a key={name} href={path} target='_blank' rel='noreferrer noopener'>
-        <span className='sr-only'>{name}</span>
-        <SVG id={iconId} title={`${name} logo`} className='w-7 h-7' />
+        <SVG
+          id={iconId}
+          title={`Ivan Atias' ${name} profile`}
+          className='w-7 h-7'
+        />
+        <span className='sr-only'>opens a new window</span>
       </a>
     ))}
   </div>
