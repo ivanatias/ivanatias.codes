@@ -1,46 +1,35 @@
 import React from 'react'
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiOutlineInstagram
-} from 'react-icons/ai'
-import { BsStackOverflow } from 'react-icons/bs'
+import SVG from '@/components/SVG'
 
 const socialLinks = [
   {
     path: 'https://github.com/ivanatias',
-    icon: <AiFillGithub />,
+    iconId: 'icon-github',
     name: 'Github'
   },
   {
     path: 'https://www.linkedin.com/in/ivandatiasr/',
-    icon: <AiFillLinkedin />,
-    name: 'Linkedin'
+    iconId: 'icon-linkedin',
+    name: 'LinkedIn'
   },
   {
     path: 'https://stackoverflow.com/users/17195992/ivanatias',
-    icon: <BsStackOverflow />,
-    name: 'Stackoverflow'
+    iconId: 'icon-stackoverflow',
+    name: 'Stack Overflow'
   },
   {
     path: 'https://instagram.com/ivanatias',
-    icon: <AiOutlineInstagram />,
+    iconId: 'icon-instagram',
     name: 'Instagram'
   }
 ]
 
 const Social = () => (
-  <div className='flex items-center gap-3'>
-    {socialLinks.map((item) => (
-      <a
-        className='text-2xl text-pink-800 dark:text-pink-600'
-        key={item.name}
-        href={item.path}
-        target='_blank'
-        rel='noreferrer noopener'
-      >
-        <span className='sr-only'>{item.name}</span>
-        {item.icon}
+  <div className='flex items-center gap-1 text-pink-800 dark:text-pink-600'>
+    {socialLinks.map(({ path, iconId, name }) => (
+      <a key={name} href={path} target='_blank' rel='noreferrer noopener'>
+        <span className='sr-only'>{name}</span>
+        <SVG id={iconId} title={`${name} logo`} className='w-7 h-7' />
       </a>
     ))}
   </div>
