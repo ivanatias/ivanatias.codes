@@ -30,4 +30,20 @@
   .xsmall-paragraph {
     @apply text-xs text-black dark:text-gray-300 2xl:text-sm;
   }
+
+  .menu-line {
+    @apply bg-black dark:bg-gray-100 w-full h-[2px] origin-left transition-all duration-300 ease-in;
+  }
+
+  .first-line-active {
+    @apply rotate-45;
+  }
+
+  .second-line-active {
+    @apply opacity-0;
+  }
+
+  .third-line-active {
+    @apply -rotate-45;
+  }
 }
