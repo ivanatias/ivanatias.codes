@@ -5,7 +5,7 @@ import { links } from '@/constants/links'
 export const MenuButton = ({ toggleMenu, isActive }) => (
   <button
     onClick={toggleMenu}
-    className='flex flex-col justify-between items-center w-7 h-[22px] cursor-pointer mt-2 md:hidden outline-none border-none'
+    className='flex flex-col justify-between items-center w-7 h-[22px] cursor-pointer md:hidden outline-none border-none'
     aria-expanded={isActive}
     aria-label={isActive ? 'Close nav menu' : 'Open nav menu'}
   >

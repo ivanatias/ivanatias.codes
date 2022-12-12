@@ -45,7 +45,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className='flex justify-end flex-1 gap-4'>
+        <div className='flex items-center justify-end flex-1 gap-4'>
           <ThemeToggleButton />
           <MenuButton toggleMenu={toggleMenu} isActive={menuOpen} />
         </div>
