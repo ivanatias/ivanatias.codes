@@ -2,56 +2,16 @@ import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import CustomLink from '@/components/CustomLink'
+import Menu, { MenuButton } from '@/components/Menu'
 const ThemeToggleButton = dynamic(() => import('@/components/ThemeToggle'), {
   ssr: false
 })
 import { links } from '@/constants/links'
-import { HiOutlineMenuAlt2 } from 'react-icons/hi'
-import { AiOutlineClose } from 'react-icons/ai'
-
-const Menu = ({ closeMenu }) => (
-  <div className='z-50 absolute bottom-[-120px] right-4 w-[200px] bg-white dark:bg-neutral-800 py-5 px-4  rounded-lg shadow-md dark:shadow-gray-600 md:hidden'>
-    <ul className='flex flex-col justify-center w-full gap-2'>
-      {links.map((link, index) => (
-        <li key={index + link.name}>
-          <CustomLink href={link.path}>
-            <a
-              className='block font-semibold text-black transition-all duration-150 decoration-black dark:decoration-white dark:text-white underline-offset-4 hover:underline'
-              onClick={closeMenu}
-            >
-              {link.name}
-            </a>
-          </CustomLink>
-        </li>
-      ))}
-    </ul>
-  </div>
-)
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const openMenuIcon = (
-    <HiOutlineMenuAlt2
-      className='text-black cursor-pointer md:hidden dark:text-white'
-      fontSize={24}
-      onClick={() => setMenuOpen(true)}
-      aria-label='Open Menu'
-    />
-  )
-
-  const closeMenuIcon = (
-    <AiOutlineClose
-      className='text-black cursor-pointer md:hidden dark:text-white'
-      fontSize={24}
-      onClick={() => setMenuOpen(false)}
-      aria-label='Close Menu'
-    />
-  )
-
-  const closeMenu = () => {
-    setMenuOpen(false)
-  }
+  const toggleMenu = () => setMenuOpen((prev) => !prev)
 
   return (
     <nav className='fixed top-0 z-50 w-full py-3 bg-white dark:bg-[#020105]'>
@@ -83,9 +43,9 @@ const Navbar = () => {
         </div>
         <div className='flex justify-end flex-1 gap-4'>
           <ThemeToggleButton />
-          {menuOpen ? closeMenuIcon : openMenuIcon}
+          <MenuButton toggleMenu={toggleMenu} isActive={menuOpen} />
         </div>
-        {menuOpen && <Menu closeMenu={closeMenu} />}
+        <Menu closeMenu={toggleMenu} isActive={menuOpen} />
       </div>
     </nav>
   )
