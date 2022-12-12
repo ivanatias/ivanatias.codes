@@ -1,28 +1,46 @@
 import React from 'react'
 
-const Paragraph = ({
+export const SmallParagraph = ({
   children,
-  smallParagraph,
-  xsParagraph,
   semibold,
   underlined,
   centered
-}) => {
-  const paragraphSize = smallParagraph
-    ? 'small-paragraph'
-    : xsParagraph
-    ? 'xsmall-paragraph'
-    : 'normal-paragraph'
+}) => (
+  <p
+    className={`small-paragraph ${semibold ? 'font-semibold' : ''} ${
+      underlined ? 'underline' : ''
+    } ${centered ? 'text-center' : ''}`}
+  >
+    {children}
+  </p>
+)
 
-  return (
-    <p
-      className={`${paragraphSize} ${semibold ? 'font-semibold' : ''} ${
-        underlined ? 'underline' : ''
-      } ${centered ? 'text-center' : ''}`}
-    >
-      {children}
-    </p>
-  )
-}
+export const NormalParagraph = ({
+  children,
+  semibold,
+  underlined,
+  centered
+}) => (
+  <p
+    className={`normal-paragraph ${semibold ? 'font-semibold' : ''} ${
+      underlined ? 'underline' : ''
+    } ${centered ? 'text-center' : ''}`}
+  >
+    {children}
+  </p>
+)
 
-export default Paragraph
+export const XSmallParagraph = ({
+  children,
+  semibold,
+  underlined,
+  centered
+}) => (
+  <p
+    className={`xsmall-paragraph ${semibold ? 'font-semibold' : ''} ${
+      underlined ? 'underline' : ''
+    } ${centered ? 'text-center' : ''}`}
+  >
+    {children}
+  </p>
+)

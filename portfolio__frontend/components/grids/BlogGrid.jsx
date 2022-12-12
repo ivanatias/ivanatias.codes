@@ -3,7 +3,7 @@ import { Article } from '@/components/layout/Article'
 import Image from 'next/future/image'
 import CustomLink from '@/components/CustomLink'
 import { H3Title } from '@/components/layout/Title'
-import Paragraph from '@/components/layout/Paragraph'
+import { SmallParagraph } from '@/components/layout/Paragraph'
 import { dateFormat } from '@/utils/helpers'
 
 const GridItem = ({
@@ -28,7 +28,7 @@ const GridItem = ({
           />
           <div className='flex flex-col gap-1'>
             <H3Title titleStyles='small-title'>{title}</H3Title>
-            <Paragraph smallParagraph>{excerpt}</Paragraph>
+            <SmallParagraph>{excerpt}</SmallParagraph>
             <span className='text-xs text-black 2xl:text-sm dark:text-gray-400'>
               {date}
             </span>

@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/future/image'
 import { Article } from '@/components/layout/Article'
 import CustomLink from '@/components/CustomLink'
-import Paragraph from '@/components/layout/Paragraph'
+import { SmallParagraph } from '@/components/layout/Paragraph'
 import { H3Title } from '@/components/layout/Title'
 import { getImageDimensions } from '@sanity/asset-utils'
 
@@ -22,7 +22,7 @@ const GridItem = ({ thumbnail, title, overview, slug }) => {
           />
           <div className='flex flex-col items-center justify-center w-full gap-1 mt-3'>
             <H3Title titleStyles='small-title'>{title}</H3Title>
-            <Paragraph smallParagraph>{overview}</Paragraph>
+            <SmallParagraph>{overview}</SmallParagraph>
           </div>
         </div>
       </a>

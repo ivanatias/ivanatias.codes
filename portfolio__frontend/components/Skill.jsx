@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/future/image'
-import Paragraph from '@/components/layout/Paragraph'
+import { XSmallParagraph } from '@/components/layout/Paragraph'
 
 const Skill = ({ skillImage, skillText }) => (
   <div className='flex flex-col items-center justify-center gap-2'>
@@ -13,9 +13,7 @@ const Skill = ({ skillImage, skillText }) => (
         className='w-10 h-10'
       />
     </div>
-    <Paragraph xsParagraph underlined>
-      {skillText}
-    </Paragraph>
+    <XSmallParagraph underlined>{skillText}</XSmallParagraph>
   </div>
 )
 

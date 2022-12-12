@@ -1,6 +1,6 @@
 import React from 'react'
 import { H2Title } from '@/components/layout/Title'
-import Paragraph from '@/components/layout/Paragraph'
+import { NormalParagraph } from '@/components/layout/Paragraph'
 
 const Footer = () => {
   const currentYear = new Date().getUTCFullYear()
@@ -9,10 +9,10 @@ const Footer = () => {
     <footer className='flex flex-col items-center justify-between pt-12 pb-6'>
       <div className='flex flex-col gap-5 max-w-[824px] w-full mx-auto px-4 md:px-5'>
         <H2Title>Feel free to reach out to me!</H2Title>
-        <Paragraph>
+        <NormalParagraph>
           Contact me through my email to talk about web development, design or
           any other subject.
-        </Paragraph>
+        </NormalParagraph>
         <a
           className='text-base font-bold text-black dark:text-gray-300 2xl:text-lg'
           href='mailto:ivan.d.atias@gmail.com'

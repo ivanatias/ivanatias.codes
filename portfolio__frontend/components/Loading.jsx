@@ -1,5 +1,5 @@
 import React from 'react'
-import Paragraph from '@/components/layout/Paragraph'
+import { SmallParagraph } from '@/components/layout/Paragraph'
 import { FaSpinner } from 'react-icons/fa'
 
 const Loading = ({ message }) => (
@@ -7,9 +7,7 @@ const Loading = ({ message }) => (
     <div className='animate-spin'>
       <FaSpinner fontSize={30} />
     </div>
-    <Paragraph smallParagraph semibold>
-      {message}
-    </Paragraph>
+    <SmallParagraph semibold>{message}</SmallParagraph>
   </div>
 )
 
