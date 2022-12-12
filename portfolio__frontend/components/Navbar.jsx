@@ -45,9 +45,9 @@ const Navbar = () => {
             </CustomLink>
           </div>
           <ul className='hidden md:flex md:items-center md:gap-2'>
-            {links.map(({ path, name }) => (
-              <li key={name}>
-                <Navlink path={path}>{name}</Navlink>
+            {links.map(({ path, label }) => (
+              <li key={label}>
+                <Navlink path={path}>{label}</Navlink>
               </li>
             ))}
           </ul>

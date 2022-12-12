@@ -34,10 +34,10 @@ const Menu = ({ closeMenu, isActive }) => {
       }`}
     >
       <ul className='flex flex-col justify-center w-full gap-2'>
-        {links.map(({ path, name }) => (
-          <li key={name}>
+        {links.map(({ path, label }) => (
+          <li key={label}>
             <Navlink path={path} onClick={closeMenu}>
-              {name}
+              {label}
             </Navlink>
           </li>
         ))}
