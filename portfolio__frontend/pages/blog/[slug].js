@@ -1,12 +1,11 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import MainSection from '@/components/layout/Section'
 import { Article } from '@/components/layout/Article'
 import ArticleHeader from '@/components/pages/blog-article-page/ArticleHeader'
 import ArticleMetaInfo from '@/components/pages/blog-article-page/ArticleMetaInfo'
 import SwitchArticle from '@/components/SwitchArticle'
+import SocialShare from '@/components/SocialShare'
 import CustomPortableText from '@/components/sanity-block-contents/CustomPortableText'
-const DynamicSocialShare = dynamic(() => import('@/components/SocialShare'))
 import {
   blogPostQuery,
   blogPostReadingTimeQuery,
@@ -38,7 +37,7 @@ const BlogArticle = ({
       <ArticleMetaInfo date={date} readingTime={readingTime} />
       <CustomPortableText value={currentPost.articleBody} />
       <SwitchArticle previousPost={previousPost} nextPost={nextPost} />
-      <DynamicSocialShare slug={currentPost.slug.current} />
+      <SocialShare slug={currentPost.slug.current} />
     </Article>
   </MainSection>
 )
