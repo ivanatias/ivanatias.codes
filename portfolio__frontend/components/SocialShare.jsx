@@ -47,7 +47,7 @@ const ShareIcon = ({
   const opacity = isActive ? 1 : 0
 
   const left = isActive
-    ? `calc(${(-1) ** position * Math.ceil(position / 2) * 40}px + 8px)`
+    ? `calc(${(-1) ** position * Math.ceil(position / 2) * 40}px + 6px)`
     : 0
 
   const top = isActive ? '60px' : 0
