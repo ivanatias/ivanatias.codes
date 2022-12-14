@@ -25,40 +25,38 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen((prev) => !prev)
 
   return (
-    <nav
-      role='navigation'
-      aria-label='Main nav'
-      className='fixed top-0 z-50 w-full py-3 bg-white dark:bg-[#020105]'
-    >
-      <div className='flex items-center justify-between max-w-[824px] mx-auto px-4 md:px-5'>
-        <div className='flex items-center gap-4'>
-          <div className='flex items-center'>
-            <CustomLink href='/'>
-              <a className='pt-2'>
-                <Image
-                  src='/logo.svg'
-                  alt='Ivan Atias Logo'
-                  width={50}
-                  height={50}
-                />
-              </a>
-            </CustomLink>
+    <header>
+      <nav className='fixed top-0 z-50 w-full py-3 bg-white dark:bg-[#020105]'>
+        <div className='flex items-center justify-between max-w-[824px] mx-auto px-4 md:px-5'>
+          <div className='flex items-center gap-4'>
+            <div className='flex items-center'>
+              <CustomLink href='/'>
+                <a className='pt-2'>
+                  <Image
+                    src='/logo.svg'
+                    alt='Ivan Atias Logo'
+                    width={50}
+                    height={50}
+                  />
+                </a>
+              </CustomLink>
+            </div>
+            <ul className='hidden md:flex md:items-center md:gap-2'>
+              {links.map(({ path, label }) => (
+                <li key={label}>
+                  <Navlink path={path}>{label}</Navlink>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className='hidden md:flex md:items-center md:gap-2'>
-            {links.map(({ path, label }) => (
-              <li key={label}>
-                <Navlink path={path}>{label}</Navlink>
-              </li>
-            ))}
-          </ul>
+          <div className='flex items-center justify-end flex-1 gap-4'>
+            <ThemeToggleButton />
+            <MenuButton toggleMenu={toggleMenu} isActive={menuOpen} />
+          </div>
+          <Menu closeMenu={toggleMenu} isActive={menuOpen} />
         </div>
-        <div className='flex items-center justify-end flex-1 gap-4'>
-          <ThemeToggleButton />
-          <MenuButton toggleMenu={toggleMenu} isActive={menuOpen} />
-        </div>
-        <Menu closeMenu={toggleMenu} isActive={menuOpen} />
-      </div>
-    </nav>
+      </nav>
+    </header>
   )
 }
 
