@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import SVG from '@/components/SVG'
 import { socials, BASE_URL } from '@/constants/socials'
+import {
+  calculateIconTransition,
+  calculateIconLeftPosition
+} from '@/utils/helpers'
 
 const SocialShare = ({ slug }) => {
   const [shareButtonActive, setShareButtonActive] = useState(false)
@@ -40,18 +44,11 @@ const ShareIcon = ({
   icon,
   position
 }) => {
-  const transition = `top 0.2s ${position * 50}ms, left 0.2s ${
-    position * 50
-  }ms, opacity 0.2s ${position * 50}ms`
-
+  const transition = calculateIconTransition(position, 50)
+  const activeLeft = calculateIconLeftPosition(position, 40)
+  const left = isActive ? activeLeft : 0
   const opacity = isActive ? 1 : 0
-
-  const left = isActive
-    ? `calc(${(-1) ** position * Math.ceil(position / 2) * 40}px + 6px)`
-    : 0
-
   const top = isActive ? '60px' : 0
-
   const pointerEvents = isActive ? 'auto' : 'none'
 
   return (
