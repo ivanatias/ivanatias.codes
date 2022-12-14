@@ -1,11 +1,6 @@
 import React from 'react'
 
-export const SmallParagraph = ({
-  children,
-  semibold,
-  underlined,
-  centered
-}) => (
+const SmallParagraph = ({ children, semibold, underlined, centered }) => (
   <p
     className={`small-paragraph ${semibold ? 'font-semibold' : ''} ${
       underlined ? 'underline' : ''
@@ -15,12 +10,7 @@ export const SmallParagraph = ({
   </p>
 )
 
-export const NormalParagraph = ({
-  children,
-  semibold,
-  underlined,
-  centered
-}) => (
+const NormalParagraph = ({ children, semibold, underlined, centered }) => (
   <p
     className={`normal-paragraph ${semibold ? 'font-semibold' : ''} ${
       underlined ? 'underline' : ''
@@ -30,12 +20,7 @@ export const NormalParagraph = ({
   </p>
 )
 
-export const XSmallParagraph = ({
-  children,
-  semibold,
-  underlined,
-  centered
-}) => (
+const XSmallParagraph = ({ children, semibold, underlined, centered }) => (
   <p
     className={`xsmall-paragraph ${semibold ? 'font-semibold' : ''} ${
       underlined ? 'underline' : ''
@@ -44,3 +29,5 @@ export const XSmallParagraph = ({
     {children}
   </p>
 )
+
+export { SmallParagraph, NormalParagraph, XSmallParagraph }

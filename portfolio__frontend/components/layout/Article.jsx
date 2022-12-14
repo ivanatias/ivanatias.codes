@@ -1,11 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-export const Article = ({ children }) => (
+const Article = ({ children }) => (
   <article className='flex flex-col w-full gap-4'>{children}</article>
 )
 
-export const AnimatedArticle = ({ children, delay = 0 }) => (
+const AnimatedArticle = ({ children, delay = 0 }) => (
   <motion.div
     initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}
@@ -14,3 +14,5 @@ export const AnimatedArticle = ({ children, delay = 0 }) => (
     <Article>{children}</Article>
   </motion.div>
 )
+
+export { Article, AnimatedArticle }
