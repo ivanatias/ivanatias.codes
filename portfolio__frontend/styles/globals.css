@@ -32,7 +32,7 @@
   }
 
   .menu-line {
-    @apply bg-black dark:bg-gray-100 w-full h-[2px] origin-left transition-all duration-300 ease-in;
+    @apply bg-black dark:bg-gray-100 w-full h-[2px] origin-left transition-all duration-200 ease-in;
   }
 
   .first-line-active {
