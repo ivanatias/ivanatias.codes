@@ -25,8 +25,8 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen((prev) => !prev)
 
   return (
-    <header>
-      <nav className='fixed top-0 z-50 w-full py-3 bg-white dark:bg-[#020105]'>
+    <header className='fixed top-0 z-50 w-full py-3 bg-white dark:bg-[#020105]'>
+      <nav>
         <div className='flex items-center justify-between max-w-[824px] mx-auto px-4 md:px-5'>
           <div className='flex items-center gap-4'>
             <div className='flex items-center'>
