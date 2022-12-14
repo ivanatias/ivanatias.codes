@@ -1,32 +1,10 @@
 import React from 'react'
 import SVG from '@/components/SVG'
-
-const socialLinks = [
-  {
-    path: 'https://github.com/ivanatias',
-    iconId: 'icon-github',
-    name: 'Github'
-  },
-  {
-    path: 'https://www.linkedin.com/in/ivandatiasr/',
-    iconId: 'icon-linkedin',
-    name: 'LinkedIn'
-  },
-  {
-    path: 'https://stackoverflow.com/users/17195992/ivanatias',
-    iconId: 'icon-stackoverflow',
-    name: 'Stack Overflow'
-  },
-  {
-    path: 'https://instagram.com/ivanatias',
-    iconId: 'icon-instagram',
-    name: 'Instagram'
-  }
-]
+import { socialLinks } from '@/constants/socials'
 
 const Social = () => (
   <div className='flex items-center gap-1 text-pink-800 dark:text-pink-600'>
-    {socialLinks.map(({ path, iconId, name }) => (
+    {socialLinks.map(({ path, icon, name }) => (
       <a
         key={name}
         href={path}
@@ -35,7 +13,7 @@ const Social = () => (
         className='hover:drop-shadow-[0_0_12px]'
       >
         <SVG
-          id={iconId}
+          id={icon}
           title={`Ivan Atias' ${name} profile`}
           className='w-7 h-7'
         />

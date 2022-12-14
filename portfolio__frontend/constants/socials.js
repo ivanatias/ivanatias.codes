@@ -1,6 +1,6 @@
 const BASE_URL = 'https://www.ivanatias.codes/blog'
 
-const socials = [
+const socialShare = [
   {
     outlet: 'https://www.facebook.com/sharer/sharer.php?u=',
     label: 'Facebook',
@@ -18,4 +18,27 @@ const socials = [
   }
 ]
 
-export { BASE_URL, socials }
+const socialLinks = [
+  {
+    path: 'https://github.com/ivanatias',
+    icon: 'icon-github',
+    name: 'Github'
+  },
+  {
+    path: 'https://www.linkedin.com/in/ivandatiasr/',
+    icon: 'icon-linkedin',
+    name: 'LinkedIn'
+  },
+  {
+    path: 'https://stackoverflow.com/users/17195992/ivanatias',
+    icon: 'icon-stackoverflow',
+    name: 'Stack Overflow'
+  },
+  {
+    path: 'https://instagram.com/ivanatias',
+    icon: 'icon-instagram',
+    name: 'Instagram'
+  }
+]
+
+export { BASE_URL, socialShare, socialLinks }

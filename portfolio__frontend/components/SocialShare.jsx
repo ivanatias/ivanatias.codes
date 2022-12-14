@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SVG from '@/components/SVG'
-import { socials, BASE_URL } from '@/constants/socials'
+import { socialShare, BASE_URL } from '@/constants/socials'
 import {
   calculateIconTransition,
   calculateIconLeftPosition
@@ -68,7 +68,7 @@ const SocialShare = ({ slug }) => {
           isActive={shareButtonActive}
           toggleShareButton={toggleShareButton}
         />
-        {socials.map(({ outlet, label, icon }, index) => (
+        {socialShare.map(({ outlet, label, icon }, index) => (
           <ShareIcon
             key={label + index}
             slug={slug}
