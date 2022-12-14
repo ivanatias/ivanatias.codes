@@ -2,11 +2,7 @@ import React from 'react'
 import SVG from '@/components/SVG'
 import { useTheme } from 'next-themes'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const themeOptions = {
-  dark: { label: 'Light mode', icon: 'icon-sun', iconLabel: 'Sun icon' },
-  light: { label: 'Dark mode', icon: 'icon-moon', iconLabel: 'Moon icon' }
-}
+import { themeOptions } from '@/constants/theme'
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme()
