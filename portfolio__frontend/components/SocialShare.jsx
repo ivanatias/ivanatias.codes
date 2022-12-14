@@ -6,35 +6,6 @@ import {
   calculateIconLeftPosition
 } from '@/utils/helpers'
 
-const SocialShare = ({ slug }) => {
-  const [shareButtonActive, setShareButtonActive] = useState(false)
-
-  const toggleShareButton = () => setShareButtonActive((prev) => !prev)
-
-  return (
-    <div className='flex items-center justify-center my-4'>
-      <div className='relative'>
-        <ShareButton
-          isActive={shareButtonActive}
-          toggleShareButton={toggleShareButton}
-        />
-        {socials.map(({ outlet, label, icon }, index) => (
-          <ShareIcon
-            key={label + index}
-            slug={slug}
-            isActive={shareButtonActive}
-            toggleShareButton={toggleShareButton}
-            outlet={outlet}
-            label={label}
-            icon={icon}
-            position={index}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
-
 const ShareIcon = ({
   slug,
   isActive,
@@ -84,5 +55,34 @@ const ShareButton = ({ toggleShareButton, isActive }) => (
     <SVG id='icon-share' hidden title='Share article' className='w-6 h-6' />
   </button>
 )
+
+const SocialShare = ({ slug }) => {
+  const [shareButtonActive, setShareButtonActive] = useState(false)
+
+  const toggleShareButton = () => setShareButtonActive((prev) => !prev)
+
+  return (
+    <div className='flex items-center justify-center my-4'>
+      <div className='relative'>
+        <ShareButton
+          isActive={shareButtonActive}
+          toggleShareButton={toggleShareButton}
+        />
+        {socials.map(({ outlet, label, icon }, index) => (
+          <ShareIcon
+            key={label + index}
+            slug={slug}
+            isActive={shareButtonActive}
+            toggleShareButton={toggleShareButton}
+            outlet={outlet}
+            label={label}
+            icon={icon}
+            position={index}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default SocialShare
