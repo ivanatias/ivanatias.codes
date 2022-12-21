@@ -12,7 +12,7 @@ import {
   blogQuery
 } from '@/constants/queries'
 import { client } from '@/sanity/client'
-import { dateFormat, readingTimeFormat } from '@/utils/helpers'
+import { readingTimeFormat } from '@/utils/helpers'
 
 const BlogArticle = ({
   currentPost,
@@ -34,7 +34,10 @@ const BlogArticle = ({
         coverImageAltText={currentPost.coverImage.altText}
         articleTitle={currentPost.articleTitle}
       />
-      <ArticleMetaInfo date={date} readingTime={readingTime} />
+      <ArticleMetaInfo
+        publishedAt={currentPost.publishDate}
+        readingTime={readingTime}
+      />
       <CustomPortableText value={currentPost.articleBody} />
       <SwitchArticle previousPost={previousPost} nextPost={nextPost} />
       <SocialShare slug={currentPost.slug.current} />
@@ -63,15 +66,13 @@ export async function getStaticProps({ params }) {
   const { estimatedReadingTime } = await client.fetch(readingTimeInfo)
 
   const readingTimeText = readingTimeFormat(estimatedReadingTime)
-  const date = dateFormat(currentPost.publishDate)
 
   return {
     props: {
       currentPost,
       previousPost,
       nextPost,
-      readingTime: readingTimeText,
-      date
+      readingTime: readingTimeText
     }
   }
 }

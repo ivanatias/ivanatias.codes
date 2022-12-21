@@ -1,14 +1,21 @@
 import React from 'react'
+import { dateFormat } from '@/utils/helpers'
 
-const ArticleMetaInfo = ({ date, readingTime }) => (
-  <div className='flex items-center gap-3'>
-    <span className='text-xs text-black 2xl:text-sm dark:text-gray-400'>
-      {date}
-    </span>
-    <span className='text-xs text-black underline 2xl:text-sm dark:text-gray-400'>
-      {readingTime}
-    </span>
-  </div>
-)
+const ArticleMetaInfo = ({ publishedAt, readingTime }) => {
+  const date = dateFormat(publishedAt)
+  return (
+    <div className='flex items-center gap-3'>
+      <time
+        dateTime={publishedAt}
+        className='text-xs text-black 2xl:text-sm dark:text-gray-400'
+      >
+        {date}
+      </time>
+      <span className='text-xs text-black underline 2xl:text-sm dark:text-gray-400'>
+        {readingTime}
+      </span>
+    </div>
+  )
+}
 
 export default ArticleMetaInfo
