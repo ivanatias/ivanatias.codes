@@ -3,7 +3,7 @@ import { Article } from '@/components/layout/Article'
 import Image from 'next/future/image'
 import CustomLink from '@/components/CustomLink'
 import Title from '@/components/layout/Title'
-import { SmallParagraph } from '@/components/layout/Paragraph'
+import Paragraph from '@/components/layout/Paragraph'
 import { dateFormat } from '@/utils/helpers'
 
 const GridItem = ({
@@ -30,7 +30,7 @@ const GridItem = ({
             <Title titleTag='h3' titleClass='small-title'>
               {title}
             </Title>
-            <SmallParagraph>{excerpt}</SmallParagraph>
+            <Paragraph pClass='small-paragraph'>{excerpt}</Paragraph>
             <time
               dateTime={publishedAt}
               className='text-xs text-black 2xl:text-sm dark:text-gray-400'

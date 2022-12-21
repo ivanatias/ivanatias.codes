@@ -2,7 +2,7 @@ import React from 'react'
 import MainSection from '@/components/layout/Section'
 import { AnimatedArticle } from '@/components/layout/Article'
 import Title from '@/components/layout/Title'
-import { NormalParagraph } from '@/components/layout/Paragraph'
+import Paragraph from '@/components/layout/Paragraph'
 import WorksGrid from '@/components/grids/WorksGrid'
 import { worksQuery } from '@/constants/queries'
 import { client } from '@/sanity/client'
@@ -13,10 +13,10 @@ const Works = ({ works }) => (
       <Title titleTag='h2' titleClass='large-title'>
         Works
       </Title>
-      <NormalParagraph>
+      <Paragraph>
         These are some of my favorite projects that I have built, each one of
         them taught me different things during their development process.
-      </NormalParagraph>
+      </Paragraph>
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.3}>

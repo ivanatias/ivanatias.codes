@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '@/components/layout/Title'
-import { NormalParagraph } from '@/components/layout/Paragraph'
+import Paragraph from '@/components/layout/Paragraph'
 
 const Footer = () => {
   const currentYear = new Date().getUTCFullYear()
@@ -11,10 +11,10 @@ const Footer = () => {
         <Title titleTag='h2' titleClass='large-title'>
           Feel free to reach out to me!
         </Title>
-        <NormalParagraph>
+        <Paragraph>
           Contact me through my email to talk about web development, design or
           any other subject.
-        </NormalParagraph>
+        </Paragraph>
         <a
           className='text-base font-bold text-black dark:text-gray-300 2xl:text-lg'
           href='mailto:ivan.d.atias@gmail.com'

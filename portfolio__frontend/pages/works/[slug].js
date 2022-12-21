@@ -5,7 +5,7 @@ import WorkHeader from '@/components/pages/work-page/WorkHeader'
 import WorkStack from '@/components/pages/work-page/WorkStack'
 import WorkLinks from '@/components/pages/work-page/WorkLinks'
 import WorkImage from '@/components/pages/work-page/WorkImage'
-import { NormalParagraph } from '@/components/layout/Paragraph'
+import Paragraph from '@/components/layout/Paragraph'
 import { client } from '@/sanity/client'
 import { worksQuery, workQuery } from '@/constants/queries'
 
@@ -16,7 +16,7 @@ const Work = ({ work }) => (
   >
     <Article>
       <WorkHeader workTitle={work.title} />
-      <NormalParagraph>{work.description}</NormalParagraph>
+      <Paragraph>{work.description}</Paragraph>
       <div className='flex flex-col gap-3 text-sm font-semibold text-black dark:text-white 2xl:text-base'>
         <WorkStack workStack={work.stack} />
         <WorkLinks githubUrl={work.githubUrl} projectUrl={work.projectUrl} />

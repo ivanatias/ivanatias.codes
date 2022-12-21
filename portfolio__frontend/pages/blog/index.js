@@ -2,7 +2,7 @@ import React from 'react'
 import MainSection from '@/components/layout/Section'
 import { AnimatedArticle } from '@/components/layout/Article'
 import Title from '@/components/layout/Title'
-import { NormalParagraph } from '@/components/layout/Paragraph'
+import Paragraph from '@/components/layout/Paragraph'
 import BlogGrid from '@/components/grids/BlogGrid'
 import { blogQuery } from '@/constants/queries'
 import { client } from '@/sanity/client'
@@ -13,10 +13,10 @@ const BlogPage = ({ blog }) => (
       <Title titleTag='h2' titleClass='large-title'>
         Blog
       </Title>
-      <NormalParagraph>
+      <Paragraph>
         Writing about web development and performance, my personal experiences
         in this field, or simply random thoughts that cross my mind.
-      </NormalParagraph>
+      </Paragraph>
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.3}>

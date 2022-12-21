@@ -1,5 +1,5 @@
 import React from 'react'
-import { NormalParagraph } from '@/components/layout/Paragraph'
+import Paragraph from '@/components/layout/Paragraph'
 
 const BioYear = ({ children }) => (
   <span className='text-sm font-bold text-pink-800 2xl:text-base dark:text-pink-600'>
@@ -7,9 +7,7 @@ const BioYear = ({ children }) => (
   </span>
 )
 
-const BioDescription = ({ children }) => (
-  <NormalParagraph>{children}</NormalParagraph>
-)
+const BioDescription = ({ children }) => <Paragraph>{children}</Paragraph>
 
 const BiographyItem = ({ year, desc }) => (
   <div className='flex flex-col gap-3 sm:flex-row'>

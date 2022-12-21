@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/future/image'
 import Social from '@/components/Social'
 import Title from '@/components/layout/Title'
-import { NormalParagraph } from '@/components/layout/Paragraph'
+import Paragraph from '@/components/layout/Paragraph'
 
 const Header = () => (
   <header className='flex flex-col items-center gap-5 pb-12 pt-28'>
@@ -16,9 +16,9 @@ const Header = () => (
     />
     <div className='flex flex-col items-center gap-2'>
       <Title>Ivan Atias</Title>
-      <NormalParagraph semibold centered>
+      <Paragraph semibold centered>
         Front-end Engineer and UI Designer based in Venezuela
-      </NormalParagraph>
+      </Paragraph>
     </div>
     <Social />
   </header>

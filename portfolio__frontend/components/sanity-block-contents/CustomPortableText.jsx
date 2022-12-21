@@ -1,6 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { NormalParagraph } from '@/components/layout/Paragraph'
+import Paragraph from '@/components/layout/Paragraph'
 import Title from '@/components/layout/Title'
 import NearScreenSuspense from '@/components/NearScreenSuspense'
 
@@ -27,7 +27,7 @@ const components = {
         {children}
       </Title>
     ),
-    normal: ({ children }) => <NormalParagraph>{children}</NormalParagraph>,
+    normal: ({ children }) => <Paragraph>{children}</Paragraph>,
     blockquote: ({ children }) => (
       <blockquote className='pl-2 text-sm italic text-black border-l-2 2xl:text-base dark:text-gray-100 border-l-pink-800 dark:border-l-pink-600'>
         {children}

@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/future/image'
 import { Article } from '@/components/layout/Article'
 import CustomLink from '@/components/CustomLink'
-import { SmallParagraph } from '@/components/layout/Paragraph'
+import Paragraph from '@/components/layout/Paragraph'
 import Title from '@/components/layout/Title'
 import { getImageDimensions } from '@sanity/asset-utils'
 
@@ -24,7 +24,7 @@ const GridItem = ({ thumbnail, title, overview, slug }) => {
             <Title titleTag='h3' titleClass='small-title'>
               {title}
             </Title>
-            <SmallParagraph>{overview}</SmallParagraph>
+            <Paragraph pClass='small-paragraph'>{overview}</Paragraph>
           </div>
         </div>
       </a>
