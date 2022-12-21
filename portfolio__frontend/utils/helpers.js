@@ -1,6 +1,4 @@
-const dateFormat = (date) => {
-  return new Date(date).toDateString()
-}
+const dateFormat = (date) => date.slice(0, 10)
 
 const readingTimeFormat = (readingTime) => {
   const readingTimeText =
