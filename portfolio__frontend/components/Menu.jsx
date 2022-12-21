@@ -1,4 +1,3 @@
-import React from 'react'
 import { Navlink } from '@/components/Navbar'
 import { links } from '@/constants/links'
 

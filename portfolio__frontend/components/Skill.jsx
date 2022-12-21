@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/future/image'
 import Paragraph from '@/components/layout/Paragraph'
 

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Paragraph = ({ children, pClass, semibold, underlined, centered }) => (
   <p
     className={`${pClass ?? 'normal-paragraph'} ${

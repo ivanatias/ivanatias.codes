@@ -1,4 +1,3 @@
-import React from 'react'
 import Title from '@/components/layout/Title'
 import Paragraph from '@/components/layout/Paragraph'
 

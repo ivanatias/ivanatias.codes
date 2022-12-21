@@ -1,4 +1,3 @@
-import React from 'react'
 import { Article } from '@/components/layout/Article'
 import Image from 'next/future/image'
 import CustomLink from '@/components/CustomLink'

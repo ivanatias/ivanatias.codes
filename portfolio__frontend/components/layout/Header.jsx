@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/future/image'
 import Social from '@/components/Social'
 import Title from '@/components/layout/Title'

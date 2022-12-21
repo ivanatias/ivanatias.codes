@@ -1,4 +1,3 @@
-import React from 'react'
 import SVG from '@/components/SVG'
 import { useTheme } from 'next-themes'
 import { motion, AnimatePresence } from 'framer-motion'

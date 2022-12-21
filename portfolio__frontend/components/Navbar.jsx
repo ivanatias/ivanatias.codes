@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import CustomLink from '@/components/CustomLink'

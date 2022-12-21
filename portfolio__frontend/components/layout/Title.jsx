@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Title = ({ children, titleClass, semibold, titleTag }) => {
   const TitleTag = titleTag ?? 'h1'
 

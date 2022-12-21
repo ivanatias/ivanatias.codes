@@ -1,4 +1,3 @@
-import React from 'react'
 import { dateFormat } from '@/utils/helpers'
 
 const ArticleMetaInfo = ({ publishedAt, readingTime }) => {

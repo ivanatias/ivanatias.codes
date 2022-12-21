@@ -1,4 +1,3 @@
-import React from 'react'
 import MainSection from '@/components/layout/Section'
 import { Article } from '@/components/layout/Article'
 import ArticleHeader from '@/components/pages/blog-article-page/ArticleHeader'

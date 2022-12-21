@@ -1,4 +1,3 @@
-import React from 'react'
 import dynamic from 'next/dynamic'
 import Paragraph from '@/components/layout/Paragraph'
 import Title from '@/components/layout/Title'

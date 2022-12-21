@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/future/image'
 import Title from '@/components/layout/Title'
 

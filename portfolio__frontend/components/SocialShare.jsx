@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import SVG from '@/components/SVG'
 import { socialShare, BASE_URL } from '@/constants/socials'
 import {

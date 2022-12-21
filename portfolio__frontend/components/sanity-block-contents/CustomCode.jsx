@@ -1,4 +1,3 @@
-import React from 'react'
 import Refractor from 'react-refractor'
 
 //Languages

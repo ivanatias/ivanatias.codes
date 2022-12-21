@@ -1,4 +1,3 @@
-import React from 'react'
 import SVG from '@/components/SVG'
 
 const WorkLink = ({ children, url, iconId }) => (

@@ -1,4 +1,3 @@
-import React from 'react'
 import MainSection from '@/components/layout/Section'
 import { AnimatedArticle } from '@/components/layout/Article'
 import Title from '@/components/layout/Title'

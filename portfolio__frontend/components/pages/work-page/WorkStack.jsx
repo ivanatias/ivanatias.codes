@@ -1,5 +1,3 @@
-import React from 'react'
-
 const WorkStack = ({ workStack }) => (
   <div className='flex items-center gap-3'>
     <span className='inline-block px-4 py-1 text-xs font-semibold text-white bg-indigo-800 rounded-lg 2xl:text-sm dark:bg-indigo-600'>
