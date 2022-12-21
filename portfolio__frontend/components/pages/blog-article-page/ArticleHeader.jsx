@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/future/image'
-import { H2Title } from '@/components/layout/Title'
+import Title from '@/components/layout/Title'
 
 const ArticleHeader = ({ coverImageUrl, coverImageAltText, articleTitle }) => (
   <div className='flex flex-col w-full gap-3'>
@@ -11,7 +11,9 @@ const ArticleHeader = ({ coverImageUrl, coverImageAltText, articleTitle }) => (
       height='56'
       className='flex-shrink-0 w-14 h-14'
     />
-    <H2Title>{articleTitle}</H2Title>
+    <Title titleTag='h2' titleClass='large-title'>
+      {articleTitle}
+    </Title>
   </div>
 )
 

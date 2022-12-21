@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/future/image'
 import Social from '@/components/Social'
-import { H1Title } from '@/components/layout/Title'
+import Title from '@/components/layout/Title'
 import { NormalParagraph } from '@/components/layout/Paragraph'
 
 const Header = () => (
@@ -15,7 +15,7 @@ const Header = () => (
       priority={true}
     />
     <div className='flex flex-col items-center gap-2'>
-      <H1Title>Ivan Atias</H1Title>
+      <Title>Ivan Atias</Title>
       <NormalParagraph semibold centered>
         Front-end Engineer and UI Designer based in Venezuela
       </NormalParagraph>

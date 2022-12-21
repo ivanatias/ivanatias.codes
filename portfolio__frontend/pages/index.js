@@ -1,7 +1,7 @@
 import React from 'react'
 import MainSection from '@/components/layout/Section'
 import { AnimatedArticle } from '@/components/layout/Article'
-import { H2Title } from '@/components/layout/Title'
+import Title from '@/components/layout/Title'
 import { NormalParagraph } from '@/components/layout/Paragraph'
 import LinkButton from '@/components/LinkButton'
 import BiographyItem from '@/components/BiographyItem'
@@ -14,7 +14,9 @@ import { skills } from '@/constants/skills'
 const Home = ({ biography }) => (
   <MainSection>
     <AnimatedArticle delay={0.1}>
-      <H2Title>Work</H2Title>
+      <Title titleTag='h2' titleClass='large-title'>
+        Work
+      </Title>
       <NormalParagraph>
         I&apos;m a Front-end Engineer and UI Designer who enjoys a lot building
         and designing good looking and functional websites and apps. These days,
@@ -27,7 +29,9 @@ const Home = ({ biography }) => (
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.3}>
-      <H2Title>Skills</H2Title>
+      <Title titleTag='h2' titleClass='large-title'>
+        Skills
+      </Title>
       <NormalParagraph>
         These are some of the technologies and tools I&apos;m comfortable with:
       </NormalParagraph>
@@ -39,7 +43,9 @@ const Home = ({ biography }) => (
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.5}>
-      <H2Title>Biography</H2Title>
+      <Title titleTag='h2' titleClass='large-title'>
+        Biography
+      </Title>
       {biography.map((item) => (
         <BiographyItem
           key={item._id}
@@ -50,7 +56,9 @@ const Home = ({ biography }) => (
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.7}>
-      <H2Title>My personal blog</H2Title>
+      <Title titleTag='h2' titleClass='large-title'>
+        Personal blog
+      </Title>
       <NormalParagraph>
         A space for sharing and expanding knowledge. I write about a wide
         variety of topics related to technology in this section, expressing my
@@ -63,7 +71,9 @@ const Home = ({ biography }) => (
     </AnimatedArticle>
 
     <AnimatedArticle delay={0.9}>
-      <H2Title>Find me online</H2Title>
+      <Title titleTag='h2' titleClass='large-title'>
+        Find me online
+      </Title>
       <NormalParagraph>You can also check my online presence:</NormalParagraph>
       <Social />
     </AnimatedArticle>

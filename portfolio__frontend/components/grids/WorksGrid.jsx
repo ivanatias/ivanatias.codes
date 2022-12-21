@@ -3,7 +3,7 @@ import Image from 'next/future/image'
 import { Article } from '@/components/layout/Article'
 import CustomLink from '@/components/CustomLink'
 import { SmallParagraph } from '@/components/layout/Paragraph'
-import { H3Title } from '@/components/layout/Title'
+import Title from '@/components/layout/Title'
 import { getImageDimensions } from '@sanity/asset-utils'
 
 const GridItem = ({ thumbnail, title, overview, slug }) => {
@@ -21,7 +21,9 @@ const GridItem = ({ thumbnail, title, overview, slug }) => {
             className='w-full h-auto rounded-lg'
           />
           <div className='flex flex-col items-center justify-center w-full gap-1 mt-3'>
-            <H3Title titleStyles='small-title'>{title}</H3Title>
+            <Title titleTag='h3' titleClass='small-title'>
+              {title}
+            </Title>
             <SmallParagraph>{overview}</SmallParagraph>
           </div>
         </div>

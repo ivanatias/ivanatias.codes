@@ -1,7 +1,7 @@
 import React from 'react'
 import MainSection from '@/components/layout/Section'
 import { AnimatedArticle } from '@/components/layout/Article'
-import { H2Title } from '@/components/layout/Title'
+import Title from '@/components/layout/Title'
 import { NormalParagraph } from '@/components/layout/Paragraph'
 import WorksGrid from '@/components/grids/WorksGrid'
 import { worksQuery } from '@/constants/queries'
@@ -10,7 +10,9 @@ import { client } from '@/sanity/client'
 const Works = ({ works }) => (
   <MainSection title='Works' canonicalUrlPath='/works'>
     <AnimatedArticle delay={0.1}>
-      <H2Title>Works</H2Title>
+      <Title titleTag='h2' titleClass='large-title'>
+        Works
+      </Title>
       <NormalParagraph>
         These are some of my favorite projects that I have built, each one of
         them taught me different things during their development process.
