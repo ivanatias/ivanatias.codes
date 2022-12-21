@@ -29,9 +29,12 @@ const GridItem = ({
           <div className='flex flex-col gap-1'>
             <H3Title titleStyles='small-title'>{title}</H3Title>
             <SmallParagraph>{excerpt}</SmallParagraph>
-            <span className='text-xs text-black 2xl:text-sm dark:text-gray-400'>
+            <time
+              dateTime={publishedAt}
+              className='text-xs text-black 2xl:text-sm dark:text-gray-400'
+            >
               {date}
-            </span>
+            </time>
           </div>
         </div>
       </a>
