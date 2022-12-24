@@ -61,8 +61,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const postInfo = blogPostQuery(params.slug)
   const readingTimeInfo = blogPostReadingTimeQuery(params.slug)
-  const { currentPost, previousPost, nextPost } = await client.fetch(postInfo)
-  const { estimatedReadingTime } = await client.fetch(readingTimeInfo)
+  const promises = [client.fetch(postInfo), client.fetch(readingTimeInfo)]
+
+  const [post, readingTime] = await Promise.all(promises)
+
+  const { currentPost, previousPost, nextPost } = post
+  const { estimatedReadingTime } = readingTime
 
   const readingTimeText = readingTimeFormat(estimatedReadingTime)
 
