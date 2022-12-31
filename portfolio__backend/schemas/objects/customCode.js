@@ -7,15 +7,14 @@ export default {
   icon: MdCode,
   fields: [
     {
-      title: "Code Filename",
-      name: "codeFilename",
-      type: "string",
-      description: "example-code-filename",
-    },
-    {
       title: "Code",
       name: "code",
       type: "code",
+      options: {
+        theme: "xcode",
+        darkTheme: "monokai",
+        withFilename: true,
+      },
     },
   ],
   preview: {

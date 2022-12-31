@@ -40,24 +40,27 @@ const components = {
         <DynamicCustomImage imageData={value} />
       </NearScreenSuspense>
     ),
-    customCode: ({ value }) => (
-      <>
-        <div className='flex justify-between items-center mb-[-28px]'>
-          <div className='flex-1 text-base italic tracking-tighter text-black dark:text-gray-100 2xl:text-lg'>
-            {value?.codeFilename}
+    customCode: ({ value }) => {
+      const {
+        code: { code, filename = '', language }
+      } = value
+
+      return (
+        <>
+          <div className='flex justify-between items-center mb-[-28px]'>
+            <div className='flex-1 text-base italic tracking-tighter text-black dark:text-gray-100 2xl:text-lg'>
+              {filename}
+            </div>
+            <div className='py-1 text-base font-semibold text-black uppercase dark:text-gray-100 2xl:text-lg'>
+              {language}
+            </div>
           </div>
-          <div className='py-1 text-base font-semibold text-black uppercase dark:text-gray-100 2xl:text-lg'>
-            {value?.code?.language}
-          </div>
-        </div>
-        <NearScreenSuspense loadingMessage='Loading code' rootMargin='-10px'>
-          <DynamicCustomCode
-            code={value?.code?.code}
-            language={value?.code?.language}
-          />
-        </NearScreenSuspense>
-      </>
-    )
+          <NearScreenSuspense loadingMessage='Loading code' rootMargin='-10px'>
+            <DynamicCustomCode code={code} language={language} />
+          </NearScreenSuspense>
+        </>
+      )
+    }
   },
   marks: {
     em: ({ children }) => <em className='italic'>{children}</em>,
@@ -68,11 +71,12 @@ const components = {
       </code>
     ),
     link: ({ value, children }) => {
-      const rel = value?.isExternal ? 'noreferrer noopener' : undefined
-      const target = value?.isExternal ? '_blank' : undefined
+      const { isExternal, href } = value
+      const rel = isExternal ? 'noreferrer noopener' : undefined
+      const target = isExternal ? '_blank' : undefined
       return (
         <a
-          href={value?.href}
+          href={href}
           rel={rel}
           target={target}
           className='text-pink-800 underline dark:text-pink-600'
