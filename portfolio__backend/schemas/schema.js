@@ -1,9 +1,3 @@
-// First, we must import the schema creator
-import createSchema from "part:@sanity/base/schema-creator";
-
-// Then import schema types from any plugins that might expose them
-import schemaTypes from "all:part:@sanity/base/schema-type";
-
 //Documents
 import biography from "./documents/biography";
 import work from "./documents/work";
@@ -16,21 +10,13 @@ import articleImage from "./objects/articleImage";
 import customCode from "./objects/customCode";
 import richText from "./objects/richText";
 
-// Then we give our schema to the builder and provide the result to Sanity
-export default createSchema({
-  // We name our schema
-  name: "default",
-  // Then proceed to concatenate our document type
-  // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([
-    /* Your types here! */
-    biography,
-    work,
-    blog,
-    technology,
-    customImage,
-    articleImage,
-    customCode,
-    richText,
-  ]),
-});
+export default [
+  biography,
+  work,
+  blog,
+  technology,
+  customImage,
+  articleImage,
+  customCode,
+  richText,
+];
