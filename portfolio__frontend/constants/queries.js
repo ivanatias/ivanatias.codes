@@ -14,7 +14,7 @@ const worksQuery = () => {
     title,
     overview,
     slug,
-    thumbNail  {
+    thumbNail {
     asset -> {
     url
    }
@@ -32,7 +32,7 @@ const workQuery = (slug) => {
     githubUrl,
     description,
     slug,
-    thumbNail  {
+    thumbNail {
       asset -> {
       url
     }
@@ -48,7 +48,7 @@ const workQuery = (slug) => {
     asset -> {
     url,
     _id  
-       }
+      }
     }
   } 
 }[0]`
@@ -69,8 +69,8 @@ const blogQuery = () => {
        asset -> {
          url
           }  
-        }
-     } 
+       }
+    } 
   }`
 
   return query

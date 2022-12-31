@@ -62,6 +62,7 @@ const components = {
       )
     }
   },
+
   marks: {
     em: ({ children }) => <em className='italic'>{children}</em>,
     strong: ({ children }) => <strong className='font-bold'>{children}</strong>,
