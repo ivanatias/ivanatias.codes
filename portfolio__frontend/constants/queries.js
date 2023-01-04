@@ -17,7 +17,7 @@ const worksQuery = () => {
     thumbNail {
     asset -> {
     url
-   }
+    }
   }
 }`
 
@@ -34,22 +34,18 @@ const workQuery = (slug) => {
     slug,
     thumbNail {
       asset -> {
-      url
-    }
-  },
+        url
+      }
+    },
   stack[] {
-    ... {
-      tech,
-      _key
-    }
+    tech,
+    _key  
   },
   additionalImages[] {
-    ... {
     asset -> {
-    url,
-    _id  
-      }
-    }
+      url,
+      _id  
+    }   
   } 
 }[0]`
 
@@ -66,10 +62,10 @@ const blogQuery = () => {
     coverImage {
       altText,
       image {
-       asset -> {
-         url
-          }  
-       }
+        asset -> {
+          url
+        }  
+      }
     } 
   }`
 
@@ -93,11 +89,11 @@ const blogPostQuery = (slug) => {
       coverImage {
         altText,
         image {
-         asset -> {
-           url
-         }  
-       }
-     } 
+          asset -> {
+            url
+          }  
+        }
+      } 
    },
    "previousPost": *[_type == "blog" && ^.publishDate > publishDate]| order(publishDate desc)[0] {
       slug
