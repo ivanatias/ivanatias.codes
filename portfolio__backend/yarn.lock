@@ -4088,9 +4088,9 @@
   "version" "1.2.7"
 
 "is-core-module@^2.9.0":
-  "integrity" "sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A=="
-  "resolved" "https://registry.npmjs.org/is-core-module/-/is-core-module-2.9.0.tgz"
-  "version" "2.9.0"
+  "integrity" "sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw=="
+  "resolved" "https://registry.npmjs.org/is-core-module/-/is-core-module-2.11.0.tgz"
+  "version" "2.11.0"
   dependencies:
     "has" "^1.0.3"
 
@@ -5101,6 +5101,11 @@
   "resolved" "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.1.2.tgz"
   "version" "1.1.2"
 
+"prettier@2.8.3":
+  "integrity" "sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw=="
+  "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.8.3.tgz"
+  "version" "2.8.3"
+
 "pretty-ms@^7.0.1":
   "integrity" "sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q=="
   "resolved" "https://registry.npmjs.org/pretty-ms/-/pretty-ms-7.0.1.tgz"
@@ -5729,7 +5734,7 @@
   dependencies:
     "diff-match-patch" "^1.0.5"
 
-"sanity-plugin-media@^2.0.2":
+"sanity-plugin-media@2.0.2":
   "integrity" "sha512-StPKT01ChPKgxix/lGOe/ancpyOE9ZPfmrhfAQkmS16IFShCKloiXe4O1YIWAQk/hzLJ8GQSjSSRMPi2HSUVgA=="
   "resolved" "https://registry.npmjs.org/sanity-plugin-media/-/sanity-plugin-media-2.0.2.tgz"
   "version" "2.0.2"

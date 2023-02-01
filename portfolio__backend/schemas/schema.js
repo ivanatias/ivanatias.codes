@@ -1,14 +1,14 @@
 //Documents
-import biography from "./documents/biography";
-import work from "./documents/work";
-import blog from "./documents/blog";
+import biography from './documents/biography'
+import work from './documents/work'
+import blog from './documents/blog'
 
 //Custom objects
-import technology from "./objects/technology";
-import customImage from "./objects/customImage";
-import articleImage from "./objects/articleImage";
-import customCode from "./objects/customCode";
-import richText from "./objects/richText";
+import technology from './objects/technology'
+import customImage from './objects/customImage'
+import articleImage from './objects/articleImage'
+import customCode from './objects/customCode'
+import richText from './objects/richText'
 
 export default [
   biography,
@@ -18,5 +18,5 @@ export default [
   customImage,
   articleImage,
   customCode,
-  richText,
-];
+  richText
+]

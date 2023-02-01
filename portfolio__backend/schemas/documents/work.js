@@ -1,87 +1,87 @@
-import { MdWork } from "react-icons/md";
+import { MdWork } from 'react-icons/md'
 
 export default {
-  name: "work",
-  title: "Work",
-  type: "document",
+  name: 'work',
+  title: 'Work',
+  type: 'document',
   icon: MdWork,
   fields: [
     {
-      name: "title",
-      title: "Title",
-      type: "string",
+      name: 'title',
+      title: 'Title',
+      type: 'string'
     },
     {
-      name: "overview",
-      title: "Overview",
-      type: "string",
+      name: 'overview',
+      title: 'Overview',
+      type: 'string'
     },
     {
-      name: "thumbNail",
-      title: "Thumbnail",
-      type: "image",
+      name: 'thumbNail',
+      title: 'Thumbnail',
+      type: 'image',
       options: {
-        hotspot: true,
-      },
+        hotspot: true
+      }
     },
     {
-      name: "description",
-      title: "Description",
-      type: "text",
+      name: 'description',
+      title: 'Description',
+      type: 'text'
     },
     {
-      name: "stack",
-      title: "Stack",
-      type: "array",
-      of: [{ type: "technology" }],
+      name: 'stack',
+      title: 'Stack',
+      type: 'array',
+      of: [{ type: 'technology' }]
     },
     {
-      name: "projectUrl",
-      title: "Project Url",
-      type: "string",
+      name: 'projectUrl',
+      title: 'Project Url',
+      type: 'string'
     },
     {
-      name: "githubUrl",
-      title: "Github Url",
-      type: "string",
+      name: 'githubUrl',
+      title: 'Github Url',
+      type: 'string'
     },
     {
-      name: "additionalImages",
-      title: "Additional Images",
-      type: "array",
+      name: 'additionalImages',
+      title: 'Additional Images',
+      type: 'array',
       of: [
         {
-          type: "image",
+          type: 'image',
           options: {
-            hotspot: true,
-          },
-        },
-      ],
+            hotspot: true
+          }
+        }
+      ]
     },
     {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
       options: {
-        source: "title",
+        source: 'title',
         maxLength: 200, //
         slugify: (input) =>
-          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
-      },
-    },
+          input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
+      }
+    }
   ],
   preview: {
     select: {
-      title: "title",
-      image: "thumbNail",
-      desc: "overview",
+      title: 'title',
+      image: 'thumbNail',
+      desc: 'overview'
     },
     prepare({ title, image, desc }) {
       return {
         title,
         media: image,
-        subtitle: desc,
-      };
-    },
-  },
-};
+        subtitle: desc
+      }
+    }
+  }
+}
