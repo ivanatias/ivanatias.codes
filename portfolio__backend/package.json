@@ -9,7 +9,8 @@
   "scripts": {
     "start": "sanity start",
     "build": "sanity build",
-    "dev": "sanity dev"
+    "dev": "sanity dev",
+    "prettier": "prettier --write \"./**/*.{js,jsx,json}\""
   },
   "keywords": [
     "sanity"
@@ -26,5 +27,8 @@
     "sanity": "3.1.2",
     "sanity-plugin-media": "2.0.2",
     "styled-components": "5.3.6"
+  },
+  "devDependencies": {
+    "prettier": "2.8.3"
   }
 }
